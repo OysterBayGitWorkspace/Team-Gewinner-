@@ -1,0 +1,298 @@
+{
+ "segment_id": "precision_ag_sensing",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "Vancouver-based Miraterra raised $16M CAD in an oversubscribed round led by At One Ventures to scale its Raman-spectroscopy-based AI soil intelligence platform beyond soil into plants and food.",
+    "date": "2026-03-25",
+    "direction": "positive",
+    "source_url": "https://techcouver.com/2026/03/25/miraterra-raises-16m-for-soil-intelligence-platform/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "TerraBlaster closed a $12.5M oversubscribed seed round led by Ulu Ventures for real-time LIBS-based NPK soil nutrient mapping at tractor speed, taking cumulative funding to $16.5M.",
+    "date": "2026-08",
+    "direction": "positive",
+    "source_url": "https://agfundernews.com/terrablaster-raises-12-5m-for-real-time-npk-soil-mapping-at-tractor-speed",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Berlin-based Seqana raised EUR 3.2M led by Pymwymic (with HTGF and Counteract) to extend its satellite-and-machine-learning soil health measurement beyond carbon.",
+    "date": "2026-06",
+    "direction": "positive",
+    "source_url": "https://www.eu-startups.com/2026/06/berlin-based-seqana-secures-e3-2-million-to-quantify-soil-health-using-satellite-imagery-and-machine-learning/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Upstream agtech, which includes precision agriculture, raised roughly $9B globally in 2025, up 7% year over year, with precision ag accounting for about a third of all agtech venture value.",
+    "date": "2025",
+    "direction": "positive",
+    "source_url": "https://hub.causo.ai/guides/agtech-foodtech-funding-2026",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Agtech VC deal count collapsed in H1 2026 versus prior periods, with a rebound seen as unlikely for the remainder of the year amid muted exits.",
+    "date": "2026-07-13",
+    "direction": "negative",
+    "source_url": "https://www.agnavigator.com/Article/2026/07/13/vc-trends-investors-pull-back-on-agtech-in-h1-2026-amid-muted-exits/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "Amsterdam/Boston-based Anterra Capital reached a $100M first close on Fund III (targeting $200M total) to back AI-driven food and agriculture startups, backed by Rabobank, Novo Holdings and Zoetis.",
+    "date": "2026-06-15",
+    "direction": "positive",
+    "source_url": "https://tech.eu/2026/06/15/anterra-capital-reaches-100m-first-close-for-fund-iii-to-back-next-gen-food-and-agritech-innovation/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Investors and growers in ag-tech are prioritizing solutions with predictable ROI, reduced operational risk and real-world workflow fit, per 2026 World Agri-Tech Innovation Summit commentary.",
+    "date": "2026",
+    "direction": "neutral",
+    "source_url": "https://worldagritechusa.com/articles/agri-tech-outlook-robotics-ai-precision-genetics-new-rules-investment",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "At One Ventures",
+    "evidence": "Led Miraterra's $16M CAD oversubscribed round for its AI-driven soil intelligence platform, joined by Farm Credit Canada, S2G Investments, Sitka Foundation and iSelect.",
+    "date": "2026-03-25",
+    "source_url": "https://techcouver.com/2026/03/25/miraterra-raises-16m-for-soil-intelligence-platform/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Ulu Ventures",
+    "evidence": "Led TerraBlaster's $12.5M oversubscribed seed round for real-time NPK soil mapping at tractor speed, joined by Khosla Ventures, Trailhead Capital, Builders Vision and others.",
+    "date": "2026-08",
+    "source_url": "https://www.agnavigator.com/Article/2026/08/25/precision-fertilizer-start-up-closes-125m-seed-round-to-scale-libs-tech/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Pymwymic",
+    "evidence": "Led Seqana's EUR 3.2M round to extend the Berlin startup's satellite-and-AI soil health measurement beyond carbon, joined by HTGF and Counteract.",
+    "date": "2026-06",
+    "source_url": "https://www.eu-startups.com/2026/06/berlin-based-seqana-secures-e3-2-million-to-quantify-soil-health-using-satellite-imagery-and-machine-learning/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Anterra Capital",
+    "evidence": "Fund III first close targets \"AI-driven food and agriculture\" startups delivering \"scalable, science-based solutions\" spanning climate resilience, resource efficiency and regulatory compliance.",
+    "date": "2026-06-15",
+    "source_url": "https://tech.eu/2026/06/15/anterra-capital-reaches-100m-first-close-for-fund-iii-to-back-next-gen-food-and-agritech-innovation/",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "AI-driven",
+     "food and agriculture",
+     "science-based",
+     "climate resilience",
+     "resource efficiency",
+     "regulatory compliance"
+    ]
+   }
+  ]
+ },
+ "regulation": {
+  "facts": [
+   {
+    "claim": "The EU Commission adopted Directive (EU) 2026/288 on 2026-02-09, amending the Nitrates Directive with new RENURE fertiliser rules and recommending Member States support precision farming eco-schemes in CAP Strategic Plans to improve fertilisation efficiency.",
+    "date": "2026-02-09",
+    "direction": "positive",
+    "source_url": "https://environment.ec.europa.eu/news/fresh-measures-reduce-farmers-dependency-imported-fertilisers-2026-02-09_en",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "The European Commission presented legislative proposals on 2025-07-16 for CAP 2028-2034 reform, replacing the two-pillar structure with a single unified fund and shifting income support toward environmental and food-safety conditionality over production.",
+    "date": "2025-07-16",
+    "direction": "neutral",
+    "source_url": "https://www.euronews.com/my-europe/2025/07/16/5-key-ideas-behind-the-eu-commissions-new-farming-rulebook",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "EU Data Act Chapter II data-sharing rights, giving farmers rights to access and share data generated by their farm IoT devices, applied from 2025-09-12, with the obligation for direct-access device interfaces following from 2026-09-12.",
+    "date": "2025-09-12",
+    "direction": "positive",
+    "source_url": "https://www.law.kuleuven.be/citip/blog/who-is-the-user-under-the-eu-data-act-in-digital-agriculture/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "strategics": {
+  "facts": [],
+  "players": [
+   {
+    "name": "John Deere",
+    "evidence": "Acquired Sentera (drone-based aerial field scouting and FieldAgent software) on 2025-05-23 to integrate imagery-derived prescriptions into its Operations Center, after a decade-long partnership.",
+    "date": "2025-05-23",
+    "source_url": "https://www.deere.com/en/news/all-news/john-deere-acquires-sentera/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "John Deere",
+    "evidence": "Acquired GUSS Automation, maker of autonomous orchard and vineyard sprayers, completing the deal in September 2025 to expand its high-value-crop autonomy portfolio.",
+    "date": "2025-09",
+    "source_url": "https://agfundernews.com/john-deere-makes-another-high-value-crop-automation-play-with-guss-acquisition",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "CropX",
+    "evidence": "Acquired Acclym (formerly Agritask) on 2025-09-02, its seventh strategic acquisition, to add enterprise sustainability and supply-chain data to its soil-sensor-based farm management platform.",
+    "date": "2025-09-02",
+    "source_url": "https://cropx.com/2025/09/02/cropx-acquires-acclym-pr/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Elbit Systems (FUSE)",
+    "evidence": "Acquired Bluewhite, an autonomous off-road/ag robotics platform with over 100,000 autonomous field operating hours, on 2026-05-27.",
+    "date": "2026-05-27",
+    "source_url": "https://thedefensepost.com/2026/05/29/elbit-fuse-acquires-bluewhite/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Syngenta",
+    "evidence": "Launched the Cropwise Open Platform with standardized APIs in November 2025 for \"third-party developers worldwide,\" stating \"the best innovations for a smallholder in sub-Saharan Africa or a grain producer in Romania may come from developers closer to those contexts.\"",
+    "date": "2025-11",
+    "source_url": "https://www.syngentagroup.com/newsroom/blogs/making-agricultural-intelligence-happen",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "third-party developers",
+     "standardized APIs",
+     "localized innovation",
+     "smallholder farmers",
+     "agronomic data"
+    ]
+   },
+   {
+    "name": "Corteva (Corteva Catalyst)",
+    "evidence": "Describes Catalyst as \"an investment and collaboration platform dedicated to accelerating the development of technologies that enable farmers around the world to sustainably produce more food and feed.\"",
+    "date": null,
+    "source_url": "https://www.corteva.com/our-impact/innovation/catalyst.html",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "farmer technology",
+     "sustainable production",
+     "external innovation",
+     "food and feed"
+    ]
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [],
+  "deals": [
+   {
+    "target": "Sentera",
+    "acquirer_or_lead": "John Deere",
+    "kind": "acquisition",
+    "date": "2025-05-23",
+    "value": null,
+    "source_url": "https://www.deere.com/en/news/all-news/john-deere-acquires-sentera/"
+   },
+   {
+    "target": "Acclym (formerly Agritask)",
+    "acquirer_or_lead": "CropX",
+    "kind": "acquisition",
+    "date": "2025-09-02",
+    "value": null,
+    "source_url": "https://cropx.com/2025/09/02/cropx-acquires-acclym-pr/"
+   },
+   {
+    "target": "GUSS Automation",
+    "acquirer_or_lead": "John Deere",
+    "kind": "acquisition",
+    "date": "2025-09",
+    "value": null,
+    "source_url": "https://agfundernews.com/john-deere-makes-another-high-value-crop-automation-play-with-guss-acquisition"
+   },
+   {
+    "target": "Bluewhite (Blue White Robotics)",
+    "acquirer_or_lead": "Elbit Systems (FUSE)",
+    "kind": "acquisition",
+    "date": "2026-05-27",
+    "value": null,
+    "source_url": "https://thedefensepost.com/2026/05/29/elbit-fuse-acquires-bluewhite/"
+   },
+   {
+    "target": "Rantizo (drone assets)",
+    "acquirer_or_lead": "SKK Holdings",
+    "kind": "acquisition",
+    "date": "2026-05-01",
+    "value": "$258.8M",
+    "source_url": "https://igrownews.com/skk-holdings-latest-news/"
+   },
+   {
+    "target": "Agremo",
+    "acquirer_or_lead": "Drone Nerds (XTI Aerospace)",
+    "kind": "acquisition",
+    "date": "2026-05-19",
+    "value": null,
+    "source_url": "https://www.prnewswire.com/news-releases/xti-aerospaces-drone-nerds-business-adds-agremo-crop-monitoring-and-field-analytics-platform-to-enterprise-software-portfolio-302776106.html"
+   },
+   {
+    "target": "Trace Genomics (assets)",
+    "acquirer_or_lead": "Miraterra",
+    "kind": "acquisition",
+    "date": "2025",
+    "value": null,
+    "source_url": "https://techcouver.com/2026/03/25/miraterra-raises-16m-for-soil-intelligence-platform/"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [
+   {
+    "claim": "CropX describes itself as \"an M&A machine,\" having made seven strategic acquisitions in five years to build an integrated digital-agronomy platform around its soil-sensor core.",
+    "date": "2026-02-09",
+    "direction": "positive",
+    "source_url": "https://agfundernews.com/cropx-and-the-case-for-consolidation-in-agtech-we-are-an-ma-machine",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Ten agtech M&A deals closed in May 2026 alone, double any comparable month, with every one a strategic buy by an established operator rather than a distress sale.",
+    "date": "2026-05",
+    "direction": "positive",
+    "source_url": "https://igrownews.com/agtech-consolidation-ma-wave-2026/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "players": [
+   {
+    "name": "CropX",
+    "evidence": "CEO Tomer Tzach on acquisition criteria: \"Technology? Customers? Revenues? And the answer is yes, yes, and yes\"; most of the seven companies acquired since 2020 (incl. Green Brain, EnGeniousAg, Acclym/Agritask) were profitable, not distressed.",
+    "date": "2026-02-09",
+    "source_url": "https://agfundernews.com/cropx-and-the-case-for-consolidation-in-agtech-we-are-an-ma-machine",
+    "intent": "acted",
+    "mandate_keywords": [
+     "technology",
+     "customers",
+     "revenue",
+     "profitable targets",
+     "soil sensing",
+     "digital agronomy"
+    ]
+   }
+  ]
+ }
+}

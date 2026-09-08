@@ -1,0 +1,256 @@
+{
+ "segment_id": "biomaterials",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "Cambridge-based PACT raised a £16m (~$20m) Series A led by Forbion and HV Capital, announced 2025-10-30, to scale its collagen-based Oval material and commission a Cambridge pilot line.",
+    "date": "2025-10-30",
+    "direction": "positive",
+    "source_url": "https://techfundingnews.com/cambridge-pact-16m-collagen-leather-scale/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Natural Fiber Welding (maker of the Mirum leather alternative) closed a $7m Series C-II on 2026-01-14 led by CTW Venture Partners and Provest Equity Partners, recapitalizing the company after a 2025 wind-down.",
+    "date": "2026-01-14",
+    "direction": "neutral",
+    "source_url": "https://finance.yahoo.com/news/mycoworks-closes-factory-cheaper-mycelium-224551926.html",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "SOSV's 'Green Rush' report found biomaterials startups raised $392m in Q1 2025 alone, putting 2025 on pace for roughly $1.5bn versus $583m in 2024 and a 2022 peak of $1.7bn.",
+    "date": null,
+    "direction": "positive",
+    "source_url": "https://sosv.com/the-green-rush/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "MycoWorks closed its 136,000-sq-ft South Carolina mycelium-growing plant around 2025-10-21, citing capital scarcity and declining US manufacturing activity, and pivoted to sourcing and tanning third-party mycelium.",
+    "date": "2025-10-21",
+    "direction": "negative",
+    "source_url": "https://www.ecotextile.com/2025102160455/news/materials-production-news/mycoworks-to-close-factory-and-focus-on-sourcing/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Faircraft acquired the 30-patent portfolio of shuttered rival VitroLabs in an asset-only deal around 2025-05-06, without assuming VitroLabs' liabilities or staff.",
+    "date": "2025-05-06",
+    "direction": "neutral",
+    "source_url": "https://tech.eu/2025/05/06/faircraft-acquires-vitrolabs-assets-in-effort-to-dominate-lab-grown-leather-market/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Rheom Materials (formerly Bucha Bio) partnered with extrusion firm Bixby International on 2025-02-07, with Bixby taking a minority equity stake to scale commercial production of the Shorai leather alternative.",
+    "date": "2025-02-07",
+    "direction": "positive",
+    "source_url": "https://energycapitalhtx.com/rheom-materials-bixby-shorai",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "Forbion and HV Capital co-led a £16m (~$20m) Series A for Cambridge-based collagen leather-alternative maker PACT, announced 2025-10-30, showing growth-stage capital remains active for biomaterials.",
+    "date": "2025-10-30",
+    "direction": "positive",
+    "source_url": "https://techfundingnews.com/cambridge-pact-16m-collagen-leather-scale/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "CTW Venture Partners and Provest Equity Partners recapitalized Natural Fiber Welding (maker of Mirum) with a $7m Series C-II on 2026-01-14, after the company's 2025 wind-down, showing specialist funds will back distressed leather-alternative producers.",
+    "date": "2026-01-14",
+    "direction": "positive",
+    "source_url": "https://finance.yahoo.com/news/mycoworks-closes-factory-cheaper-mycelium-224551926.html",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "Forbion",
+    "evidence": "Co-led PACT's £16m Series A (2025-10-30) to scale its Oval collagen-based leather alternative and commission a pilot production line.",
+    "date": "2025-10-30",
+    "source_url": "https://techfundingnews.com/cambridge-pact-16m-collagen-leather-scale/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "HV Capital",
+    "evidence": "Co-led PACT's £16m Series A (2025-10-30) alongside Forbion.",
+    "date": "2025-10-30",
+    "source_url": "https://techfundingnews.com/cambridge-pact-16m-collagen-leather-scale/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "CTW Venture Partners",
+    "evidence": "Co-invested in Natural Fiber Welding's $7m Series C-II (2026-01-14), rescuing the plant-based leather/rubber materials maker after its 2025 wind-down.",
+    "date": "2026-01-14",
+    "source_url": "https://finance.yahoo.com/news/mycoworks-closes-factory-cheaper-mycelium-224551926.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Provest Equity Partners",
+    "evidence": "Co-invested in Natural Fiber Welding's $7m Series C-II (2026-01-14) alongside CTW Venture Partners.",
+    "date": "2026-01-14",
+    "source_url": "https://finance.yahoo.com/news/mycoworks-closes-factory-cheaper-mycelium-224551926.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "regulation": {
+  "facts": [
+   {
+    "claim": "France's Ministry of the Ecological Transition opened a public consultation on 2026-07-08 (through 2026-07-29) on new technical specifications for its textile EPR scheme, proposing eco-modulation fees that reward recyclable and bio-based materials over the 2022 framework.",
+    "date": "2026-07-08",
+    "direction": "positive",
+    "source_url": "https://circulearth.com/en/frances-new-textile-epr-scheme-key-technical-specification-changes-expected-from-2027/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Every EU member state must have a functioning textile Extended Producer Responsibility scheme in place by 2028-04-17, creating an EU-wide funding and eco-modulation mechanism that can favor plastic-free, bio-based leather alternatives over synthetic (PU/PVC) leather.",
+    "date": "2028-04-17",
+    "direction": "positive",
+    "source_url": "https://www.carbonfact.com/blog/policy/textile-epr-overview",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Under the EU Ecodesign for Sustainable Products Regulation, textiles (along with tyres and aluminium) are slated to be covered by mandatory Digital Product Passport requirements starting in 2027, adding traceability and sustainability-disclosure obligations for leather and leather-alternative products sold in the EU.",
+    "date": null,
+    "direction": "positive",
+    "source_url": "https://www.reconomy.com/2026/02/23/eu-digital-product-passports/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "strategics": {
+  "facts": [
+   {
+    "claim": "Hyundai Motor Group partnered with Uncaged Innovations, announced 2025-09-03, to co-develop a low-carbon, grain-based leather alternative for vehicle interiors as part of its sustainable-mobility push.",
+    "date": "2025-09-03",
+    "direction": "positive",
+    "source_url": "https://triplepundit.com/2025/hyundai-low-carbon-leather-alternative/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Senior representatives from Hermès, Chanel, L'Oréal, LVMH and Kering reportedly expressed interest in mycelium-based materials for fashion, leather goods, beauty, fine watchmaking and jewelry applications at VivaTech 2026 (2026-06-17 to 2026-06-20).",
+    "date": "2026-06",
+    "direction": "positive",
+    "source_url": "https://natlawreview.com/press-releases/heri-farms-inc-gains-spotlight-vivatech-2026-luxury-and-automotive-giants-visit-mycelium-brand-holon-bionics",
+    "source_type": "web",
+    "confidence": "low"
+   }
+  ],
+  "players": [
+   {
+    "name": "Hyundai Motor Group",
+    "evidence": "Announced partnership with Uncaged Innovations (2025-09-03) to develop a scalable, next-generation leather alternative for vehicle interiors; said the deal 'reinforces the Group's leadership in material innovation and environmental responsibility.'",
+    "date": "2025-09-03",
+    "source_url": "https://triplepundit.com/2025/hyundai-low-carbon-leather-alternative/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Hermès, Chanel, L'Oréal, LVMH, Kering",
+    "evidence": "Senior professionals from these houses expressed interest in mycelium materials' potential across fashion, leather goods, beauty, fine watchmaking and jewelry at VivaTech 2026.",
+    "date": "2026-06",
+    "source_url": "https://natlawreview.com/press-releases/heri-farms-inc-gains-spotlight-vivatech-2026-luxury-and-automotive-giants-visit-mycelium-brand-holon-bionics",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "mycelium materials",
+     "fashion",
+     "leather goods",
+     "beauty",
+     "fine watchmaking",
+     "jewelry"
+    ]
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [],
+  "deals": [
+   {
+    "target": "VitroLabs",
+    "acquirer_or_lead": "Faircraft",
+    "kind": "acquisition",
+    "date": "2025-05-06",
+    "value": null,
+    "source_url": "https://tech.eu/2025/05/06/faircraft-acquires-vitrolabs-assets-in-effort-to-dominate-lab-grown-leather-market/"
+   },
+   {
+    "target": "MycoWorks (South Carolina mycelium plant)",
+    "acquirer_or_lead": "MycoWorks (restructuring)",
+    "kind": "other",
+    "date": "2025-10-21",
+    "value": null,
+    "source_url": "https://www.ecotextile.com/2025102160455/news/materials-production-news/mycoworks-to-close-factory-and-focus-on-sourcing/"
+   },
+   {
+    "target": "PACT",
+    "acquirer_or_lead": "Forbion, HV Capital",
+    "kind": "growth_round",
+    "date": "2025-10-30",
+    "value": "£16m (~$20m)",
+    "source_url": "https://techfundingnews.com/cambridge-pact-16m-collagen-leather-scale/"
+   },
+   {
+    "target": "Natural Fiber Welding (Mirum)",
+    "acquirer_or_lead": "CTW Venture Partners, Provest Equity Partners",
+    "kind": "growth_round",
+    "date": "2026-01-14",
+    "value": "$7m",
+    "source_url": "https://finance.yahoo.com/news/mycoworks-closes-factory-cheaper-mycelium-224551926.html"
+   },
+   {
+    "target": "Rheom Materials (Shorai)",
+    "acquirer_or_lead": "Bixby International",
+    "kind": "growth_round",
+    "date": "2025-02-07",
+    "value": null,
+    "source_url": "https://energycapitalhtx.com/rheom-materials-bixby-shorai"
+   },
+   {
+    "target": "Faircraft",
+    "acquirer_or_lead": "Kindred Ventures, Cap Horn, BPI",
+    "kind": "growth_round",
+    "date": "2024-11",
+    "value": "€15m (~$15.8m)",
+    "source_url": "https://www.causeartist.com/blog/faircraft-raises-15million-sustainable-leather"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [
+   {
+    "claim": "MycoWorks cited capital scarcity and seven straight months of US manufacturing-PMI decline when it closed its South Carolina mycelium plant in Oct 2025, a dynamic that could push under-capitalized leather-alternative makers toward consolidation, though no dedicated buy-and-build platform has emerged yet.",
+    "date": "2025-10-21",
+    "direction": "negative",
+    "source_url": "https://www.ecotextile.com/2025102160455/news/materials-production-news/mycoworks-to-close-factory-and-focus-on-sourcing/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "France's Faircraft absorbed failed peer VitroLabs via an asset-only acquisition (May 2025) rather than a full merger, indicating IP-scavenging rather than a platform roll-up strategy is the current consolidation pattern in lab-grown leather.",
+    "date": "2025-05-06",
+    "direction": "neutral",
+    "source_url": "https://tech.eu/2025/05/06/faircraft-acquires-vitrolabs-assets-in-effort-to-dominate-lab-grown-leather-market/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "players": []
+ }
+}

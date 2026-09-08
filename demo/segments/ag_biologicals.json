@@ -1,0 +1,428 @@
+{
+ "segment_id": "ag_biologicals",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "Agricultural Biologicals deal count rose from 6 deals in 2024 to 11 in 2025 and 10 through May 2026, with the segment raising about $259M in 2024 and about $252M in 2025, holding roughly stable while broader agritech funding declined.",
+    "date": "2026-05",
+    "direction": "neutral",
+    "source_url": "https://www.peony.ink/blog/top-15-agriculture-investors",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "French olfactory-biocontrol startup Agriodor raised a €15M Series A led by Crédit Mutuel Impact's Environmental and Solidarity Revolution Fund, announced 2026-04-15.",
+    "date": "2026-04-15",
+    "direction": "positive",
+    "source_url": "https://tech.eu/2026/04/15/agriodor-raises-eur15-million-to-expand-scent-based-crop-protection-globally/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Belgian biocontrol firm Biotalys closed a €12.05M private placement with existing shareholders (Ackermans & van Haaren, Agri Investment Fund, GIMV, PMV, VIB, Sofinnova Industrial Biotech I among others) on 2026-05-20.",
+    "date": "2026-05-20",
+    "direction": "positive",
+    "source_url": "https://www.globenewswire.com/news-release/2026/05/20/3298768/0/en/biotalys-announces-closing-of-private-placement.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Danish fungal-biocontrol spin-out Mycoverse (DTU) raised €2.4M pre-seed co-led by Future Food Fund and High-Tech Gründerfonds, announced March 2026, bringing cumulative funding to ~€4.3M.",
+    "date": "2026-03",
+    "direction": "positive",
+    "source_url": "https://www.eu-startups.com/2026/03/denmarks-mycoverse-raises-e2-4-million-to-develop-fungal-based-biological-alternatives-to-chemical-pesticides",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Genetic insect-control startup Biocentis (Imperial College London spin-out) raised $19M total ($13M seed equity plus $6M Wellcome award) led by Grantham Foundation and Algebris Investments, announced 2025-11-18.",
+    "date": "2025-11-18",
+    "direction": "positive",
+    "source_url": "https://www.axios.com/pro/climate-deals/2025/11/18/biocentis-seed-funding",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Israeli bioinsecticide company IBI Ag closed a $10M Series A led by Corteva Catalyst, announced 2025-11-11, with participation from Trendlines Group and the Israel Innovation Authority.",
+    "date": "2025-11-11",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/ibi-ag-completes-10-million-series-a-round-led-by-corteva-302611427.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Belgian biopesticide spin-off B-COS raised €1M pre-seed led by Agri Investment Fund and VP Capital, announced May 2026, plus a Vlaio research grant, to fund 20+ field trials in Europe.",
+    "date": "2026-05",
+    "direction": "positive",
+    "source_url": "https://www.mainsights.io/ma-news/belgium-based-b-cos-raises-eur-1m-pre-seed-funding-for-biopesticide-development-led-by-agri-investment-fund-and-vp-capital",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "Corteva Catalyst led a $10M Series A for bioinsecticide startup IBI Ag, with participation from Trendlines Group, Iron Nation, Consensus Business Group, Bandera Capital and First Imagine Ventures.",
+    "date": "2025-11-11",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/ibi-ag-completes-10-million-series-a-round-led-by-corteva-302611427.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Grantham Foundation for the Protection of the Environment and Algebris Investments led a $13M seed equity round (plus $6M Wellcome award) for insect-control biotech Biocentis.",
+    "date": "2025-11-18",
+    "direction": "positive",
+    "source_url": "https://www.axios.com/pro/climate-deals/2025/11/18/biocentis-seed-funding",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Anterra Capital announced an €86M first close of its Fund III (against a €172M target) on 2026-06-15, with a mandate for life-science and software innovation in food and agriculture including agricultural biotechnology.",
+    "date": "2026-06-15",
+    "direction": "positive",
+    "source_url": "https://fundmomentum.vc/blog/anterra-capital-fund-iii-86m-first-close-agrifoodtech-rabobank-novo-zoetis-2026",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Zebra Impact Ventures (Regenerative Growth I, with Mirabaud Asset Management) led AgroSpheres' $37M Series B final close, joined by Lewis and Clark AgriFood, Ospraie Ag Science Ventures, FMC Ventures, BIDRA Ventures and Cavallo Ventures.",
+    "date": "2024-09-30",
+    "direction": "positive",
+    "source_url": "https://cvillebiohub.org/2024/09/30/agrospheres-secures-37m-series-b-funding-pushes-for-growth/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "Corteva Catalyst",
+    "evidence": "Led the $10M Series A for bioinsecticide company IBI Ag in November 2025.",
+    "date": "2025-11-11",
+    "source_url": "https://www.prnewswire.com/news-releases/ibi-ag-completes-10-million-series-a-round-led-by-corteva-302611427.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Grantham Foundation / Algebris Investments",
+    "evidence": "Co-led the $13M seed round for genetic insect-control company Biocentis, a spin-out of Imperial College London.",
+    "date": "2025-11-18",
+    "source_url": "https://www.axios.com/pro/climate-deals/2025/11/18/biocentis-seed-funding",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Anterra Capital",
+    "evidence": "Announced €86M first close of Fund III (target €172M) with mandate for 'life-science and software innovation applied to food and agriculture,' portfolio spanning agricultural biotechnology and biological design.",
+    "date": "2026-06-15",
+    "source_url": "https://fundmomentum.vc/blog/anterra-capital-fund-iii-86m-first-close-agrifoodtech-rabobank-novo-zoetis-2026",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "life-science food and agriculture",
+     "AI-accelerated trait discovery",
+     "biological design",
+     "agricultural biotechnology"
+    ]
+   },
+   {
+    "name": "Crédit Mutuel Impact (Environmental and Solidarity Revolution Fund)",
+    "evidence": "Led Agriodor's €15M Series A for scent-based olfactory biocontrol, alongside Région Sud Investissement, CAAP Création, Capagro, CapHorn and SWEN Capital Partners.",
+    "date": "2026-04-15",
+    "source_url": "https://tech.eu/2026/04/15/agriodor-raises-eur15-million-to-expand-scent-based-crop-protection-globally/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Future Food Fund / High-Tech Gründerfonds (HTGF)",
+    "evidence": "Co-led Mycoverse's €2.4M pre-seed round for fungal biocontrol against potato late blight, with participation from Paulig's venture arm PINC.",
+    "date": "2026-03",
+    "source_url": "https://www.eu-startups.com/2026/03/denmarks-mycoverse-raises-e2-4-million-to-develop-fungal-based-biological-alternatives-to-chemical-pesticides",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "regulation": {
+  "facts": [
+   {
+    "claim": "The European Parliament adopted a resolution (590-28, 32 abstentions) on 2025-11-25 calling for a clear EU legal definition of biological control, an accelerated EU-level approval framework, mutual recognition across member states, and fast-track/provisional-approval procedures to cut current 7-9 year approval timelines toward the 2-3 years seen in the Americas and Asia.",
+    "date": "2025-11-25",
+    "direction": "positive",
+    "source_url": "https://www.hortidaily.com/article/9788400/the-european-parliament-supports-faster-access-to-biocontrol/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "The European Commission is preparing new rules to fast-track biocontrol/biopesticide approvals, expected in Q4 2026, to be followed by a broader 2026 EU Biotech Act addressing remaining regulatory gaps.",
+    "date": "2026",
+    "direction": "positive",
+    "source_url": "https://news.agropages.com/News/NewsDetail---53086.htm",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "The EPA began modernizing its pesticide registration framework in 2025 (MyPest tracking system launched January 2025, Office of Pesticide Programs restructured May 2025) and proposed a streamlined registration review process for several low-risk biopesticides.",
+    "date": "2025-05",
+    "direction": "positive",
+    "source_url": "https://www.epa.gov/pesticides/epa-proposes-streamlined-registration-review-process-several-low-risk-biopesticides",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Post-Brexit UK biopesticide approvals remain slower than the EU under the retained 1107/2009 framework administered by HSE; the UK government is working to realign pesticide legislation with the EU, targeting a finalized agreement by mid-2027.",
+    "date": "2026",
+    "direction": "negative",
+    "source_url": "https://www.pan-uk.org/post-brexit-pesticide-divergence/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "strategics": {
+  "facts": [
+   {
+    "claim": "Syngenta stated an ambition to become 'a global leader in biologicals' when announcing the Intrinsyx Bio acquisition, targeting the nutrient-use-efficiency segment it calls biologicals' fastest-growing market.",
+    "date": "2024-12",
+    "direction": "positive",
+    "source_url": "https://www.syngenta.com/media/media-releases/2025/syngenta-become-global-leader-biologicals-expanding-nature-inspired",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "BASF Agricultural Solutions completed its acquisition of biological insect-control company AgBiTech on 2026-03-31, expanding what it calls its 'biological insect control portfolio' and citing intent to give farmers 'more effective and diversified insect control options.'",
+    "date": "2026-03-31",
+    "direction": "positive",
+    "source_url": "https://www.basf.com/global/en/media/news-releases/2026/03/p-26-029",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Corteva led a $10M Series A in nanobody-based bioinsecticide startup IBI Ag via its Corteva Catalyst venture arm, announced 2025-11-11.",
+    "date": "2025-11-11",
+    "direction": "positive",
+    "source_url": "https://www.fertilizerdaily.com/20251113-corteva-leads-10-million-investment-in-ibi-ag-to-advance-nanobody-based-bioinsecticides/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Biotalys entered a new strategic partnership with 21st.BIO in January 2026 for biocontrol production, following the conclusion of its prior manufacturing/commercialization collaboration with Novonesis on its EVOCA NG biofungicide.",
+    "date": "2026-01-23",
+    "direction": "neutral",
+    "source_url": "https://www.globenewswire.com/news-release/2026/01/23/3224398/0/en/Biotalys-and-21st-BIO-Enter-into-Strategic-Partnership-to-Advance-Biocontrol-Production.html",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Certis Belchim partnered with Greenhas Group in June 2026 to jointly advance next-generation biostimulant innovation.",
+    "date": "2026-06",
+    "direction": "positive",
+    "source_url": "https://www.global-agriculture.com/biologicals/certis-belchim-and-greenhas-group-partner-to-advance-next-generation-biostimulant-innovation/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Suterra (The Wonderful Company) acquired Vestaron's peptide biopesticide product lines and R&D pipeline in May 2026, stating its intent to combine '40 years of mating disruption and biological scaling experience' with Vestaron's technology and begin manufacturing the Spear Lep product later in 2026.",
+    "date": "2026-05-06",
+    "direction": "positive",
+    "source_url": "https://www.suterra.com/blog/suterra-acquires-vestarons-rd-assets-and-product-lines",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "players": [
+   {
+    "name": "Syngenta",
+    "evidence": "Stated ambition to become 'a global leader in biologicals' and 'expand nature-inspired solutions for farmers' when acquiring Intrinsyx Bio for nutrient-use-efficiency products.",
+    "date": "2024-12",
+    "source_url": "https://www.syngenta.com/media/media-releases/2025/syngenta-become-global-leader-biologicals-expanding-nature-inspired",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "global leader in biologicals",
+     "nutrient use efficiency",
+     "nature-inspired solutions"
+    ]
+   },
+   {
+    "name": "BASF Agricultural Solutions",
+    "evidence": "Completed acquisition of AgBiTech to expand its 'biological insect control portfolio' and offer 'more effective and diversified insect control options,' with focus on Brazil.",
+    "date": "2026-03-31",
+    "source_url": "https://www.basf.com/global/en/media/news-releases/2026/03/p-26-029",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Corteva (Corteva Catalyst)",
+    "evidence": "Led $10M Series A investment in bioinsecticide/nanobody startup IBI Ag.",
+    "date": "2025-11-11",
+    "source_url": "https://www.fertilizerdaily.com/20251113-corteva-leads-10-million-investment-in-ibi-ag-to-advance-nanobody-based-bioinsecticides/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "FMC (FMC Ventures)",
+    "evidence": "Participated as co-lead investor (via FMC Ventures) in SOLASTA Bio's Series A for peptide-based bioinsecticides, and separately took a $400M strategic minority investment from Tessenderlo Group to fund crop-protection R&D/commercialization.",
+    "date": "2026-06-30",
+    "source_url": "https://www.prnewswire.com/news-releases/fmc-corporation-reaches-agreement-for-400-million-minority-equity-investment-from-tessenderlo-group-302815255.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Novonesis",
+    "evidence": "Ran a manufacturing/commercialization partnership with Biotalys for its EVOCA NG biofungicide before the relationship concluded in early 2026.",
+    "date": "2026-01",
+    "source_url": "https://www.globenewswire.com/news-release/2026/01/23/3224398/0/en/Biotalys-and-21st-BIO-Enter-into-Strategic-Partnership-to-Advance-Biocontrol-Production.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Certis Belchim",
+    "evidence": "Partnered with Greenhas Group (June 2026) to advance next-generation biostimulant innovation, and previously partnered with Renaissance BioScience on biopesticide development.",
+    "date": "2026-06",
+    "source_url": "https://www.global-agriculture.com/biologicals/certis-belchim-and-greenhas-group-partner-to-advance-next-generation-biostimulant-innovation/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Suterra (The Wonderful Company)",
+    "evidence": "Acquired Vestaron's product lines and R&D pipeline, stating plan to manufacture branded Spear Lep product later in 2026, expanding its biological pest-control platform.",
+    "date": "2026-05-06",
+    "source_url": "https://www.suterra.com/blog/suterra-acquires-vestarons-rd-assets-and-product-lines",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [
+   {
+    "claim": "AgBiome shut down after failing to sustain its business despite raising $117M in 2022 and $200M+ over its lifetime; Ginkgo Bioworks acquired its platform assets (strains, gene sequences, pipeline) for $18.2M in Ginkgo stock on 2024-04-10.",
+    "date": "2024-04-10",
+    "direction": "negative",
+    "source_url": "https://www.agriinvestor.com/agbiomes-demise-does-not-mean-its-work-will-go-unfulfilled/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "BASF Agricultural Solutions completed its acquisition of biological insect-control company AgBiTech (from PE owner Paine Schwartz Partners) on 2026-03-31, financial terms undisclosed.",
+    "date": "2026-03-31",
+    "direction": "positive",
+    "source_url": "https://www.basf.com/global/en/media/news-releases/2026/03/p-26-029",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Suterra acquired Vestaron's Spear and Basin biopesticide product lines, active ingredients and Kalamazoo R&D pipeline on 2026-05-06 after Vestaron struggled to commercialize independently.",
+    "date": "2026-05-06",
+    "direction": "neutral",
+    "source_url": "https://www.suterra.com/blog/suterra-acquires-vestarons-rd-assets-and-product-lines",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Syngenta acquired Intrinsyx Bio, a California nutrient-use-efficiency biologicals startup, completing the deal in December 2024 to build a platform in NUE, described as biologicals' fastest-growing segment.",
+    "date": "2024-12",
+    "direction": "positive",
+    "source_url": "https://www.syngenta.com/media/media-releases/2025/syngenta-become-global-leader-biologicals-expanding-nature-inspired",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "deals": [
+   {
+    "target": "AgBiome (assets)",
+    "acquirer_or_lead": "Ginkgo Bioworks",
+    "kind": "acquisition",
+    "date": "2024-04-10",
+    "value": "$18.2M (stock)",
+    "source_url": "https://www.agriinvestor.com/agbiomes-demise-does-not-mean-its-work-will-go-unfulfilled/"
+   },
+   {
+    "target": "Intrinsyx Bio",
+    "acquirer_or_lead": "Syngenta",
+    "kind": "acquisition",
+    "date": "2024-12",
+    "value": null,
+    "source_url": "https://www.syngenta.com/media/media-releases/2025/syngenta-become-global-leader-biologicals-expanding-nature-inspired"
+   },
+   {
+    "target": "AgBiTech",
+    "acquirer_or_lead": "BASF Agricultural Solutions",
+    "kind": "acquisition",
+    "date": "2026-03-31",
+    "value": "undisclosed",
+    "source_url": "https://www.basf.com/global/en/media/news-releases/2026/03/p-26-029"
+   },
+   {
+    "target": "Vestaron (product lines/R&D)",
+    "acquirer_or_lead": "Suterra (The Wonderful Company)",
+    "kind": "acquisition",
+    "date": "2026-05-06",
+    "value": null,
+    "source_url": "https://www.suterra.com/blog/suterra-acquires-vestarons-rd-assets-and-product-lines"
+   },
+   {
+    "target": "AgroSpheres",
+    "acquirer_or_lead": "Zebra Impact Ventures (led Series B)",
+    "kind": "growth_round",
+    "date": "2024-09-30",
+    "value": "$37M",
+    "source_url": "https://cvillebiohub.org/2024/09/30/agrospheres-secures-37m-series-b-funding-pushes-for-growth/"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [
+   {
+    "claim": "BioFirst Group (formerly Biobest), backed by Tikehau Capital, AXA and Unilever, acquired 85% of Brazilian biologicals maker Biotrop for a €532M enterprise value in 2023, and has since layered on further acquisitions (BioWorks 2023, Ecoation tech 2025).",
+    "date": "2025-07",
+    "direction": "positive",
+    "source_url": "https://biofirstgroup.com/blogs/news/biobest-acquires-ecoation-technology-in-commitment-to-support-horticulture-growers-with-automated-ipm-scouting-and-monitoring-tools",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Private equity firm Paine Schwartz Partners sold biocontrol platform AgBiTech to BASF Agricultural Solutions, with the deal closing 2026-03-31, exiting a PE-built biologicals roll-up (AgBiTech had assembled manufacturing in the US, Australia and Brazil).",
+    "date": "2026-03-31",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/paine-schwartz-partners-announces-sale-of-agbitech-to-basf-agricultural-solutions-302731357.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Suterra (a division of The Wonderful Company) acquired Vestaron's product lines, active ingredients and R&D pipeline on 2026-05-06, absorbing a distressed biologicals peer's assets into its own biocontrol platform.",
+    "date": "2026-05-06",
+    "direction": "neutral",
+    "source_url": "https://www.suterra.com/blog/suterra-acquires-vestarons-rd-assets-and-product-lines",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "players": [
+   {
+    "name": "BioFirst Group (Biobest)",
+    "evidence": "Built a Latin America-to-Europe biocontrol/biostimulant platform via Biotrop (€532M, 2023), BioWorks (2023) and Ecoation tech acquisition (2025); CEO Jean-Marc Vandoorne says acquisitions bring 'future development roadmap under our direct control.'",
+    "date": "2025-07",
+    "source_url": "https://biofirstgroup.com/blogs/news/biobest-acquires-ecoation-technology-in-commitment-to-support-horticulture-growers-with-automated-ipm-scouting-and-monitoring-tools",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Paine Schwartz Partners",
+    "evidence": "Sustainable-food-chain PE firm exited its AgBiTech biocontrol platform to BASF in March 2026, having built it into a global manufacturer across the US, Australia and Brazil.",
+    "date": "2026-03-31",
+    "source_url": "https://www.prnewswire.com/news-releases/paine-schwartz-partners-announces-sale-of-agbitech-to-basf-agricultural-solutions-302731357.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Suterra",
+    "evidence": "Acquired Vestaron's Spear and Basin product lines, active ingredients and Kalamazoo R&D pipeline in May 2026 to combine its own mating-disruption/biological scaling with peptide technology.",
+    "date": "2026-05-06",
+    "source_url": "https://www.suterra.com/blog/suterra-acquires-vestarons-rd-assets-and-product-lines",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ }
+}

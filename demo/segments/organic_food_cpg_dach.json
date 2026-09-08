@@ -1,0 +1,349 @@
+{
+ "segment_id": "organic_food_cpg_dach",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "KoRo (Berlin clean-label snacking/dry-goods DTC-and-retail brand) extended its Series C by €5m from Kharis Capital on Feb 27, 2025, bringing the round (initially €35m, led by Coefficient Capital in Nov 2024) to €40m total.",
+    "date": "2025-02-27",
+    "direction": "positive",
+    "source_url": "https://www.just-food.com/news/koro-garners-funding-from-kharis/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "NutriUnited, a German buy-and-build platform for family-owned organic/artisan food producers, raised an €8.5M seed round in November 2025 to scale its consolidation model.",
+    "date": "2025-11-25",
+    "direction": "positive",
+    "source_url": "https://tech.eu/2025/11/25/josef-brunners-nutriunited-secures-eur85m-seed-round-to-champion-family-owned-food-producers/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Bio Company, Germany's 3rd-largest organic supermarket chain, reported FY2025 revenue of roughly €199M, essentially flat versus €201M the prior year, shortly before merging with wholesaler Terra Naturkost.",
+    "date": "2026",
+    "direction": "neutral",
+    "source_url": "https://rundschau.de/unternehmen/bio-company-erreicht-umsatz-auf-vorjahresniveau/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "At Biofach 2026 (Feb 2026), organic F&B industry leaders warned the segment faces consolidation pressure and eroding price premiums, saying brands must \"innovate and co-operate or disappear.\"",
+    "date": "2026-02",
+    "direction": "negative",
+    "source_url": "https://www.foodingredientsfirst.com/news/biofach-2026-organic-innovation.html",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "Growth investors Coefficient Capital (lead) and Kharis Capital backed KoRo's extended Series C (€35m Nov 2024, +€5m Feb 2025, totaling €40m), showing continued specialist-fund appetite for DACH clean-label snacking brands.",
+    "date": "2025-02-27",
+    "direction": "positive",
+    "source_url": "https://www.just-food.com/news/koro-garners-funding-from-kharis/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "NutriUnited's €8.5M seed round (Nov 2025) drew a syndicate of German angel/family-office investors (incl. Atlantis Ventures, G-FUND, OakHorizon) specifically to fund buy-and-build acquisitions of family-owned food producers.",
+    "date": "2025-11-25",
+    "direction": "positive",
+    "source_url": "https://tech.eu/2025/11/25/josef-brunners-nutriunited-secures-eur85m-seed-round-to-champion-family-owned-food-producers/",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "Kharis Capital (Kharis Food Tech Fund)",
+    "evidence": "Invested €5m into KoRo's Series C extension, closed Feb 27, 2025, taking the round to €40m total.",
+    "date": "2025-02-27",
+    "source_url": "https://www.just-food.com/news/koro-garners-funding-from-kharis/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Coefficient Capital",
+    "evidence": "Led KoRo's €35m Series C (Nov 2024); the fund is known for early bets on Oatly, Just Spices and Magic Spoon, i.e. clean-label/better-for-you consumer brands.",
+    "date": "2024-11",
+    "source_url": "https://partechpartners.com/news/koro-secures-35-million-in-series-c-funding-round-to-boost-omnichannel-presence-and-fuel-european-expansion",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "regulation": {
+  "facts": [
+   {
+    "claim": "Germany made the stricter Nutri-Score 2023 algorithm mandatory for all voluntary users from January 2026 (after a two-year transition ending end-2025); use of the label itself remains voluntary.",
+    "date": "2026-01",
+    "direction": "neutral",
+    "source_url": "https://www.zm-online.de/news/detail/ab-2026-gilt-der-strengere-nutri-score-fuer-alle",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Germany's proposed Kinderlebensmittel-Werbegesetz (ad ban on high sugar/fat/salt foods aimed at under-14s) remains politically blocked as of 2025, with the BMEL's 4th draft criticized by coalition SPD lawmakers as \"unworkable,\" repeatedly delaying the legislation.",
+    "date": "2025",
+    "direction": "neutral",
+    "source_url": "https://www.bbh-blog.de/alle-themen/gesetzesvorhaben-das-kinderlebensmittel-werbegesetz/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "German Agriculture Minister Alois Rainer (CSU) proposed cutting federal GAK co-financing (which covers organic-farming/agri-environmental subsidies) by €150M for 2026, creating funding uncertainty for organic producers.",
+    "date": "2026",
+    "direction": "negative",
+    "source_url": "https://www.ml.niedersachsen.de/presse/pressemitteilungen/kurzungen-bei-bundesmitteln-fur-okolandbau-artenschutz-und-landlichen-raum-249463.html",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "strategics": {
+  "facts": [
+   {
+    "claim": "Big CPG strategics (Nestlé, Danone, Mars, Kraft Heinz among others) are stepping up bolt-on M&A in health-forward, premium and better-for-you food categories heading into 2026.",
+    "date": "2025-11-19",
+    "direction": "positive",
+    "source_url": "https://www.foodnavigator.com/Article/2025/11/19/big-food-ma-trends-nestle-mars-unilever-and-kraft-heinz-drive-2026-industry-shake-up/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "dm expanded its dm Bio private-label certifications to include Bioland (from April 2026), joining existing Demeter and Naturland partnerships, becoming the first German drugstore to work with all three leading organic associations.",
+    "date": "2026-04-16",
+    "direction": "positive",
+    "source_url": "https://lebensmittelpraxis.de/handel-aktuell/48356-bio-eigenmarken-dm-kooperiert-kuenftig-mit-bioland.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Dr. Oetker is pursuing \"selective bolt-on opportunities in desserts and better-for-you segments\" to complement organic growth, alongside its July 2025 acquisition of Kathi.",
+    "date": "2025-07",
+    "direction": "positive",
+    "source_url": "https://tracxn.com/d/acquisitions/acquisitions-by-dr.oetker/__FnzvfyQ1B28F4-RBfAGjVckQs1Dx32O2cT_WvN4nDQ8",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Nestlé and Danone both moved to fully own/acquire meal-replacement and functional-nutrition brands in 2026 (Yfood and Huel respectively), signaling strategic appetite for clean-label functional nutrition adjacent to organic CPG.",
+    "date": "2026-06",
+    "direction": "positive",
+    "source_url": "https://www.just-food.com/news/nestle-to-buy-ready-to-drink-meal-firm-yfood-outright/",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "players": [
+   {
+    "name": "dm",
+    "evidence": "CEO Kerstin Erbe: dm aims to \"offer customers a bio food assortment in the best specialist retail quality,\" adding Bioland certification to ~700 dm Bio products alongside Demeter and Naturland (April 2026).",
+    "date": "2026-04-16",
+    "source_url": "https://lebensmittelpraxis.de/handel-aktuell/48356-bio-eigenmarken-dm-kooperiert-kuenftig-mit-bioland.html",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "bio food assortment",
+     "specialist retail quality",
+     "Bioland/Demeter/Naturland certification",
+     "private label upgrade"
+    ]
+   },
+   {
+    "name": "Dr. Oetker",
+    "evidence": "Pursuing \"selective bolt-on opportunities in desserts and better-for-you segments to complement organic growth\"; acquired baking/frozen-cake maker Kathi in July 2025.",
+    "date": "2025-07",
+    "source_url": "https://tracxn.com/d/acquisitions/acquisitions-by-dr.oetker/__FnzvfyQ1B28F4-RBfAGjVckQs1Dx32O2cT_WvN4nDQ8",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "bolt-on M&A",
+     "desserts",
+     "better-for-you",
+     "frozen",
+     "baking"
+    ]
+   },
+   {
+    "name": "Nestlé",
+    "evidence": "Completed full buyout of ready-to-drink meal brand Yfood in June 2026, after taking a 49.95% stake for ~€215M in 2023.",
+    "date": "2026-06",
+    "source_url": "https://www.just-food.com/news/nestle-to-buy-ready-to-drink-meal-firm-yfood-outright/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Danone",
+    "evidence": "Agreed to acquire UK functional-nutrition/meal-replacement brand Huel for approximately €1 billion in 2026.",
+    "date": "2026",
+    "source_url": "https://thefoodstack.substack.com/p/eur-1-billion-for-a-meal-shake-what",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Katjes International",
+    "evidence": "Acquired better-for-you snacking brand Graze (Nature Delivered Ltd) from Unilever in February 2026, adding to a portfolio strategy of acquiring growth consumer brands.",
+    "date": "2026-02",
+    "source_url": "https://retail-news.de/katjes-halbjahr-2026-umsatz-graze-bogner-missoni/",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [
+   {
+    "claim": "Holle baby food, a Swiss-based organic/biodynamic baby-food brand also distributed in Germany, was acquired/received a majority strategic investment from Spain's MaserGrup on June 23, 2025.",
+    "date": "2025-06-23",
+    "direction": "positive",
+    "source_url": "https://www.biowelt-online.de/news/masergrup-uebernimmt-holle-baby-food/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Bio Company and Terra Naturkost, Germany's #3 organic supermarket chain and #3 organic wholesaler, merged operations into new holding Bioverbund SE in January 2026 amid margin pressure from discounters.",
+    "date": "2026-01",
+    "direction": "neutral",
+    "source_url": "https://www.freshplaza.de/article/9860346/bio-company-und-terra-naturkost-grunden-bioverbund-se/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Dr. Oetker acquired German baking-mix and frozen-cake maker Kathi in July 2025 as part of a bolt-on M&A strategy in desserts and better-for-you categories.",
+    "date": "2025-07",
+    "direction": "positive",
+    "source_url": "https://tracxn.com/d/acquisitions/acquisitions-by-dr.oetker/__FnzvfyQ1B28F4-RBfAGjVckQs1Dx32O2cT_WvN4nDQ8",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Nestlé completed a full buyout of ready-to-drink meal brand Yfood in June 2026, after first taking a 49.95% stake for roughly €215M in 2023.",
+    "date": "2026-06",
+    "direction": "positive",
+    "source_url": "https://www.just-food.com/news/nestle-to-buy-ready-to-drink-meal-firm-yfood-outright/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Danone agreed to acquire UK meal-replacement/functional-nutrition brand Huel for approximately €1 billion in 2026, underscoring strategic buyer appetite for clean-label functional nutrition brands adjacent to this segment.",
+    "date": "2026",
+    "direction": "positive",
+    "source_url": "https://thefoodstack.substack.com/p/eur-1-billion-for-a-meal-shake-what",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "deals": [
+   {
+    "target": "Holle baby food",
+    "acquirer_or_lead": "MaserGrup",
+    "kind": "acquisition",
+    "date": "2025-06-23",
+    "value": null,
+    "source_url": "https://www.biowelt-online.de/news/masergrup-uebernimmt-holle-baby-food/"
+   },
+   {
+    "target": "Bio Company / Terra Naturkost (Bioverbund SE)",
+    "acquirer_or_lead": "Bio Company & Terra Naturkost (mutual holding)",
+    "kind": "merger",
+    "date": "2026-01",
+    "value": null,
+    "source_url": "https://www.freshplaza.de/article/9860346/bio-company-und-terra-naturkost-grunden-bioverbund-se/"
+   },
+   {
+    "target": "KoRo",
+    "acquirer_or_lead": "Coefficient Capital (lead) / Kharis Capital (extension)",
+    "kind": "growth_round",
+    "date": "2025-02-27",
+    "value": "€40m total (incl. €5m Kharis extension)",
+    "source_url": "https://www.just-food.com/news/koro-garners-funding-from-kharis/"
+   },
+   {
+    "target": "Kathi",
+    "acquirer_or_lead": "Dr. Oetker",
+    "kind": "acquisition",
+    "date": "2025-07",
+    "value": null,
+    "source_url": "https://tracxn.com/d/acquisitions/acquisitions-by-dr.oetker/__FnzvfyQ1B28F4-RBfAGjVckQs1Dx32O2cT_WvN4nDQ8"
+   },
+   {
+    "target": "Yfood",
+    "acquirer_or_lead": "Nestlé",
+    "kind": "acquisition",
+    "date": "2026-06",
+    "value": null,
+    "source_url": "https://www.just-food.com/news/nestle-to-buy-ready-to-drink-meal-firm-yfood-outright/"
+   },
+   {
+    "target": "Huel",
+    "acquirer_or_lead": "Danone",
+    "kind": "acquisition",
+    "date": "2026",
+    "value": "~€1 billion",
+    "source_url": "https://thefoodstack.substack.com/p/eur-1-billion-for-a-meal-shake-what"
+   },
+   {
+    "target": "Graze (Nature Delivered Ltd)",
+    "acquirer_or_lead": "Katjes International",
+    "kind": "acquisition",
+    "date": "2026-02",
+    "value": null,
+    "source_url": "https://retail-news.de/katjes-halbjahr-2026-umsatz-graze-bogner-missoni/"
+   },
+   {
+    "target": "NutriUnited (Grasmehr, Morawitzky platform)",
+    "acquirer_or_lead": "NutriUnited seed investor syndicate",
+    "kind": "growth_round",
+    "date": "2025-11-25",
+    "value": "€8.5M seed",
+    "source_url": "https://tech.eu/2025/11/25/josef-brunners-nutriunited-secures-eur85m-seed-round-to-champion-family-owned-food-producers/"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [
+   {
+    "claim": "Germany's organic specialty retail sector (Naturkostfachhandel) is described as being in a consolidation phase, with smaller and mid-size chains pursuing strategic cooperations, shop-in-shop concepts, and generational ownership transitions rather than standalone growth.",
+    "date": "2026-01",
+    "direction": "negative",
+    "source_url": "https://lebensmittelpraxis.de/handel-aktuell/49383-naturkosthandel-bio-company-und-terra-naturkost-buendeln-ihre-kraefte.html",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "players": [
+   {
+    "name": "Bioverbund SE (Bio Company + Terra Naturkost)",
+    "evidence": "Germany's 3rd-largest organic supermarket chain (Bio Company, ~€199M FY revenue) merged operations with the 3rd-largest organic wholesaler (Terra Naturkost) under new holding Bioverbund SE in Jan 2026 to bundle purchasing volume and compete with discounters/drugstores on price.",
+    "date": "2026-01",
+    "source_url": "https://www.freshplaza.de/article/9860346/bio-company-und-terra-naturkost-grunden-bioverbund-se/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "NutriUnited",
+    "evidence": "Buy-and-build platform explicitly targeting family-owned German food producers in meat, meat-alternatives and ready-meals for succession solutions; raised €8.5M seed (Nov 2025) to accelerate integrating additional family businesses (already owns Grasmehr and Morawitzky, 140+ employees).",
+    "date": "2025-11-25",
+    "source_url": "https://www.eu-startups.com/2025/11/backing-europes-family-run-food-producers-germanys-nutriunited-secures-e8-5-million-to-scale-its-buy-and-build-model/",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "family-owned food producers",
+     "buy-and-build",
+     "succession solutions",
+     "artisan/craftsmanship",
+     "meat and meat alternatives",
+     "ready meals"
+    ]
+   },
+   {
+    "name": "MaserGrup",
+    "evidence": "Spanish food group described as \"eyeing M&A amid sales push\" took a strategic stake/majority in Swiss-German organic baby-food brand Holle in June 2025 as part of a multi-year international buy-and-build investment plan.",
+    "date": "2025-06-23",
+    "source_url": "https://www.biowelt-online.de/news/masergrup-uebernimmt-holle-baby-food/",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ }
+}

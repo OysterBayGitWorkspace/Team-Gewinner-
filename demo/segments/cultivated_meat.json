@@ -1,0 +1,256 @@
+{
+ "segment_id": "cultivated_meat",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "Aleph Farms raised $29M (largest 2025 cultivated meat deal) via a $22M SAFE plus $7M from existing investors to commercialize lower-cost whole-cut cultivated steak.",
+    "date": "2025-03-25",
+    "direction": "positive",
+    "source_url": "https://agfundernews.com/exclusive-aleph-farms-raises-30m-unveils-lower-cost-version-of-whole-cut-technology",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Mosa Meat raised €15M ($17.6M), the second-largest 2025 cultivated meat round, backed by Invest-NL, LIOF, PHW Group and angel Jitse Groen, reaching 99.999% cost reduction from its original €250K burger.",
+    "date": "2025-12-23",
+    "direction": "positive",
+    "source_url": "https://agfundernews.com/mosa-meat-raises-17-6m-prioritizes-fundamentals-over-speed",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "Dutch state-owned impact investors Invest-NL and LIOF, alongside German meat producer PHW Group and angel Jitse Groen (Just Eat Takeaway founder), backed Mosa Meat's €15M ($17.6M) round.",
+    "date": "2025-12-23",
+    "direction": "positive",
+    "source_url": "https://agfundernews.com/mosa-meat-raises-17-6m-prioritizes-fundamentals-over-speed",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Aleph Farms raised $29M via a $22M SAFE plus $7M from existing investors to commercialize lower-cost whole-cut cultivated steak, the largest disclosed 2025 cultivated meat round.",
+    "date": "2025-03-25",
+    "direction": "positive",
+    "source_url": "https://agfundernews.com/exclusive-aleph-farms-raises-30m-unveils-lower-cost-version-of-whole-cut-technology",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Big Idea Ventures' Global Food Innovation Fund II (target $75M), backed by AAK and Bühler, is actively deploying into alternative-protein and cultivated inputs startups with new cohorts announced through 2025.",
+    "date": "2025",
+    "direction": "positive",
+    "source_url": "https://bigideaventures.com/alternative-protein-global-investment-leader-big-idea-ventures-announces-first-new-protein-fund-ii-investments/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "Invest-NL",
+    "evidence": "Dutch state-owned impact investor, backed by an InvestEU guarantee, participated in Mosa Meat's €15M funding round announced December 2025.",
+    "date": "2025-12-23",
+    "source_url": "https://agfundernews.com/mosa-meat-raises-17-6m-prioritizes-fundamentals-over-speed",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "LIOF",
+    "evidence": "Dutch state-owned impact investor joined Mosa Meat's €15M round in December 2025.",
+    "date": "2025-12-23",
+    "source_url": "https://agfundernews.com/mosa-meat-raises-17-6m-prioritizes-fundamentals-over-speed",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "PHW Group",
+    "evidence": "German meat producer and strategic partner joined Mosa Meat's €15M round in December 2025.",
+    "date": "2025-12-23",
+    "source_url": "https://agfundernews.com/mosa-meat-raises-17-6m-prioritizes-fundamentals-over-speed",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Big Idea Ventures (Global Food Innovation Fund II)",
+    "evidence": "Deploying its $75M-target New Protein/Global Food Innovation Fund II, co-running the 2026 Mars Petcare pet food innovation program seeking alternative proteins, fats, oils and novel ingredients.",
+    "date": "2026-05",
+    "source_url": "https://www.nasdaq.com/press-release/big-idea-ventures-and-mars-petcare-launch-2026-global-pet-food-innovation-program",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "alternative proteins",
+     "fats",
+     "oils",
+     "novel ingredients",
+     "low carbon materials",
+     "pet food"
+    ]
+   }
+  ]
+ },
+ "regulation": {
+  "facts": [
+   {
+    "claim": "UK FSA and Food Standards Scotland's two-year Regulatory Sandbox for Cell-Cultivated Products (started March 2025, running to February 2027) had two applications pass validation and move to ACNFP risk assessment in February 2026.",
+    "date": "2026-02",
+    "direction": "positive",
+    "source_url": "https://www.gov.uk/government/publications/fsa-bc-260308-regulatory-sandbox-for-cell-cultivated-products-ccps/regulatory-sandbox-for-cell-cultivated-products-ccps",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "As of September 2025 no cultivated meat product had been authorized under the EU Novel Food framework; Gourmey's cultivated foie gras application (filed July 2024) and Mosa Meat's cultivated beef fat application (filed January 2025) remain pending with EFSA.",
+    "date": "2025-09",
+    "direction": "negative",
+    "source_url": "https://www.foodnavigator.com/Article/2026/02/18/cultivated-meat-regulation-where-countries-stand-in-2026/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "In March 2026 the EU ruled that 'meat' and 31 other common meat-related terms cannot be used for alternative proteins including cultivated meat in labelling, though terms like 'burger' and 'sausage' remain permitted for plant-based products.",
+    "date": "2026-03",
+    "direction": "negative",
+    "source_url": "https://www.foodnavigator.com/Article/2026/04/16/eu-bans-cultivated-meat-terminology/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Seven US states (Alabama, Florida, Indiana, Mississippi, Montana, Nebraska, Texas) have enacted bans on manufacturing, selling or distributing cell-cultured meat as of 2025-2026, with South Dakota adding a five-year prohibition in 2026.",
+    "date": "2026",
+    "direction": "negative",
+    "source_url": "https://www.usnews.com/news/best-states/articles/2025-12-23/states-try-to-snuff-out-lab-grown-meat-before-it-really-starts",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ]
+ },
+ "strategics": {
+  "facts": [],
+  "players": [
+   {
+    "name": "Mars Petcare",
+    "evidence": "Launched the 2026 Global Pet Food Innovation Program with Big Idea Ventures, AAK, Bühler, Givaudan and Ingredion, seeking 'startups with groundbreaking low carbon materials' with 'a strong focus on alternative proteins, fats, oils and novel ingredients' for pet nutrition.",
+    "date": "2026-05",
+    "source_url": "https://www.nasdaq.com/press-release/big-idea-ventures-and-mars-petcare-launch-2026-global-pet-food-innovation-program",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "low carbon materials",
+     "alternative proteins",
+     "fats",
+     "oils",
+     "novel ingredients",
+     "pet food",
+     "pet nutrition"
+    ]
+   },
+   {
+    "name": "Bühler Group",
+    "evidence": "Partnered with Israel's Ever After Foods to commercialize an edible packed-bed bioreactor system enabling ten-fold smaller-scale, food-grade cultivated meat production and cutting costs over 90%.",
+    "date": "2025-04",
+    "source_url": "https://www.foodnavigator-usa.com/Article/2025/04/01/ever-after-foods-and-buhler-aim-to-lower-cultivated-meat-costs/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "PHW Group",
+    "evidence": "German meat producer and strategic partner joined Mosa Meat's €15M funding round in December 2025.",
+    "date": "2025-12-23",
+    "source_url": "https://agfundernews.com/mosa-meat-raises-17-6m-prioritizes-fundamentals-over-speed",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [],
+  "deals": [
+   {
+    "target": "Vital Meat",
+    "acquirer_or_lead": "Gourmey (forming PARIMA)",
+    "kind": "merger",
+    "date": "2025-10-15",
+    "value": null,
+    "source_url": "https://www.foodnavigator.com/Article/2025/10/15/cultivated-meat-merger-gourmey-buys-vital-meat/"
+   },
+   {
+    "target": "Orbillion Bio",
+    "acquirer_or_lead": "Fork & Good",
+    "kind": "acquisition",
+    "date": "2025-10-30",
+    "value": "undisclosed",
+    "source_url": "https://www.greenqueen.com.hk/fork-and-good-orbillion-bio-acquisition-lab-grown-cultivated-meat/"
+   },
+   {
+    "target": "Matrix Food Technologies",
+    "acquirer_or_lead": "Nexture Bio",
+    "kind": "acquisition",
+    "date": "2025-01-19",
+    "value": null,
+    "source_url": "https://vegconomist.com/investments-finance/nexture-bio-acquires-matrix-food-technologies/"
+   },
+   {
+    "target": "Believer Meats",
+    "acquirer_or_lead": "n/a (ceased operations)",
+    "kind": "shutdown",
+    "date": "2025-12",
+    "value": "raised ~$387-390M total since 2018",
+    "source_url": "https://www.calcalistech.com/ctechnews/article/bknaajdzbe"
+   },
+   {
+    "target": "Meatable",
+    "acquirer_or_lead": "n/a (dissolved)",
+    "kind": "shutdown",
+    "date": "2025-12-19",
+    "value": "Agronomics wrote off £11.9M stake",
+    "source_url": "https://www.theglobeandmail.com/investing/markets/markets-news/ACCESS%20Newswire/36708782/agronomics-limited-announces-dissolution-of-meatable/"
+   },
+   {
+    "target": "Believer Meats' North Carolina facility",
+    "acquirer_or_lead": "UPSIDE Foods (bid withdrawn)",
+    "kind": "other",
+    "date": "2026-08-17",
+    "value": "$50M stalking horse bid, later withdrawn; no qualifying bids received",
+    "source_url": "https://agfundernews.com/breaking-upside-foods-drops-bid-for-believer-meats-us-cultivated-meat-facility"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [
+   {
+    "claim": "The number of identified cultivated meat companies fell from 155 in 2024 to 140 in 2025, partly due to shutdowns and acquisitions consolidating the sector.",
+    "date": "2025",
+    "direction": "negative",
+    "source_url": "https://www.meatpoultry.com/articles/33489-cultivated-meat-industry-shrinks-as-investment-and-access-tighten",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "players": [
+   {
+    "name": "PARIMA (Gourmey + Vital Meat)",
+    "evidence": "Gourmey acquired French peer Vital Meat to form PARIMA, combining full-stack production with Vital Meat's 2,000-litre bioreactor capacity and avian cell lines, now holding 15 patent families and 9 regulatory filings in progress.",
+    "date": "2025-10-15",
+    "source_url": "https://www.foodnavigator.com/Article/2025/10/15/cultivated-meat-merger-gourmey-buys-vital-meat/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Fork & Good",
+    "evidence": "Acquired Berkeley-based Orbillion Bio to consolidate cultivated pork and beef cell-cultivation technology into one platform spanning North America, Europe, Asia and the Middle East.",
+    "date": "2025-10-30",
+    "source_url": "https://www.greenqueen.com.hk/fork-and-good-orbillion-bio-acquisition-lab-grown-cultivated-meat/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Nexture Bio",
+    "evidence": "Acquired scaffold producer Matrix Food Technologies to expand its portfolio of animal-component-free microcarriers, scaffolds and cell-attachment factors.",
+    "date": "2025-01-19",
+    "source_url": "https://vegconomist.com/investments-finance/nexture-bio-acquires-matrix-food-technologies/",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ }
+}

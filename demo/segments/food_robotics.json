@@ -1,0 +1,444 @@
+{
+ "segment_id": "food_robotics",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "Wonder raised a $650M Series D at a $9B pre-money valuation (July 2026), with proceeds explicitly directed partly at its Infinite Kitchen robotics program alongside physical and marketplace expansion.",
+    "date": "2026-07-16",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/wonder-announces-650-million-series-d-round-at-a-9-billion-pre-money-valuation-302827208.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Appetronix closed a $6M seed-plus round in November 2025 (total raised over $10M) led by AlleyCorp and the Grote family to scale robotic kitchens in airports, hospitals and other high-traffic non-commercial foodservice sites.",
+    "date": "2025-11-06",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/appetronix-closes-10m-in-total-seed-funding-to-scale-robotic-kitchens-across-non-commercial-foodservice-markets-led-by-alleycorp-and-the-grote-family-fueling-fast-expansion-of-automated-food-concepts-302606925.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "The global restaurant and food-service robotics market was estimated at roughly $1.8B in 2026, growing about 61% year-over-year, the fastest of any robotics vertical, per Robotics Center's April 2026 application guide.",
+    "date": "2026-04-01",
+    "direction": "positive",
+    "source_url": "https://www.roboticscenter.ai/applications/restaurant-robots",
+    "source_type": "web",
+    "confidence": "low"
+   },
+   {
+    "claim": "Restaurant automation was framed as a $28B market opportunity for 2026 by Fortune, citing company filings and industry reports, alongside a wave of consolidation moves (Miso/Zignyl, Miso/Zume).",
+    "date": "2026-02-26",
+    "direction": "positive",
+    "source_url": "https://fortune.com/2026/02/26/robot-disruption-fast-food-short-order-cook-flippy-labor-shortage/",
+    "source_type": "web",
+    "confidence": "low"
+   },
+   {
+    "claim": "Circus SE slashed its FY2026 revenue guidance by roughly 90% (from €44-55M to €5.2M, announced 2026-07-16) and scaled back its robot deployment target from 300 to 50 units, an execution warning sign for the segment's near-term commercial scaling.",
+    "date": "2026-07-16",
+    "direction": "negative",
+    "source_url": "https://www.ad-hoc-news.de/boerse/news/unternehmensnachrichten/circus-se-s-kitchen-robot-reset-a-90-percent-revenue-cut-an-insider/69923115",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Broader food-tech VC funding fell 8.6% in capital and 16.3% in deal count in Q4 2025 versus prior periods, with investors rotating toward later-stage, profitable companies and away from early-stage capital-intensive hardware bets, per PitchBook data cited by FoodNavigator.",
+    "date": "2026-04-10",
+    "direction": "negative",
+    "source_url": "https://www.foodnavigator.com/Article/2026/04/10/food-tech-funding-slows-as-investors-demand-profits/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Global robotics-sector venture funding (all verticals) reached $18.8B in the first half+ of 2026 versus $15B for all of 2025, a ~25% YoY increase, reflecting a favorable general fundraising backdrop that food robotics competes within.",
+    "date": "2026",
+    "direction": "positive",
+    "source_url": "https://news.crunchbase.com/robotics/startup-venture-funding-surges-2026-data/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "Wonder's $650M Series D (July 2026, $9B pre-money) drew new and continued participation from growth investors Accel, GV, ARK Invest, NEA, AllianceBernstein and Kayne Anderson Rudnick, with funds explicitly earmarked for its Infinite Kitchen robotics program.",
+    "date": "2026-07-16",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/wonder-announces-650-million-series-d-round-at-a-9-billion-pre-money-valuation-302827208.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Chef Robotics' $43.1M Series A (equity + equipment financing) was led by growth-stage fund Avataar Ventures with Construct Capital, Bloomberg Beta, Insight Partners and others participating, though the round closed in March/April 2025, outside the trailing 12 months.",
+    "date": "2025-03-31",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/chef-robotics-announces-43m-series-a-round-led-by-avataar-ventures-to-scale-the-deployment-of-ai-enabled-robotics-302416039.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Appetronix's $6M seed-plus round (Nov 2025, total funding to $10M+) was led by consumer-tech specialist fund AlleyCorp alongside the Grote family (Donatos founders), AlleyCorp's third investment in the company.",
+    "date": "2025-11-06",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/appetronix-closes-10m-in-total-seed-funding-to-scale-robotic-kitchens-across-non-commercial-foodservice-markets-led-by-alleycorp-and-the-grote-family-fueling-fast-expansion-of-automated-food-concepts-302606925.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Amsterdam-based Anterra Capital reached a $100M (€86M) first close of Fund III in June 2026 for AI-driven food and agriculture investing, but explicitly favors capital-efficient, science-backed bets over capital-intensive hardware plays, so its fit with food robotics specifically is uncertain.",
+    "date": "2026-06-15",
+    "direction": "neutral",
+    "source_url": "https://tech.eu/2026/06/15/anterra-capital-reaches-100m-first-close-for-fund-iii-to-back-next-gen-food-and-agritech-innovation/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "Accel / GV / NEA / ARK Invest / AllianceBernstein / Kayne Anderson Rudnick",
+    "evidence": "Joined or continued in Wonder's $650M Series D (July 2026), funds earmarked partly for kitchen robotics (Infinite Kitchen) investment.",
+    "date": "2026-07-16",
+    "source_url": "https://www.prnewswire.com/news-releases/wonder-announces-650-million-series-d-round-at-a-9-billion-pre-money-valuation-302827208.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "AlleyCorp",
+    "evidence": "Led Appetronix's $6M seed-plus round (Nov 2025) to scale robotic kitchens in non-commercial foodservice; third investment in the company.",
+    "date": "2025-11-06",
+    "source_url": "https://www.prnewswire.com/news-releases/appetronix-closes-10m-in-total-seed-funding-to-scale-robotic-kitchens-across-non-commercial-foodservice-markets-led-by-alleycorp-and-the-grote-family-fueling-fast-expansion-of-automated-food-concepts-302606925.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "McWin Capital Partners",
+    "evidence": "Head of Science Steven Gamo said the fund looks for automation and robotics that tackle labor challenges \"from farms to restaurants\" and \"founders who understand manufacturing as a competitive moat.\"",
+    "date": "2026-01-08",
+    "source_url": "https://futurefoodtechsf.com/articles/2026-food-tech-investment-outlook-vision-viability",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "automation",
+     "robotics",
+     "farms to restaurants",
+     "labor challenges",
+     "manufacturing moat"
+    ]
+   }
+  ]
+ },
+ "regulation": {
+  "facts": [
+   {
+    "claim": "Germany's statutory minimum wage rose from €12.82 to €13.90/hour on 2026-01-01 (rising again to €14.60 in Jan 2027), the largest increase since the minimum wage's 2015 introduction, raising labor costs in kitchens and strengthening the case for automation.",
+    "date": "2026-01-01",
+    "direction": "positive",
+    "source_url": "https://mercans.com/resources/statutory-alerts/germany-minimum-wage-e13-90-hour-mini-job-ceiling-e603-in-effect-jan-2026/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "The EU Machinery Regulation (EU) 2023/1230 applies from 2027-01-20 and adds new essential requirements for autonomous mobile machinery, AI/self-evolving behaviour safety review and cybersecurity, directly affecting food-robot and automated-kitchen manufacturers selling into the EU.",
+    "date": "2027-01-20",
+    "direction": "negative",
+    "source_url": "https://www.tuv.com/world/en/new-machinery-regulation-eu-2023-1230.html",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "The European Commission's draft guidelines (published 2026-05-19) would classify AI-enabled kitchen/food robots with object-recognition, grasping or human-avoidance safety functions as high-risk under AI Act Article 6(1), but enforcement for AI embedded in already-regulated machinery has been deferred to 2028-08-02 under the AI Omnibus amendments, easing near-term compliance pressure.",
+    "date": "2026-05-19",
+    "direction": "neutral",
+    "source_url": "https://www.faegredrinker.com/en/insights/publications/2026/5/eu-ai-act-high-risk-systems-european-commission-issues-draft-guidelines",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "strategics": {
+  "facts": [
+   {
+    "claim": "Chipotle's Cultivate Next venture fund ($15M) and Cava Group ($5M, plus $5M conditional) co-invested $25M into kitchen-automation startup Hyphen's Series B, closed around mid-2024/mid-2025 reporting, to build 'fast lane' and digital-order-focused make lines.",
+    "date": "2024-07",
+    "direction": "positive",
+    "source_url": "https://www.cnbc.com/2025/12/30/hyphen-automated-makelines-investments-cava-chipotle.html",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "LG Electronics acquired foodservice-robot maker Bear Robotics (Servi) on 2025-01-22 to build out its robotics division, after co-leading Bear's earlier funding rounds.",
+    "date": "2025-01-22",
+    "direction": "positive",
+    "source_url": "https://pitchbook.com/profiles/company/185087-98",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Foodservice operator platform Automated Retail Technologies (ART) said in Feb 2026 it has active kiosk partnerships with the world's three largest foodservice operators—Aramark, Sodexo and Compass Group—plus Nestlé, to bring 24/7 unstaffed hot-food kiosks to high-traffic venues.",
+    "date": "2026-02-25",
+    "direction": "positive",
+    "source_url": "https://www.newsdirect.com/newsroom/automated-retail-technologies-launches-reg-cf-raise-to-help-scale-just-baked-robotic-kiosks-nationwide/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "McWin Capital Partners' Head of Science said the fund is targeting automation and robotics that solve labor challenges \"from farms to restaurants,\" prioritizing founders \"who understand manufacturing as a competitive moat.\"",
+    "date": "2026-01-08",
+    "direction": "positive",
+    "source_url": "https://futurefoodtechsf.com/articles/2026-food-tech-investment-outlook-vision-viability",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Schreiber Foods' VP of Corporate Ventures said \"AI, robotics, next-gen biology, and digital platforms are changing how food is made and moved,\" signaling continued corporate-venture interest in food automation.",
+    "date": "2026-01-08",
+    "direction": "positive",
+    "source_url": "https://futurefoodtechsf.com/articles/2026-food-tech-investment-outlook-vision-viability",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "players": [
+   {
+    "name": "Chipotle (Cultivate Next) / Cava Group",
+    "evidence": "Co-invested $25M into Hyphen's Series B to deploy automated make-lines for fast-lane and digital-order service.",
+    "date": "2024-07",
+    "source_url": "https://www.cnbc.com/2025/12/30/hyphen-automated-makelines-investments-cava-chipotle.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "LG Electronics",
+    "evidence": "Acquired foodservice-robot maker Bear Robotics (Jan 2025) to build out its robotics business.",
+    "date": "2025-01-22",
+    "source_url": "https://pitchbook.com/profiles/company/185087-98",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Aramark / Sodexo / Compass Group",
+    "evidence": "Named as active kiosk-deployment partners of Automated Retail Technologies' Just Baked robotic kiosks (800+ deployments) as of Feb 2026.",
+    "date": "2026-02-25",
+    "source_url": "https://www.newsdirect.com/newsroom/automated-retail-technologies-launches-reg-cf-raise-to-help-scale-just-baked-robotic-kiosks-nationwide/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "McWin Capital Partners",
+    "evidence": "\"We look for founders who understand manufacturing as a competitive moat\" in automation/robotics addressing labor challenges from farms to restaurants.",
+    "date": "2026-01-08",
+    "source_url": "https://futurefoodtechsf.com/articles/2026-food-tech-investment-outlook-vision-viability",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "automation",
+     "robotics",
+     "labor challenges",
+     "manufacturing moat",
+     "farms to restaurants"
+    ]
+   },
+   {
+    "name": "Schreiber Foods",
+    "evidence": "\"AI, robotics, next-gen biology, and digital platforms are changing how food is made and moved\" — corporate ventures lead signaling continued interest in food automation investment.",
+    "date": "2026-01-08",
+    "source_url": "https://futurefoodtechsf.com/articles/2026-food-tech-investment-outlook-vision-viability",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "AI",
+     "robotics",
+     "digital platforms",
+     "food production"
+    ]
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [
+   {
+    "claim": "Karakuri, a UK robotic-kitchen-automation startup for QSR/fast-casual, shut down in May 2026 after failing to secure new funding, per founder Barney Wragg.",
+    "date": "2026-05",
+    "direction": "negative",
+    "source_url": "https://retailtechinnovationhub.com/home/2023/6/20/journeys-end-robotics-startup-karakuri-collapses-after-failing-to-secure-new-funding",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Sony acquired commercial-kitchen robotics maker Dexai Robotics (maker of robot sous-chef Alfred) on 2025-09-08, a rare large-strategic exit for the segment.",
+    "date": "2025-09-08",
+    "direction": "positive",
+    "source_url": "https://www.crunchbase.com/acquisition/sony-acquires-dexai-robotics--af25512b",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Sweetgreen sold its Spyce/Infinite Kitchen robotics business to Wonder for $186.4M ($100M cash + $86M stock) in November 2025, four years after acquiring Spyce for $70M, to refocus on profitability.",
+    "date": "2025-11-06",
+    "direction": "positive",
+    "source_url": "https://www.restaurantbusinessonline.com/technology/sweetgreen-sell-spyce-technology-company-wonder-1864m",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "LG Electronics acquired foodservice-robot maker Bear Robotics on 2025-01-22, folding it into LG's robotics division.",
+    "date": "2025-01-22",
+    "direction": "positive",
+    "source_url": "https://pitchbook.com/profiles/company/185087-98",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Bear Robotics (LG-owned) announced a definitive agreement to acquire humanoid-manipulation startup Kinisi Robotics in June 2026, adding manipulation capability to its service-robot line.",
+    "date": "2026-06",
+    "direction": "positive",
+    "source_url": "https://tracxn.com/d/companies/bear-robotics/__FRssqTVCLEHCRFGXRZmMl2Hs9Ipfh0xKCo-JNA1lmmM/funding-and-investors",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "deals": [
+   {
+    "target": "Karakuri",
+    "acquirer_or_lead": "N/A (shutdown)",
+    "kind": "shutdown",
+    "date": "2026-05",
+    "value": null,
+    "source_url": "https://retailtechinnovationhub.com/home/2023/6/20/journeys-end-robotics-startup-karakuri-collapses-after-failing-to-secure-new-funding"
+   },
+   {
+    "target": "Dexai Robotics",
+    "acquirer_or_lead": "Sony",
+    "kind": "acquisition",
+    "date": "2025-09-08",
+    "value": null,
+    "source_url": "https://www.crunchbase.com/acquisition/sony-acquires-dexai-robotics--af25512b"
+   },
+   {
+    "target": "Spyce / Infinite Kitchen (Sweetgreen)",
+    "acquirer_or_lead": "Wonder",
+    "kind": "acquisition",
+    "date": "2025-11-06",
+    "value": "$186.4M",
+    "source_url": "https://www.restaurantbusinessonline.com/technology/sweetgreen-sell-spyce-technology-company-wonder-1864m"
+   },
+   {
+    "target": "Bear Robotics",
+    "acquirer_or_lead": "LG Electronics",
+    "kind": "acquisition",
+    "date": "2025-01-22",
+    "value": null,
+    "source_url": "https://pitchbook.com/profiles/company/185087-98"
+   },
+   {
+    "target": "Kinisi Robotics",
+    "acquirer_or_lead": "Bear Robotics (LG)",
+    "kind": "acquisition",
+    "date": "2026-06",
+    "value": null,
+    "source_url": "https://tracxn.com/d/companies/bear-robotics/__FRssqTVCLEHCRFGXRZmMl2Hs9Ipfh0xKCo-JNA1lmmM/funding-and-investors"
+   },
+   {
+    "target": "Kitchen Robotics (K-Robotics)",
+    "acquirer_or_lead": "Circus SE",
+    "kind": "acquisition",
+    "date": "2026-04-30",
+    "value": "low six-figure EUR cash",
+    "source_url": "https://www.investing.com/news/company-news/circus-completes-acquisition-of-kitchen-robotics-for-u-s-push-93CH-4647906"
+   },
+   {
+    "target": "Alberts",
+    "acquirer_or_lead": "Circus SE",
+    "kind": "acquisition",
+    "date": "2026-07-02",
+    "value": "1.2M shares + up to €350K cash + earn-out",
+    "source_url": "https://www.eqs-news.com/news/ad-hoc/circus-completes-acquisition-of-belgian-food-robotics-company-alberts/6a16c002-5867-4cb7-b95f-588daf0f39ed_en"
+   },
+   {
+    "target": "Zignyl",
+    "acquirer_or_lead": "Miso Robotics",
+    "kind": "acquisition",
+    "date": "2026-02-26",
+    "value": null,
+    "source_url": "https://www.qsrmagazine.com/news/miso-robotics-acquires-ai-powered-tool-zignyl/"
+   },
+   {
+    "target": "Zume Pizza (technology/IP)",
+    "acquirer_or_lead": "Miso Robotics",
+    "kind": "acquisition",
+    "date": "2026-06-24",
+    "value": null,
+    "source_url": "https://www.qsrmagazine.com/news/miso-robotics-acquires-zume-pizzas-technology-and-patent-portfolio/"
+   },
+   {
+    "target": "Cibotica",
+    "acquirer_or_lead": "Appetronix",
+    "kind": "acquisition",
+    "date": "2026-04-28",
+    "value": null,
+    "source_url": "https://www.prnewswire.com/news-releases/appetronix-acquires-cibotica-to-accelerate-multi-cuisine-expansion-and-elevate-food-robotics--ai-ecosystem-302754636.html"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [
+   {
+    "claim": "Circus SE completed two food-robotics acquisitions within 12 weeks: US-Israeli firm Kitchen Robotics (K-Robotics) on 2026-04-30 and Belgian firm Alberts on 2026-07-02, expanding its patent and product portfolio.",
+    "date": "2026-07-02",
+    "direction": "neutral",
+    "source_url": "https://www.eqs-news.com/news/ad-hoc/circus-completes-acquisition-of-belgian-food-robotics-company-alberts/6a16c002-5867-4cb7-b95f-588daf0f39ed_en",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Miso Robotics made two bolt-on acquisitions in 2026: AI restaurant-ops tool Zignyl (2026-02-26) and Zume's 300+ patent robotic food-prep/delivery IP portfolio (2026-06-24), building a broader automation platform around Flippy.",
+    "date": "2026-06-24",
+    "direction": "positive",
+    "source_url": "https://fortune.com/2026/02/26/robot-disruption-fast-food-short-order-cook-flippy-labor-shortage/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Circus SE simultaneously cut its FY2026 revenue guidance from €44-55M to €5.2M (announced 2026-07-16) while continuing to acquire, showing consolidation activity outpacing commercial traction in the segment.",
+    "date": "2026-07-16",
+    "direction": "negative",
+    "source_url": "https://www.ad-hoc-news.de/boerse/news/unternehmensnachrichten/circus-se-s-kitchen-robot-reset-a-90-percent-revenue-cut-an-insider/69923115",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "players": [
+   {
+    "name": "Circus SE",
+    "evidence": "Acquired Kitchen Robotics (US-Israeli, Apr 2026, NSF-certified components for US entry) and Alberts (Belgian, Jul 2026, compact autonomous supply systems) to fill portfolio and geographic gaps.",
+    "date": "2026-07-02",
+    "source_url": "https://www.investing.com/news/company-news/circus-se-completes-acquisition-of-belgian-robotics-firm-alberts-93CH-4773377",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Miso Robotics",
+    "evidence": "Acquired Zignyl (restaurant-ops AI, Feb 2026) and Zume's patent portfolio (300+ patents in robotic food prep/delivery, Jun 2026) to build a unified restaurant-automation platform.",
+    "date": "2026-06-24",
+    "source_url": "https://www.qsrmagazine.com/news/miso-robotics-acquires-zume-pizzas-technology-and-patent-portfolio/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Appetronix",
+    "evidence": "Acquired Canadian salad/bowl-assembly robotics company Cibotica (Apr 2026) explicitly \"to accelerate multi-cuisine expansion\" beyond its pizza-robot base, alongside three AlleyCorp-backed funding rounds.",
+    "date": "2026-04-28",
+    "source_url": "https://www.prnewswire.com/news-releases/appetronix-acquires-cibotica-to-accelerate-multi-cuisine-expansion-and-elevate-food-robotics--ai-ecosystem-302754636.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Wonder (Wonder Group)",
+    "evidence": "Bought Sweetgreen's Spyce/Infinite Kitchen robotics unit for $186.4M (Nov 2025) and raised $650M (Jul 2026) explicitly to keep investing in \"technology, robotics and artificial intelligence\" across its restaurant platform.",
+    "date": "2025-11-06",
+    "source_url": "https://www.therobotreport.com/sweetgreen-sells-spyce-robotics-unit-wonder-186-4m/",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ }
+}

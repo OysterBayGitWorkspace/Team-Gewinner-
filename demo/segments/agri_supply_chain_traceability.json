@@ -1,0 +1,296 @@
+{
+ "segment_id": "agri_supply_chain_traceability",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "TRACT, an agri-food supply chain traceability and intelligence platform backed by ADM, Cargill, Louis Dreyfus and ofi, raised a €18.6M ($21.6M) Series A led by Icos Capital with Rabo Investments participating.",
+    "date": "2025-10-30",
+    "direction": "positive",
+    "source_url": "https://www.foodingredientsfirst.com/news/tract-agriculture-sustainable-farming-funding.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Agridence acquired European traceability platform Farmer Connect to consolidate Asia and Europe compliance/traceability offerings across coffee, cocoa, rubber and palm oil.",
+    "date": "2025-08-19",
+    "direction": "positive",
+    "source_url": "https://www.foodingredientsfirst.com/news/agridence-farmer-connect-acquisition.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Global agrifoodtech funding hit $16.2B in 2025, roughly flat year-over-year (-3%), with supply chain resilience and traceability emerging as a standalone investment category per AgFunder's 2026 report.",
+    "date": "2026",
+    "direction": "neutral",
+    "source_url": "https://agfundernews.com/agrifoodtech-funding-is-flat-the-interesting-part-is-where-it-isnt",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Upstream agtech startups (farm/food production/biological systems) drew $9B in 2025, up 7% year-over-year, even as deal count fell 12%, per AgFunder's 2026 Global AgriFoodTech Investment Report.",
+    "date": "2026",
+    "direction": "neutral",
+    "source_url": "https://agfundernews.com/agrifoodtech-funding-is-flat-the-interesting-part-is-where-it-isnt",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Indonesian aquaculture/agri-supply-chain-adjacent unicorn eFishery collapsed after an accounting fraud scandal; investigators found reported 2024 revenue of ~$752M vs. an actual ~$157M, denting investor trust in Southeast Asian agri supply-chain tech.",
+    "date": "2026-04-29",
+    "direction": "negative",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-04-29/founder-gets-9-years-in-jail-for-300-million-indonesia-scandal",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Indonesian agri supply-chain platform TaniHub's bankruptcy case progressed to trial at the Jakarta Corruption Court in 2025-2026, with its P2P lending arm TaniFund carrying a ~30% non-performing loan rate.",
+    "date": "2026",
+    "direction": "negative",
+    "source_url": "https://www.therunway.ventures/p/tanihub",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Koltiva's most recent disclosed funding was an undisclosed investment from Silverstrand Capital, with the Meloy Fund, Planet Rise, Development Finance Asia and Blue7 also participating, announced in November 2024; no newer 2025-2026 round was found.",
+    "date": "2024-11",
+    "direction": "neutral",
+    "source_url": "https://leadiq.com/c/koltiva/5d28ba586c628d5488263b12",
+    "source_type": "web",
+    "confidence": "low"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "TRACT, an agri-food supply chain traceability and intelligence platform, closed a €18.6M ($21.6M) Series A led by Icos Capital with participation from ADM, Cargill, Louis Dreyfus Company, Olam Food Ingredients (ofi) and Rabo Investments.",
+    "date": "2025-10-30",
+    "direction": "positive",
+    "source_url": "https://www.foodingredientsfirst.com/news/tract-agriculture-sustainable-farming-funding.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Cargill Ventures said it targets growth-stage Series A/B companies with clear strategic value to Cargill's business, spanning next-gen food and feed, sustainable/regenerative agriculture, smart midstream and digital platforms, and the 'farm of tomorrow'.",
+    "date": "2026-07-28",
+    "direction": "neutral",
+    "source_url": "https://agfundernews.com/cargill-ventures-eyes-renewed-dealmaking-as-agrifoodtech-resets",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "Icos Capital",
+    "evidence": "Led the €18.6M Series A for agri-commodity supply chain traceability platform TRACT, backed by ADM, Cargill, Louis Dreyfus and ofi.",
+    "date": "2025-10-30",
+    "source_url": "https://www.foodingredientsfirst.com/news/tract-agriculture-sustainable-farming-funding.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Rabo Investments",
+    "evidence": "Participated as an investor in TRACT's €18.6M Series A round for agri supply chain traceability and compliance data.",
+    "date": "2025-10-30",
+    "source_url": "https://www.foodingredientsfirst.com/news/tract-agriculture-sustainable-farming-funding.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Cargill Ventures",
+    "evidence": "Stated it invests in 'next-generation food and feed, better health for humans and animals, a sustainable and regenerative future, smart midstream and digital platforms, and the farm of tomorrow' at Series A/B, only where there is 'strategic value or impact' on Cargill's businesses.",
+    "date": "2026-07-28",
+    "source_url": "https://agfundernews.com/cargill-ventures-eyes-renewed-dealmaking-as-agrifoodtech-resets",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "smart midstream",
+     "digital platforms",
+     "farm of tomorrow",
+     "sustainable and regenerative",
+     "Series A/B",
+     "strategic value"
+    ]
+   }
+  ]
+ },
+ "regulation": {
+  "facts": [
+   {
+    "claim": "The EU Council/Parliament revised the EU Deforestation Regulation (EUDR) to postpone application to December 30, 2026 for large/medium operators and June 30, 2027 for micro/small operators, while simplifying due diligence requirements.",
+    "date": "2025-12-18",
+    "direction": "negative",
+    "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2025/12/18/deforestation-council-signs-off-targeted-revision-to-simplify-and-postpone-the-regulation/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "The European Commission published an EUDR simplification package on May 4, 2026, confirming the December 30, 2026 application date for large/medium companies without further delay and issuing updated guidance, FAQs, a draft delegated act on product scope, and an updated implementing act on the information system.",
+    "date": "2026-05-04",
+    "direction": "positive",
+    "source_url": "https://www.hoganlovells.com/en/publications/eu-deforestation-regulation-commission-publishes-simplification-package-ahead-of-december-2026",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Indonesia raised its crude palm oil export levy to 12.5% of the CPO reference price (from 10%) in March 2026 and expects to collect Rp41.22 trillion (~$2.33B) in levies in 2026, up about 31% year-over-year, squeezing farm-gate prices for smallholders.",
+    "date": "2026-03",
+    "direction": "negative",
+    "source_url": "https://www.thestar.com.my/business/business-news/2026/08/21/indonesia-expects-palm-oil-export-levy-collection-to-jump-about-31",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Indonesia's palm oil plantation fund distributed Rp2.42 trillion between January and August 2026 to replant 40,484 hectares of smallholder oil palm plantations (smallholders manage ~41% of Indonesia's total oil palm area).",
+    "date": "2026-08",
+    "direction": "positive",
+    "source_url": "https://www.thestar.com.my/business/business-news/2026/08/21/indonesia-expects-palm-oil-export-levy-collection-to-jump-about-31",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "RSPO's 2026 Impact Report states 20% of global palm oil production is now RSPO-certified, and the RSPO Board approved 2026 CSPO uptake targets (2% for processors/traders, 12% for consumer goods manufacturers/retailers), with Shared Responsibility policy updates due by June 30, 2026.",
+    "date": "2026",
+    "direction": "positive",
+    "source_url": "https://www.palmoilmagazine.com/rspo/2026/05/12/rspo-tightens-2026-shared-responsibility-rules-to-accelerate-cspo-adoption/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "2,266 independent smallholders across three farmer groups in Jambi Province, Indonesia, achieved the first scaled dual RSPO and ISPO certification, covering 4,171.62 hectares, in June 2026.",
+    "date": "2026-06",
+    "direction": "positive",
+    "source_url": "https://www.manilatimes.net/2026/06/03/tmt-newswire/pr-newswire/over-2200-jambi-independent-oil-palm-smallholders-achieve-historic-dual-rspo-and-ispo-certification-unlocking-global-sustainable-palm-oil-markets/2357654",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "strategics": {
+  "facts": [
+   {
+    "claim": "ADM's VP of Sustainability Portfolio said the company wants to 'take a proactive approach to transparency, making access to ESG metrics and supply chain traceability simpler, more consistent, and more actionable' when backing traceability platform TRACT.",
+    "date": "2025-10-30",
+    "direction": "positive",
+    "source_url": "https://www.foodingredientsfirst.com/news/tract-agriculture-sustainable-farming-funding.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Barry Callebaut and Nestlé partnered on a net-zero cocoa production project in Brazil and an agroforestry project planting trees across ~30,000 acres in Côte d'Ivoire involving over 6,000 farmers.",
+    "date": "2026",
+    "direction": "positive",
+    "source_url": "https://sustainabilityonline.net/news/nestle-barry-callebaut-team-up-on-net-zero-cocoa-project-in-brazil/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Mondelez International expanded its Cocoa Life sustainability/traceability program in Côte d'Ivoire together with Barry Callebaut and Solidaridad.",
+    "date": "2026",
+    "direction": "positive",
+    "source_url": "https://www.barry-callebaut.com/en/about-us/media/news-stories/barry-callebaut-partner-mondelez-scale-their-cocoa-life-program",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "players": [
+   {
+    "name": "ADM, Cargill, Louis Dreyfus Company, Olam Food Ingredients (ofi)",
+    "evidence": "Co-backed the €18.6M Series A for agri supply chain traceability/intelligence platform TRACT, with ADM stating a wish to make 'ESG metrics and supply chain traceability simpler, more consistent, and more actionable'.",
+    "date": "2025-10-30",
+    "source_url": "https://www.foodingredientsfirst.com/news/tract-agriculture-sustainable-farming-funding.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Cargill Ventures",
+    "evidence": "Said it invests only where there is 'strategic value or impact' on Cargill's business, across 'next-generation food and feed... a sustainable and regenerative future, smart midstream and digital platforms, and the farm of tomorrow' at Series A/B stage.",
+    "date": "2026-07-28",
+    "source_url": "https://agfundernews.com/cargill-ventures-eyes-renewed-dealmaking-as-agrifoodtech-resets",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "smart midstream",
+     "digital platforms",
+     "farm of tomorrow",
+     "sustainable and regenerative",
+     "strategic value",
+     "Series A/B"
+    ]
+   },
+   {
+    "name": "Nestlé & Barry Callebaut",
+    "evidence": "Partnered on a net-zero cocoa production project in Brazil and a ~30,000-acre agroforestry program with 6,000+ farmers in Côte d'Ivoire.",
+    "date": "2026",
+    "source_url": "https://sustainabilityonline.net/news/nestle-barry-callebaut-team-up-on-net-zero-cocoa-project-in-brazil/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Mondelez International",
+    "evidence": "Expanded its Cocoa Life sourcing/traceability program in Côte d'Ivoire with Barry Callebaut and Solidaridad.",
+    "date": "2026",
+    "source_url": "https://www.barry-callebaut.com/en/about-us/media/news-stories/barry-callebaut-partner-mondelez-scale-their-cocoa-life-program",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [],
+  "deals": [
+   {
+    "target": "Farmer Connect",
+    "acquirer_or_lead": "Agridence",
+    "kind": "acquisition",
+    "date": "2025-08-19",
+    "value": null,
+    "source_url": "https://www.foodingredientsfirst.com/news/agridence-farmer-connect-acquisition.html"
+   },
+   {
+    "target": "TRACT",
+    "acquirer_or_lead": "Icos Capital (lead); ADM, Cargill, Louis Dreyfus, ofi, Rabo Investments (participants)",
+    "kind": "growth_round",
+    "date": "2025-10-30",
+    "value": "€18.6M / $21.6M Series A",
+    "source_url": "https://www.foodingredientsfirst.com/news/tract-agriculture-sustainable-farming-funding.html"
+   },
+   {
+    "target": "eFishery",
+    "acquirer_or_lead": "n/a (fraud collapse, no acquirer)",
+    "kind": "shutdown",
+    "date": "2026-04-29",
+    "value": "~$300M scandal; founder Gibran Huzaifah sentenced to 9 years for embezzlement and money laundering after accounting fraud collapse",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-04-29/founder-gets-9-years-in-jail-for-300-million-indonesia-scandal"
+   },
+   {
+    "target": "TaniHub / TaniFund",
+    "acquirer_or_lead": "n/a (bankruptcy, no acquirer)",
+    "kind": "shutdown",
+    "date": "2026",
+    "value": "Bankruptcy (PKPU) case moved to trial at Jakarta Corruption Court; TaniFund P2P lending unit reported ~30% non-performing loan rate",
+    "source_url": "https://www.therunway.ventures/p/tanihub"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [
+   {
+    "claim": "Agridence (Singapore, Asia-focused agri-commodity supply chain platform) acquired Farmer Connect (Geneva, Europe-focused compliance/traceability platform) to build a unified EUDR/ESG compliance and traceability offering spanning coffee, cocoa, rubber and palm oil.",
+    "date": "2025-08-19",
+    "direction": "positive",
+    "source_url": "https://www.foodingredientsfirst.com/news/agridence-farmer-connect-acquisition.html",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "players": [
+   {
+    "name": "Agridence",
+    "evidence": "Acquired European compliance/traceability platform Farmer Connect to combine Agridence's Asia presence with Farmer Connect's Europe/EUDR expertise into one supply-chain compliance platform covering coffee, cocoa, rubber and palm oil.",
+    "date": "2025-08-19",
+    "source_url": "https://www.foodingredientsfirst.com/news/agridence-farmer-connect-acquisition.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ }
+}

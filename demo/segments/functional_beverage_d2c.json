@@ -1,0 +1,344 @@
+{
+ "segment_id": "functional_beverage_d2c",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "Waterdrop closed a landmark funding round exceeding €100M ($117M) in May 2026, adding Aspeya, Atlantic Grupa and athlete Aleksander Aamodt Kilde alongside existing backers Temasek, Döhler and Bitburger.",
+    "date": "2026-05-05",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/waterdrop-closes-landmark-funding-round-exceeding-100-million-welcoming-aspeya-atlantic-grupa-and-aleksander-aamodt-kilde-as-partners-in-its-next-chapter-of-global-growth-302771197.html",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "CAVU Consumer Partners closed its fifth fund, CAVU Consumer Partners V, at $325M (above its $275M target) in February 2026, to invest in 'better-for-you' food & beverage, beauty, pet and wellness brands.",
+    "date": "2026-02-03",
+    "direction": "positive",
+    "source_url": "https://www.globenewswire.com/news-release/2026/02/03/3231238/0/en/CAVU-Consumer-Partners-Closes-Fifth-Fund-at-325-Million-to-Invest-in-the-Next-Era-of-Better-For-You-Consumer-Brands.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Monogram Capital Partners closed an oversubscribed $350M Fund III at its hard cap in November 2025, targeting Food & Beverage among four core consumer verticals, bringing AUM to ~$1.75B.",
+    "date": "2025-11-18",
+    "direction": "positive",
+    "source_url": "https://www.prnewswire.com/news-releases/monogram-capital-partners-closes-oversubscribed-350-million-fund-iii-302617821.html",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "CAVU Consumer Partners",
+    "evidence": "Closed Fund V at $325M 'to invest in the next era of better-for-you consumer brands' across food & beverage, beauty, pet and wellness.",
+    "date": "2026-02-03",
+    "source_url": "https://www.globenewswire.com/news-release/2026/02/03/3231238/0/en/CAVU-Consumer-Partners-Closes-Fifth-Fund-at-325-Million-to-Invest-in-the-Next-Era-of-Better-For-You-Consumer-Brands.html",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "better-for-you",
+     "food and beverage",
+     "beauty",
+     "pet",
+     "wellness"
+    ]
+   },
+   {
+    "name": "Monogram Capital Partners",
+    "evidence": "Closed $350M Fund III to keep executing across 'Food & Beverage, Beauty & Personal Care, Pet, and Consumer/Business Services,' partnering as first institutional investor with 'category-defining consumer companies.'",
+    "date": "2025-11-18",
+    "source_url": "https://www.prnewswire.com/news-releases/monogram-capital-partners-closes-oversubscribed-350-million-fund-iii-302617821.html",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "Food & Beverage",
+     "first institutional investor",
+     "category-defining consumer companies",
+     "founder-owned brands"
+    ]
+   }
+  ]
+ },
+ "regulation": {
+  "facts": []
+ },
+ "strategics": {
+  "facts": [
+   {
+    "claim": "Danone completed its acquisition of Huel on September 1, 2026, extending its portfolio into functional nutrition.",
+    "date": "2026-09-01",
+    "direction": "positive",
+    "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356691/0/en/danone-completes-its-acquisition-of-huel-extending-its-portfolio-in-functional-nutrition.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Danone agreed to acquire Australia's Made Group, whose brands include Cocobella coconut water, Rokesby functional dairy and Nutrientwater enhanced water, announced June 22, 2026.",
+    "date": "2026-06-22",
+    "direction": "positive",
+    "source_url": "https://www.beveragedaily.com/Article/2026/06/22/danone-strengthens-functional-beverages-portfolio-with-asia-pacific-acquisitions/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "PepsiCo is pushing into liquid protein and functional hydration (Gatorade Zero Sugar, Gatorlyte, Propel) to meet demand for high-protein, clean-label drinks with no artificial ingredients.",
+    "date": null,
+    "direction": "positive",
+    "source_url": "https://finance.yahoo.com/news/does-pepsico-edge-functional-beverage-133700503.html",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Coca-Cola is accelerating innovation with a sharper focus on functional drinks, premium hydration, zero-sugar offerings and energy beverages to reignite 2026 growth.",
+    "date": null,
+    "direction": "positive",
+    "source_url": "https://www.theglobeandmail.com/investing/markets/stocks/KO/pressreleases/2117157/can-pepsicos-innovation-push-reignite-its-growth-in-2026/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "players": [
+   {
+    "name": "Danone",
+    "evidence": "Completed its ~$1B acquisition of Huel, 'extending its portfolio in Functional Nutrition.'",
+    "date": "2026-09-01",
+    "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356691/0/en/danone-completes-its-acquisition-of-huel-extending-its-portfolio-in-functional-nutrition.html",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Danone",
+    "evidence": "Agreed to buy Made Group, adding functional beverage brands Cocobella, Rokesby and Nutrientwater to its portfolio.",
+    "date": "2026-06-22",
+    "source_url": "https://www.beveragedaily.com/Article/2026/06/22/danone-strengthens-functional-beverages-portfolio-with-asia-pacific-acquisitions/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "PepsiCo",
+    "evidence": "Pushing into 'liquid protein' and functional hydration, 'targeting the surging demand for high-protein, clean-label drinks with superior taste and no artificial ingredients.'",
+    "date": null,
+    "source_url": "https://finance.yahoo.com/news/does-pepsico-edge-functional-beverage-133700503.html",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "liquid protein",
+     "clean-label",
+     "functional hydration",
+     "no artificial ingredients",
+     "high-protein"
+    ]
+   },
+   {
+    "name": "Coca-Cola",
+    "evidence": "Statement of 2026 strategy: 'sharper focus on functional drinks, premium hydration, zero-sugar offerings and energy beverages.'",
+    "date": null,
+    "source_url": "https://www.theglobeandmail.com/investing/markets/stocks/KO/pressreleases/2117157/can-pepsicos-innovation-push-reignite-its-growth-in-2026/",
+    "intent": "stated_looking_for",
+    "mandate_keywords": [
+     "functional drinks",
+     "premium hydration",
+     "zero-sugar",
+     "energy beverages"
+    ]
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [
+   {
+    "claim": "Celsius Holdings acquired energy/functional drink brand Alani Nu for $1.8B, announced April 2025, its largest acquisition to date.",
+    "date": "2025-04",
+    "direction": "positive",
+    "source_url": "https://www.foodnavigator.com/Article/2025/11/12/celsius-enters-a-new-era-with-rockstar-alani-nu-acquisitions/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Celsius Holdings acquired Rockstar Energy from PepsiCo in August 2025 as PepsiCo simultaneously took $585M of newly issued Celsius convertible preferred stock.",
+    "date": "2025-08",
+    "direction": "positive",
+    "source_url": "https://www.fooddive.com/news/pepsico-ups-stake-in-energy-drink-company-celsius-with-585m-deal/758933/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Keurig Dr Pepper agreed to acquire energy drink brand Ghost for up to $1.65B total (about $990M for an initial 60% stake), announced October 24, 2024.",
+    "date": "2024-10-24",
+    "direction": "positive",
+    "source_url": "https://news.keurigdrpepper.com/2024-10-24-Keurig-Dr-Pepper-to-Acquire-Disruptive-Energy-Drink-Business-GHOST",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Butterfly-backed Generous Brands acquired gut-health/kombucha brand Health-Ade for around $500M in July 2025.",
+    "date": "2025-07",
+    "direction": "positive",
+    "source_url": "https://www.foodnavigator.com/Article/2026/06/26/private-equity-reshapes-food-and-beverage-through-deals-and-consolidation/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Danone completed its roughly $1B acquisition of Huel on September 1, 2026, extending its portfolio into functional nutrition.",
+    "date": "2026-09-01",
+    "direction": "positive",
+    "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356691/0/en/danone-completes-its-acquisition-of-huel-extending-its-portfolio-in-functional-nutrition.html",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Alex Cooper's Nestlé-backed Unwell Beverages (hydration, energy and protein drinks) is shutting down around 18 months after its early-2025 launch, confirmed August 2026.",
+    "date": "2026-08-13",
+    "direction": "negative",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-08-13/podcaster-alex-cooper-is-shutting-down-unwell-beverages",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Nestlé is divesting its Holistic Health portfolio, including functional hydration brand Nuun, to PE firm Yellow Wood Partners for around $1B.",
+    "date": "2026-09",
+    "direction": "negative",
+    "source_url": "https://www.bevnet.com/news/2026/nestle-offloads-nuun-amid-supplement-divestment",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "deals": [
+   {
+    "target": "Alani Nu",
+    "acquirer_or_lead": "Celsius Holdings",
+    "kind": "acquisition",
+    "date": "2025-04",
+    "value": "$1.8B",
+    "source_url": "https://www.foodnavigator.com/Article/2025/11/12/celsius-enters-a-new-era-with-rockstar-alani-nu-acquisitions/"
+   },
+   {
+    "target": "Rockstar Energy (US/Canada)",
+    "acquirer_or_lead": "Celsius Holdings (from PepsiCo)",
+    "kind": "acquisition",
+    "date": "2025-08",
+    "value": null,
+    "source_url": "https://www.fooddive.com/news/pepsico-ups-stake-in-energy-drink-company-celsius-with-585m-deal/758933/"
+   },
+   {
+    "target": "Ghost Lifestyle / Ghost Beverages",
+    "acquirer_or_lead": "Keurig Dr Pepper",
+    "kind": "acquisition",
+    "date": "2024-10-24",
+    "value": "$1.65B total (~$990M for initial 60% stake)",
+    "source_url": "https://news.keurigdrpepper.com/2024-10-24-Keurig-Dr-Pepper-to-Acquire-Disruptive-Energy-Drink-Business-GHOST"
+   },
+   {
+    "target": "Health-Ade",
+    "acquirer_or_lead": "Generous Brands (Butterfly-backed)",
+    "kind": "acquisition",
+    "date": "2025-07",
+    "value": "~$500M",
+    "source_url": "https://www.foodnavigator.com/Article/2026/06/26/private-equity-reshapes-food-and-beverage-through-deals-and-consolidation/"
+   },
+   {
+    "target": "Huel",
+    "acquirer_or_lead": "Danone",
+    "kind": "acquisition",
+    "date": "2026-09-01",
+    "value": "~$1B (~€1bn)",
+    "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356691/0/en/danone-completes-its-acquisition-of-huel-extending-its-portfolio-in-functional-nutrition.html"
+   },
+   {
+    "target": "Made Group (Cocobella, Rokesby, Nutrientwater, Impressed)",
+    "acquirer_or_lead": "Danone",
+    "kind": "acquisition",
+    "date": "2026-06-22",
+    "value": null,
+    "source_url": "https://www.beveragedaily.com/Article/2026/06/22/danone-strengthens-functional-beverages-portfolio-with-asia-pacific-acquisitions/"
+   },
+   {
+    "target": "Unwell Beverages",
+    "acquirer_or_lead": "N/A - wind-down",
+    "kind": "shutdown",
+    "date": "2026-08-13",
+    "value": null,
+    "source_url": "https://www.bloomberg.com/news/articles/2026-08-13/podcaster-alex-cooper-is-shutting-down-unwell-beverages"
+   },
+   {
+    "target": "Nuun (part of Nestlé Holistic Health portfolio)",
+    "acquirer_or_lead": "Yellow Wood Partners",
+    "kind": "acquisition",
+    "date": "2026-09",
+    "value": "~$1B for full portfolio (SFr800m)",
+    "source_url": "https://www.bevnet.com/news/2026/nestle-offloads-nuun-amid-supplement-divestment"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [
+   {
+    "claim": "Celsius Holdings acquired Alani Nu ($1.8B, April 2025) and Rockstar Energy (August 2025), pushing its US tracked energy-drink market share to roughly 21%.",
+    "date": "2025-08",
+    "direction": "positive",
+    "source_url": "https://www.foodnavigator.com/Article/2025/11/12/celsius-enters-a-new-era-with-rockstar-alani-nu-acquisitions/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Yellow Wood Partners agreed to buy Nestlé's Holistic Health portfolio (SFr800m/~$1B), including hydration brand Nuun, as Nestlé exits supplements/hydration.",
+    "date": "2026-09",
+    "direction": "positive",
+    "source_url": "https://www.bevnet.com/news/2026/nestle-offloads-nuun-amid-supplement-divestment",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Butterfly-backed Generous Brands acquired kombucha/gut-health beverage brand Health-Ade for around $500M in July 2025, expanding its health-oriented beverage platform.",
+    "date": "2025-07",
+    "direction": "positive",
+    "source_url": "https://www.foodnavigator.com/Article/2026/06/26/private-equity-reshapes-food-and-beverage-through-deals-and-consolidation/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Cinven-backed Vitamin Well Group raised $2.2B via cross-currency loans to fund its combination with CDMO EMPWR Nutrition Group, expected to close Q4 2026.",
+    "date": "2026-07-22",
+    "direction": "positive",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-07-22/vitamin-well-raises-2-2-billion-from-cross-currency-loan-deal",
+    "source_type": "web",
+    "confidence": "high"
+   }
+  ],
+  "players": [
+   {
+    "name": "Celsius Holdings",
+    "evidence": "Acquired Alani Nu ($1.8B) and Rockstar Energy in 2025, building a 'scaled Modern Energy portfolio' and lifting US tracked share ~1,000bps.",
+    "date": "2025-08",
+    "source_url": "https://www.foodnavigator.com/Article/2025/11/12/celsius-enters-a-new-era-with-rockstar-alani-nu-acquisitions/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Yellow Wood Partners",
+    "evidence": "Agreed to acquire Nestlé's Holistic Health portfolio, including hydration brand Nuun, for roughly $1B.",
+    "date": "2026-09",
+    "source_url": "https://www.bevnet.com/news/2026/nestle-offloads-nuun-amid-supplement-divestment",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Butterfly / Generous Brands",
+    "evidence": "Acquired Health-Ade for ~$500M, 'expanding Butterfly's portfolio of health-oriented beverage brands.'",
+    "date": "2025-07",
+    "source_url": "https://www.foodnavigator.com/Article/2026/06/26/private-equity-reshapes-food-and-beverage-through-deals-and-consolidation/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Cinven / Vitamin Well Group",
+    "evidence": "Vitamin Well Group agreed to combine with EMPWR Nutrition Group, funded by a $2.2B cross-currency loan raise.",
+    "date": "2026-07-22",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-07-22/vitamin-well-raises-2-2-billion-from-cross-currency-loan-deal",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ }
+}

@@ -1,0 +1,271 @@
+{
+ "segment_id": "alt_cocoa_ingredients",
+ "funding_market": {
+  "facts": [
+   {
+    "claim": "Foreverland (Italy) raised a €6M ($7M) Series A in March 2026, led by Kost Capital and Maia Ventures, taking its total funding to €9.4M.",
+    "date": "2026-03-24",
+    "direction": "positive",
+    "source_url": "https://tech.eu/2026/03/24/foreverland-lands-eur6m-to-tackle-cocoa-supply-with-alternatives/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Win-Win Foods raised a £3M (~$4M) Series A in July 2025, led by Oetker Collection and FoodLabs, to scale cocoa-free chocolate production and expand across Europe.",
+    "date": "2025-07-23",
+    "direction": "positive",
+    "source_url": "https://www.thegrocer.co.uk/news/win-win-closes-3m-series-a-round-to-fuel-cocoa-free-chocolate-growth/707138.article",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Green Spot Technologies raised €5M ($5.8M) in a Series A on 6 November 2025, led by Team for the Planet, to scale upcycled fermented cocoa-alternative ingredients from 100 to 1,000 tonnes/year under its new Milatea brand.",
+    "date": "2025-11-06",
+    "direction": "positive",
+    "source_url": "https://vegconomist.com/investments-finance/investments-acquisitions/green-spot-technologies-raise-scale-fermented-ingredients-replace-cocoa/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Voyage Foods closed a $3.25M Series B-II round on 18 December 2025, adding to prior 2024/2025 rounds that bring its total disclosed funding to roughly $91-113M.",
+    "date": "2025-12-18",
+    "direction": "positive",
+    "source_url": "https://www.cbinsights.com/company/voyage-82/financials",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Cargill and Voyage Foods launched NextCoa, a grapeseed-based cocoa-free confectionery ingredient, into the North American market on 12 May 2026, marking Cargill's entry into the cocoa-alternative race.",
+    "date": "2026-05-12",
+    "direction": "positive",
+    "source_url": "https://www.cargill.com/2026/cargill-and-voyage-foods-to-bring-nextcoa-cocoa-free",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Global agrifoodtech venture funding was roughly flat at $16.2B in 2025 (down 3% year-over-year per AgFunder), with capital increasingly concentrated in companies with tangible science and clear paths to revenue, the backdrop against which alt-cocoa raises are being priced.",
+    "date": "2026",
+    "direction": "neutral",
+    "source_url": "https://agfunder.com/research/agfunder-global-agrifoodtech-investment-report-2026/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "capital_access": {
+  "facts": [
+   {
+    "claim": "Kost Capital and Maia Ventures co-led Foreverland's €6M Series A (March 2026), with first-time participation from CDP Venture Capital, Riello Investimenti SGR's Linfa agrifoodtech fund and Newtree Impact.",
+    "date": "2026-03-24",
+    "direction": "positive",
+    "source_url": "https://tech.eu/2026/03/24/foreverland-lands-eur6m-to-tackle-cocoa-supply-with-alternatives/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Oetker Collection and FoodLabs led Win-Win Foods' £3M ($4M) Series A (July 2025), joined by food-industry strategics Paulig, plus Mustard Seed Maze, Gota Ventures and Kapital.",
+    "date": "2025-07-23",
+    "direction": "positive",
+    "source_url": "https://www.thegrocer.co.uk/news/win-win-closes-3m-series-a-round-to-fuel-cocoa-free-chocolate-growth/707138.article",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "Team for the Planet led Green Spot Technologies' €5M ($5.8M) Series A (November 2025) to scale its upcycled, fermented cocoa-alternative ingredient line, backed by EIT Food and the European Innovation Council.",
+    "date": "2025-11-06",
+    "direction": "positive",
+    "source_url": "https://vegconomist.com/investments-finance/investments-acquisitions/green-spot-technologies-raise-scale-fermented-ingredients-replace-cocoa/",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ],
+  "active_funds": [
+   {
+    "name": "Kost Capital",
+    "evidence": "Co-led Foreverland's €6M Series A round (March 2026) as a repeat investor scaling cocoa-free chocolate manufacturing in Europe.",
+    "date": "2026-03-24",
+    "source_url": "https://www.eu-startups.com/2026/03/italys-foreverland-unwraps-e6-million-to-sweeten-the-european-expansion-of-its-cocoa-free-chocolate-alternative",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Maia Ventures",
+    "evidence": "Co-led Foreverland's €6M Series A round (March 2026), deploying capital from its €55M agrifoodtech fund into the alt-cocoa space.",
+    "date": "2026-03-24",
+    "source_url": "https://www.eu-startups.com/2026/03/italys-foreverland-unwraps-e6-million-to-sweeten-the-european-expansion-of-its-cocoa-free-chocolate-alternative",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Oetker Collection",
+    "evidence": "Led Win-Win Foods' £3M Series A (July 2025) as a returning strategic-financial backer of cocoa-free chocolate scale-up.",
+    "date": "2025-07-23",
+    "source_url": "https://oetker-collection.com/en/win-win-raises-3-million-in-series-a-funding-round-oetker-collection-continues-to-invest-in-cocoa-free-chocolate-alternative/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Team for the Planet",
+    "evidence": "Led Green Spot Technologies' €5M Series A (November 2025) to scale upcycled fermented cocoa-alternative ingredients.",
+    "date": "2025-11-06",
+    "source_url": "https://vegconomist.com/investments-finance/investments-acquisitions/green-spot-technologies-raise-scale-fermented-ingredients-replace-cocoa/",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "regulation": {
+  "facts": [
+   {
+    "claim": "The EU Council agreed in December 2025 to postpone the EU Deforestation Regulation (EUDR) — which requires cocoa traders and brands to prove deforestation-free sourcing post-2020 — by another year, to 30 December 2026.",
+    "date": "2025-12-18",
+    "direction": "negative",
+    "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2025/12/18/deforestation-council-signs-off-targeted-revision-to-simplify-and-postpone-the-regulation/",
+    "source_type": "web",
+    "confidence": "high"
+   },
+   {
+    "claim": "As of early 2026 no precision-fermentation- or cell-culture-derived food ingredient (including cell-cultured cocoa) had received EU Novel Food approval, with the process typically taking 2.5-4+ years, versus several such approvals already granted in the US.",
+    "date": "2026",
+    "direction": "negative",
+    "source_url": "https://www.biosafe.fi/insight/precision-fermentation-is-ready-eu-novel-food-approval-isnt",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "The EU's Biotech Act, finalized in late 2025, explicitly excludes novel foods (including cell-cultured ingredients) from its new regulatory-sandbox provisions on ethical/cultural grounds, removing a potential fast-track for cell-cultured cocoa in Europe.",
+    "date": "2025-12",
+    "direction": "negative",
+    "source_url": "https://www.foodnavigator.com/Article/2025/12/18/eu-making-mistake-by-cutting-novel-foods-out-of-regulatory-sandbox/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "Cocoa futures corrected more than 70% from their late-2024 highs and fell over 30% in early 2026, as the ICCO projected the 2025/26 season would swing from a ~500,000-tonne deficit to a ~150,000-tonne surplus on improved West African and Ecuador harvests, easing some price pressure toward cocoa-free substitution.",
+    "date": "2026",
+    "direction": "negative",
+    "source_url": "https://massmarketretailers.com/from-shortages-to-surplus-cocoa-market-recovers/",
+    "source_type": "web",
+    "confidence": "medium"
+   },
+   {
+    "claim": "The ICCO projects the 2026/27 cocoa surplus will shrink sharply to just ~80,000 tonnes, down from ~415,000 tonnes in 2025/26, pointing to renewed supply tightness after the 2026 price correction.",
+    "date": "2026",
+    "direction": "positive",
+    "source_url": "https://kolaking.substack.com/p/cocoa-hits-record-high-as-global",
+    "source_type": "web",
+    "confidence": "medium"
+   }
+  ]
+ },
+ "strategics": {
+  "facts": [],
+  "players": [
+   {
+    "name": "Barry Callebaut",
+    "evidence": "Announced a long-term commercial partnership with Planet A Foods (27 May 2026) to scale/distribute ChoViva cocoa-free chocolate globally, targeting a US launch by Sept 2026; also partnered with ZHAW (July 2025) on cell-cultured cocoa research.",
+    "date": "2026-05-27",
+    "source_url": "https://www.barry-callebaut.com/en/about-us/media/news-stories/barry-callebaut-and-planet-foods-partner-pioneer-sustainable-chocolate",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Cargill",
+    "evidence": "Partnered with Voyage Foods to launch NextCoa, a grapeseed-based cocoa-free confectionery ingredient, into the North American market on 12 May 2026.",
+    "date": "2026-05-12",
+    "source_url": "https://www.cargill.com/2026/cargill-and-voyage-foods-to-bring-nextcoa-cocoa-free",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Nestlé",
+    "evidence": "Launched its Choco Crossies 'Snack Vibes' line in Germany (announced March 2026) formulated with 74% Planet A Foods' ChoViva, its first cocoa-free confectionery product.",
+    "date": "2026-03-10",
+    "source_url": "https://www.foodnavigator.com/Article/2026/03/10/nestle-launches-cocoa-free-chocolate-with-choviva/",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Puratos (Sparkalis)",
+    "evidence": "Corporate venture arm Sparkalis invested in cell-cultured cocoa startup California Cultured and is set to launch the first professional cell-based-cocoa chocolate for US B2B customers by end of 2026.",
+    "date": "2024-10-10",
+    "source_url": "https://agfundernews.com/sparkalis-invests-in-plant-cell-culture-startup-california-cultured-to-futureproof-cocoa-supply-chain",
+    "intent": "acted",
+    "mandate_keywords": []
+   },
+   {
+    "name": "Lindt",
+    "evidence": "Kept up its multi-year cocoa-free push via ChoViva (Planet A Foods), maintaining a long-term commercial relationship through 2025-2026 as ChoViva also scaled to Nestlé and Barry Callebaut.",
+    "date": "2025",
+    "source_url": "https://vegconomist.com/food-and-beverage/sweets-snacks/lindt-cocoa-free-chocolate-brand-choviva/",
+    "intent": "acted",
+    "mandate_keywords": []
+   }
+  ]
+ },
+ "exit_comps": {
+  "facts": [],
+  "deals": [
+   {
+    "target": "Kokomodo",
+    "acquirer_or_lead": "Pluri Inc. (71% stake)",
+    "kind": "acquisition",
+    "date": "2025-01",
+    "value": "$4.5M in Pluri shares (plus $6.5M concurrent private placement)",
+    "source_url": "https://www.foodbusinessnews.net/articles/28183-pluri-acquires-71-stake-in-kokomodo"
+   },
+   {
+    "target": "Planet A Foods",
+    "acquirer_or_lead": "Burda Principal Investments & Zintinus (co-lead)",
+    "kind": "growth_round",
+    "date": "2024-12-06",
+    "value": "$30M Series B",
+    "source_url": "https://techcrunch.com/2024/12/05/planet-a-foods-nabs-30m-to-make-tons-more-cocoa-free-chocolate/"
+   },
+   {
+    "target": "California Cultured",
+    "acquirer_or_lead": "Sparkalis (Puratos corporate venture arm)",
+    "kind": "growth_round",
+    "date": "2024-10-10",
+    "value": null,
+    "source_url": "https://agfundernews.com/sparkalis-invests-in-plant-cell-culture-startup-california-cultured-to-futureproof-cocoa-supply-chain"
+   },
+   {
+    "target": "Voyage Foods",
+    "acquirer_or_lead": "undisclosed lead investor(s)",
+    "kind": "growth_round",
+    "date": "2025-12-18",
+    "value": "$3.25M Series B-II",
+    "source_url": "https://www.cbinsights.com/company/voyage-82/financials"
+   },
+   {
+    "target": "Foreverland",
+    "acquirer_or_lead": "Kost Capital & Maia Ventures (co-lead)",
+    "kind": "growth_round",
+    "date": "2026-03-24",
+    "value": "€6M Series A",
+    "source_url": "https://tech.eu/2026/03/24/foreverland-lands-eur6m-to-tackle-cocoa-supply-with-alternatives/"
+   },
+   {
+    "target": "Win-Win Foods",
+    "acquirer_or_lead": "Oetker Collection & FoodLabs (co-lead)",
+    "kind": "growth_round",
+    "date": "2025-07-23",
+    "value": "£3M Series A",
+    "source_url": "https://www.thegrocer.co.uk/news/win-win-closes-3m-series-a-round-to-fuel-cocoa-free-chocolate-growth/707138.article"
+   },
+   {
+    "target": "Green Spot Technologies",
+    "acquirer_or_lead": "Team for the Planet",
+    "kind": "growth_round",
+    "date": "2025-11-06",
+    "value": "€5M Series A",
+    "source_url": "https://vegconomist.com/investments-finance/investments-acquisitions/green-spot-technologies-raise-scale-fermented-ingredients-replace-cocoa/"
+   }
+  ]
+ },
+ "consolidators": {
+  "facts": [],
+  "players": []
+ }
+}

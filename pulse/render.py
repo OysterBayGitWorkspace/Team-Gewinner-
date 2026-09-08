@@ -92,7 +92,7 @@ def link(url, text) -> str:
 
 
 def fact_li(f: dict) -> str:
-    src = link(f.get("source_url"), "source") if f.get("source_url") else '<span class="muted">jarvis</span>'
+    src = link(f.get("source_url"), "source") if f.get("source_url") else '<span class="muted">internal</span>'
     return (f'<li><span class="dir dir-{esc(f.get("direction"))}"></span>'
             f'{esc(f.get("claim"))} <span class="muted small">{esc(f.get("date") or "undated")} · {src} · {esc(f.get("confidence"))}</span></li>')
 
