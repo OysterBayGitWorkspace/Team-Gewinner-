@@ -77,7 +77,7 @@ def run_demo(out: Path) -> int:
     out.mkdir(parents=True, exist_ok=True)
     page = render_html(pulse, run_report, segments_cfg, demo=True)
     (out / "index.html").write_text(page)
-    (out / "artifact.html").write_text(artifact_body(page))
+    (out / "artifact.html").write_text(artifact_body(page, title="Portfolio Market Pulse Demo"))
     (out / "pulse.md").write_text(render_markdown(pulse, run_report, segments_cfg, demo=True))
     (out / "pulse.json").write_text(json.dumps(pulse, indent=1, ensure_ascii=False, default=str))
     print(f"demo: {len(pulse['companies'])} fictional companies → {out / 'index.html'}")

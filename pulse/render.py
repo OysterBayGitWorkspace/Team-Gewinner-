@@ -274,11 +274,11 @@ def render_markdown(pulse: dict, run_report: dict, segments_cfg: dict, demo: boo
     return "\n".join(lines) + "\n"
 
 
-def artifact_body(full_html: str) -> str:
+def artifact_body(full_html: str, title: str = "Portfolio Market Pulse") -> str:
     """Body-only variant for hosts that supply their own document skeleton: <title> + <style> + body content."""
     style = re.search(r"<style>(.*?)</style>", full_html, re.S)
     body = re.search(r"<body>(.*?)</body>", full_html, re.S)
-    return ("<title>Portfolio Market Pulse</title>\n"
+    return (f"<title>{esc(title, 80)}</title>\n"
             f"<style>{style.group(1) if style else ''}</style>\n{body.group(1) if body else full_html}")
 
 
