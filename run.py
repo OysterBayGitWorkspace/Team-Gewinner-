@@ -139,11 +139,11 @@ def main(argv: list[str] | None = None) -> int:
     specs: list[WorkerSpec] = []
     model = os.environ.get("PULSE_MODEL", w.DEFAULT_MODEL)
     if not args.skip_macro:
-        specs.append(WorkerSpec("macro", prompts.macro_prompt(as_of.isoformat()), schemas.MACRO, ["WebSearch", "WebFetch"], False, 18, model))
+        specs.append(WorkerSpec("macro", prompts.macro_prompt(as_of.isoformat()), schemas.MACRO, ["WebSearch", "WebFetch"], False, 18, model, timeout_s=600))
     for sid in seg_ids:
         ours = [n for n, c in companies_cfg.items() if c["segment"] == sid and not c.get("status_override")]
         specs.append(WorkerSpec(f"segment__{sid}", prompts.segment_prompt(as_of.isoformat(), sid, segments_cfg[sid], ours), schemas.SEGMENT,
-                                ["WebSearch", "WebFetch", "mcp__jarvis__knowledge_search"], True, 30, model))
+                                ["WebSearch", "WebFetch", "mcp__jarvis__knowledge_search"], True, 30, model, timeout_s=900))
     for inv in scoped:
         c = companies_cfg[inv["name"]]
         specs.append(WorkerSpec(f"company__{slug(inv['name'])}",
@@ -151,7 +151,7 @@ def main(argv: list[str] | None = None) -> int:
                                                        segments_cfg[c["segment"]]["label"], inv.get("attention_items", [])),
                                 schemas.COMPANY,
                                 ["mcp__jarvis__company_current_state", "mcp__jarvis__fund_kpis", "mcp__jarvis__knowledge_search", "WebSearch"],
-                                True, 22, model))
+                                True, 22, model, timeout_s=600))
 
     if args.dry_run:
         for s in specs:

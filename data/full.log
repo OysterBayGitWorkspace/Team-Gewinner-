@@ -9,3 +9,19 @@
 2026-09-08 17:48:03,387 INFO pulse.workers worker start name=segment__biomaterials model=claude-sonnet-5 tools=3
 2026-09-08 17:48:03,387 INFO pulse.workers worker start name=segment__food_robotics model=claude-sonnet-5 tools=3
 2026-09-08 17:48:03,389 INFO pulse.workers worker start name=segment__organic_food_cpg_dach model=claude-sonnet-5 tools=3
+2026-09-08 17:50:07,283 INFO pulse.workers worker done name=macro turns=14 cost=0.513 dur=124s
+2026-09-08 17:50:07,285 INFO pulse.workers worker start name=segment__plant_based_meat model=claude-sonnet-5 tools=3
+2026-09-08 17:51:26,694 INFO pulse.workers worker done name=segment__ag_biologicals turns=32 cost=1.019 dur=203s
+2026-09-08 17:51:26,695 INFO pulse.workers worker start name=segment__precision_ag_sensing model=claude-sonnet-5 tools=3
+2026-09-08 17:52:37,917 INFO pulse.workers worker done name=segment__food_robotics turns=29 cost=1.236 dur=274s
+2026-09-08 17:52:37,932 INFO pulse.workers worker start name=segment__seed_and_crop_genetics model=claude-sonnet-5 tools=3
+2026-09-08 17:54:09,479 INFO pulse.workers worker done name=segment__biomaterials turns=34 cost=1.350 dur=364s
+2026-09-08 17:54:09,705 INFO pulse.workers worker start name=company__seedalive model=claude-sonnet-5 tools=4
+2026-09-08 17:54:10,771 INFO pulse.workers worker done name=segment__alt_cocoa_ingredients turns=43 cost=1.364 dur=367s
+2026-09-08 17:54:10,784 INFO pulse.workers worker start name=company__nukoko model=claude-sonnet-5 tools=4
+2026-09-08 17:55:04,107 ERROR pulse.workers worker timeout name=segment__agri_supply_chain_traceability after=421s
+2026-09-08 17:55:04,120 ERROR pulse.workers worker timeout name=segment__organic_food_cpg_dach after=421s
+2026-09-08 17:55:04,128 ERROR pulse.workers worker timeout name=segment__agri_robotics after=421s
+2026-09-08 17:55:04,438 INFO pulse.workers worker start name=company__muhlenkraft model=claude-sonnet-5 tools=4
+2026-09-08 17:55:04,438 INFO pulse.workers worker start name=company__arda-biomaterials model=claude-sonnet-5 tools=4
+2026-09-08 17:55:04,438 INFO pulse.workers worker start name=company__eternal model=claude-sonnet-5 tools=4
