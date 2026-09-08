@@ -56,6 +56,17 @@ def test_artifact_body_strips_skeleton():
     assert "<!DOCTYPE" not in body and "<html" not in body and "<body>" not in body and "<head>" not in body
 
 
+def test_names_without_source_fall_back_to_search_but_facts_do_not():
+    from pulse.render import link
+    assert 'google.com/search?q=Bayer+Crop+Science' in link(None, "Bayer Crop Science", fallback_query="Bayer Crop Science")
+    assert 'rel="noopener noreferrer"' in link("https://x.y/z", "t") and 'target="_blank"' in link("https://x.y/z", "t")
+    assert link(None, "plain") == "plain"
+    pulse, seg = build_pulse()
+    html = render_html(pulse, report(seg), CFG)
+    # internal (fictional/confidential) facts never become search links
+    assert html.count("google.com/search") == html.count('class="search-link"')
+
+
 def test_slug():
     assert slug("Löwenzahn Organics") == "lowenzahn-organics"
     assert slug("Air Up") == "air-up"

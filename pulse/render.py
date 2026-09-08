@@ -9,6 +9,7 @@ import html
 import re
 import unicodedata
 from datetime import datetime
+from urllib.parse import quote_plus
 
 MAX_TEXT = 400
 CSS = r"""@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -51,7 +52,7 @@ h3{font-size:1.35rem} h4{font-weight:600;font-size:.72rem;text-transform:upperca
 table{width:100%;border-collapse:collapse;font-size:.85rem} th{text-align:left;font-weight:600;padding:10px 8px;border-bottom:1px solid rgba(15,20,26,.25);white-space:nowrap;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mute)} td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle} tr:hover td{background:rgba(255,255,255,.55)}
 .table-wrap{overflow-x:auto} ul{padding-left:18px} li{margin:5px 0} .facts li{list-style:none;position:relative;padding-left:14px}
 summary{cursor:pointer;list-style:none} summary::-webkit-details-marker{display:none} summary::before{content:"▸";display:inline-block;margin-right:8px;color:var(--mute);transition:transform .2s} details[open] summary::before{transform:rotate(90deg)}
-a{color:inherit;text-decoration-color:rgba(15,20,26,.3);text-underline-offset:2px} a:hover{text-decoration-color:var(--accent)}
+a{color:inherit;text-decoration-color:rgba(15,20,26,.3);text-underline-offset:2px} a:hover{text-decoration-color:var(--accent)} a.search-link{text-decoration-style:dotted}
 .footer{background:var(--graphite);color:#8f9ba7;padding:28px;text-align:center;font-size:.78rem;font-family:'JetBrains Mono',monospace}
 @keyframes pulse-red{0%{box-shadow:0 0 0 0 rgba(239,68,68,.55)}70%{box-shadow:0 0 0 9px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
 @keyframes pulse-soft{0%{box-shadow:0 0 0 0 rgba(15,20,26,.22)}70%{box-shadow:0 0 0 7px rgba(15,20,26,0)}100%{box-shadow:0 0 0 0 rgba(15,20,26,0)}}
@@ -85,9 +86,15 @@ def dot(light: dict, label: str | None = None) -> str:
     return f'<span class="light" title="{title}"><span class="dot" style="background:{LIGHT_HEX[c]}"></span>{lab}</span>'
 
 
-def link(url, text) -> str:
+def link(url, text, fallback_query: str | None = None) -> str:
+    """External link that always opens in a new tab. With fallback_query, a name without a source
+    still opens a web search for that name, so no counterparty is a dead label. Only public names
+    are ever passed as fallback_query; internal facts never are."""
     if url and str(url).startswith(("http://", "https://")):
-        return f'<a href="{esc(url, 500)}" target="_blank" rel="noopener">{esc(text)}</a>'
+        return f'<a href="{esc(url, 500)}" target="_blank" rel="noopener noreferrer">{esc(text)}</a>'
+    if fallback_query:
+        q = quote_plus(str(fallback_query)[:120])
+        return f'<a href="https://www.google.com/search?q={q}" target="_blank" rel="noopener noreferrer" class="search-link" title="no source on file, opens a web search">{esc(text)}</a>'
     return esc(text)
 
 
@@ -99,7 +106,7 @@ def fact_li(f: dict) -> str:
 
 def party_li(p: dict, limit: int = 180) -> str:
     intent = ' <span class="tag tag-sand">looking</span>' if p.get("intent") == "stated_looking_for" else ""
-    return (f'<li>{link(p.get("source_url"), p["name"])}{intent} <span class="muted small">({esc(p.get("kind"))}, '
+    return (f'<li>{link(p.get("source_url"), p["name"], fallback_query=p["name"])}{intent} <span class="muted small">({esc(p.get("kind"))}, '
             f'{esc(p.get("date") or "undated")}) {esc(p.get("evidence"), limit)}</span></li>')
 
 
@@ -122,7 +129,7 @@ def _matches_block(c: dict) -> str:
     if not c.get("matches"):
         return ""
     items = "".join(
-        f'<li>{link(m.get("source_url"), m["name"])} <span class="muted small">({esc(m["kind"])}, {esc(m.get("date") or "undated")}) '
+        f'<li>{link(m.get("source_url"), m["name"], fallback_query=m["name"])} <span class="muted small">({esc(m["kind"])}, {esc(m.get("date") or "undated")}) '
         f'{esc(m.get("evidence"), 200)} · matches: {esc(", ".join(m.get("match_terms") or []), 120)}</span></li>' for m in c["matches"])
     return f'<h4>Lid to pot: parties that said they look for this</h4><ul class="small">{items}</ul>'
 
@@ -203,7 +210,7 @@ def render_html(pulse: dict, run_report: dict, segments_cfg: dict, demo: bool = 
             funds = "".join(party_li({**f, "kind": "fund"}) for f in data["capital_access"]["active_funds"]) or "<li class='muted'>none found</li>"
             players = "".join(party_li({**p, "kind": "strategic"}) for p in data["strategics"]["players"]) or "<li class='muted'>none found</li>"
             cons = "".join(party_li({**p, "kind": "consolidator"}) for p in data.get("consolidators", {}).get("players", [])) or "<li class='muted'>none found</li>"
-            deals = "".join(f"<li>{esc(d['kind'])}: {esc(d['target'])} ← {link(d.get('source_url'), d['acquirer_or_lead'])} <span class='muted small'>{esc(d.get('date') or 'undated')} {esc(d.get('value') or '')}</span></li>" for d in data["exit_comps"]["deals"]) or "<li class='muted'>none found</li>"
+            deals = "".join(f"<li>{esc(d['kind'])}: {link(None, d['target'], fallback_query=d['target'] + ' ' + d['acquirer_or_lead'])} ← {link(d.get('source_url'), d['acquirer_or_lead'], fallback_query=d['acquirer_or_lead'])} <span class='muted small'>{esc(d.get('date') or 'undated')} {esc(d.get('value') or '')}</span></li>" for d in data["exit_comps"]["deals"]) or "<li class='muted'>none found</li>"
             facts = "".join(fact_li(f) for dim in ("funding_market", "regulation", "consolidators") for f in data.get(dim, {}).get("facts", []))
             body = f"""<div class="cols">
               <div><h4>Active funds (12 m)</h4><ul class="small">{funds}</ul><h4>Vocal strategics (12 m)</h4><ul class="small">{players}</ul></div>
