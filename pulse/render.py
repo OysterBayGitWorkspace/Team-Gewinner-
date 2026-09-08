@@ -11,6 +11,53 @@ import unicodedata
 from datetime import datetime
 
 MAX_TEXT = 400
+CSS = r"""@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{--bg0:#f4f6f8;--bg1:#d9dee4;--bg2:#c3cad2;--ink:#0f141a;--ink2:#3d4752;--mute:#6b7683;--line:rgba(15,20,26,.08);--glass:rgba(255,255,255,.62);--glass2:rgba(255,255,255,.85);--graphite:#14181e;--silver:#e6eaee;--green:#22c55e;--amber:#f5b301;--red:#ef4444;--grey:#9aa4ae;--accent:#38bdf8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope','Inter',system-ui,sans-serif;background:radial-gradient(1200px 600px at 15% -10%,#ffffff 0%,transparent 60%),radial-gradient(900px 500px at 100% 20%,#e9edf1 0%,transparent 55%),linear-gradient(160deg,var(--bg0) 0%,var(--bg1) 55%,var(--bg2) 100%);background-attachment:fixed;color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+h1,h2,h3{font-weight:600;letter-spacing:-0.02em;line-height:1.05}
+h1{font-size:clamp(2.2rem,4.5vw,3.8rem);background:linear-gradient(90deg,#ffffff 0%,#c9d1da 60%,#8f9ba7 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(1.4rem,2.6vw,2rem);margin-bottom:22px;color:var(--ink)}
+h3{font-size:1.35rem} h4{font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;margin:18px 0 8px;color:var(--mute)}
+.container{max-width:1280px;margin:0 auto;padding:0 clamp(20px,3vw,48px)}
+.header{background:radial-gradient(800px 300px at 80% 0%,rgba(56,189,248,.18),transparent 60%),linear-gradient(135deg,#0b0f14 0%,#1a2129 60%,#232b34 100%);color:var(--silver);padding:clamp(32px,4vw,64px) 0 clamp(28px,3vw,48px);position:relative;overflow:hidden}
+.header::after{content:"";position:absolute;inset:auto -10% -60% -10%;height:120px;background:radial-gradient(closest-side,rgba(255,255,255,.08),transparent);pointer-events:none}
+.header .subtitle{color:#8f9ba7;font-weight:400;margin-top:10px;letter-spacing:.02em;font-family:'JetBrains Mono',monospace;font-size:.85rem}
+.banner{background:rgba(255,255,255,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:12px 0;font-size:.85rem;color:var(--ink2);font-family:'JetBrains Mono',monospace;position:sticky;top:0;z-index:5}
+.banner.warn{background:rgba(245,179,1,.35)}
+.legend span{margin-right:14px;display:inline-flex;align-items:center;gap:6px} .legend .dot{width:9px;height:9px;animation:none}
+.section{padding:44px 0} .section-sand{background:transparent}
+.card{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 12px 40px -20px rgba(15,20,26,.35);border-radius:18px;padding:26px;margin-bottom:14px;transition:transform .25s ease,box-shadow .25s ease}
+.card.prop:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 22px 50px -22px rgba(15,20,26,.45)}
+.tag{display:inline-block;padding:.28rem .8rem;border-radius:100rem;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-left:4px;vertical-align:middle;font-family:'JetBrains Mono',monospace}
+.tag-dark{background:var(--graphite);color:var(--silver)} .tag-sand{background:rgba(15,20,26,.06);color:var(--ink2);border:1px solid var(--line)}
+.tag-red{background:var(--red);color:#fff} .tag-amber{background:var(--amber);color:#1a1a1a}
+.tag-esc{background:var(--red);color:#fff;animation:escalate 1.6s ease-in-out infinite}
+.muted{color:var(--mute)} .small{font-size:.85rem} .warn-text{color:var(--red)}
+.light{display:inline-flex;align-items:center;gap:7px;margin-right:16px;font-size:.78rem;color:var(--ink2)} .lbl{color:var(--mute)}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block;flex:none;position:relative;box-shadow:0 0 0 0 currentColor}
+.dot[style*="#c0392b"]{background:var(--red)!important;animation:pulse-red 1.4s ease-out infinite}
+.dot[style*="#d9a53a"]{background:var(--amber)!important;animation:pulse-soft 2.6s ease-out infinite}
+.dot[style*="#3f8f5a"]{background:var(--green)!important;animation:pulse-soft 3.4s ease-out infinite}
+.dot[style*="#b5b0a6"]{background:var(--grey)!important;opacity:.7}
+.dir{position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--grey)} .dir-positive{background:var(--green)} .dir-negative{background:var(--red)}
+.lights-row{margin:10px 0} .lights-row.inline{margin:0 0 0 12px;display:inline}
+.prop-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.route{font-size:1.2rem;font-weight:600;margin:14px 0 4px;color:var(--ink)}
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.path{background:var(--glass2);border:1px solid rgba(255,255,255,.9);border-radius:14px;padding:16px} .path-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px} .path ul{margin-top:8px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:32px} @media(max-width:900px){.cols,.paths{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:.85rem} th{text-align:left;font-weight:600;padding:10px 8px;border-bottom:1px solid rgba(15,20,26,.25);white-space:nowrap;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mute)} td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle} tr:hover td{background:rgba(255,255,255,.55)}
+.table-wrap{overflow-x:auto} ul{padding-left:18px} li{margin:5px 0} .facts li{list-style:none;position:relative;padding-left:14px}
+summary{cursor:pointer;list-style:none} summary::-webkit-details-marker{display:none} summary::before{content:"▸";display:inline-block;margin-right:8px;color:var(--mute);transition:transform .2s} details[open] summary::before{transform:rotate(90deg)}
+a{color:inherit;text-decoration-color:rgba(15,20,26,.3);text-underline-offset:2px} a:hover{text-decoration-color:var(--accent)}
+.footer{background:var(--graphite);color:#8f9ba7;padding:28px;text-align:center;font-size:.78rem;font-family:'JetBrains Mono',monospace}
+@keyframes pulse-red{0%{box-shadow:0 0 0 0 rgba(239,68,68,.55)}70%{box-shadow:0 0 0 9px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
+@keyframes pulse-soft{0%{box-shadow:0 0 0 0 rgba(15,20,26,.22)}70%{box-shadow:0 0 0 7px rgba(15,20,26,0)}100%{box-shadow:0 0 0 0 rgba(15,20,26,0)}}
+@keyframes escalate{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.6)}50%{box-shadow:0 0 0 8px rgba(239,68,68,0)}}
+@media (prefers-reduced-motion: reduce){.dot,.tag-esc,.card{animation:none!important;transition:none!important}}
+"""
 LIGHT_HEX = {"green": "#3f8f5a", "yellow": "#d9a53a", "red": "#c0392b", "grey": "#b5b0a6"}
 DIM_LABELS = [("funding_market", "Funding"), ("capital_access", "Capital access"), ("regulation", "Regulation"),
               ("strategics", "Strategics"), ("exit_comps", "Exit comps"), ("consolidators", "Consolidators")]
@@ -176,30 +223,7 @@ def render_html(pulse: dict, run_report: dict, segments_cfg: dict) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Market Pulse {esc(as_of)} — Oyster Bay VC</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap');
-:root{{--black:#000;--white:#fff;--pearl:#f3f3e9;--sand-dry:#f7e8d9;--sand-wet:#7a6957}}
-*{{margin:0;padding:0;box-sizing:border-box}}
-body{{font-family:'Outfit','Inter','Helvetica Neue',sans-serif;background:var(--pearl);color:var(--black);line-height:1.5;-webkit-font-smoothing:antialiased}}
-h1,h2,h3{{font-weight:300;letter-spacing:-0.03em;line-height:1}} h1{{font-size:clamp(2rem,4vw,3.5rem)}} h2{{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:24px}} h3{{font-size:1.3rem}} h4{{font-weight:500;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin:16px 0 8px;color:var(--sand-wet)}}
-.container{{max-width:1280px;margin:0 auto;padding:0 clamp(24px,3vw,48px)}}
-.header{{background:var(--black);color:var(--pearl);padding:clamp(24px,3vw,48px) 0}} .header h1{{color:var(--pearl)}} .header .subtitle{{color:var(--sand-wet);font-weight:300;margin-top:8px}}
-.section{{padding:48px 0}} .section-sand{{background:var(--sand-dry)}}
-.card{{background:var(--white);border-radius:.75rem;padding:24px;margin-bottom:12px}}
-.tag{{display:inline-block;padding:.25rem .75rem;border-radius:100rem;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-left:4px;vertical-align:middle}}
-.tag-dark{{background:var(--black);color:var(--pearl)}} .tag-sand{{background:var(--sand-dry);color:var(--sand-wet)}} .tag-red{{background:#c0392b;color:#fff}} .tag-amber{{background:#d9a53a;color:#000}} .tag-esc{{background:#000;color:#fff;outline:2px solid #c0392b}}
-.muted{{color:var(--sand-wet)}} .small{{font-size:.85rem}} .warn-text{{color:#c0392b}}
-.banner{{background:var(--sand-dry);padding:12px 0;font-size:.9rem}} .banner.warn{{background:#d9a53a}} .legend span{{margin-right:16px}} .legend .dot{{width:10px;height:10px}}
-.light{{display:inline-flex;align-items:center;gap:6px;margin-right:14px;font-size:.8rem}} .dot{{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}} .lbl{{color:var(--sand-wet)}}
-.lights-row{{margin:8px 0}} .lights-row.inline{{margin:0 0 0 12px;display:inline}}
-.prop-head{{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}} .route{{font-size:1.15rem;font-weight:400;margin:12px 0 4px}}
-.paths{{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;border-top:1px solid rgba(0,0,0,.08);padding-top:16px}} .path-head{{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px}} .path ul{{margin-top:6px}}
-.cols{{display:grid;grid-template-columns:1fr 1fr;gap:32px}} @media(max-width:900px){{.cols,.paths{{grid-template-columns:1fr}}}}
-table{{width:100%;border-collapse:collapse;font-size:.85rem}} th{{text-align:left;font-weight:500;padding:8px;border-bottom:2px solid var(--black);white-space:nowrap}} td{{padding:8px;border-bottom:1px solid rgba(0,0,0,.08);vertical-align:top}} tr:hover td{{background:var(--sand-dry)}}
-.table-wrap{{overflow-x:auto}} ul{{padding-left:18px}} li{{margin:4px 0}} .facts li{{list-style:none;position:relative;padding-left:14px}}
-.dir{{position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:#b5b0a6}} .dir-positive{{background:#3f8f5a}} .dir-negative{{background:#c0392b}}
-summary{{cursor:pointer}} a{{color:inherit}} .footer{{background:var(--black);color:var(--sand-wet);padding:24px;text-align:center;font-size:.8rem}}
-</style></head><body>
+<style>{CSS}</style></head><body>
 <div class="header"><div class="container"><h1>Portfolio Market Pulse</h1><div class="subtitle">Oyster Bay Venture Capital · as of {esc(as_of)} · {len(companies)} companies · confidential</div></div></div>
 <div class="banner{banner_cls}"><div class="container">Run {esc(run_report['run_id'])} · {n_ok}/{n_all} workers succeeded · research cost {total_cost:.2f} USD · generated {esc(run_report['generated_at'])} · <span class="legend">{legend}</span></div></div>
 
