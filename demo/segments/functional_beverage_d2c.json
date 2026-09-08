@@ -70,7 +70,7 @@
     "claim": "Danone completed its acquisition of Huel on September 1, 2026, extending its portfolio into functional nutrition.",
     "date": "2026-09-01",
     "direction": "positive",
-    "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356691/0/en/danone-completes-its-acquisition-of-huel-extending-its-portfolio-in-functional-nutrition.html",
+    "source_url": "https://uk.finance.yahoo.com/news/danone-completes-acquisition-huel-extending-155900850.html",
     "source_type": "web",
     "confidence": "high"
    },
@@ -104,7 +104,7 @@
     "name": "Danone",
     "evidence": "Completed its ~$1B acquisition of Huel, 'extending its portfolio in Functional Nutrition.'",
     "date": "2026-09-01",
-    "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356691/0/en/danone-completes-its-acquisition-of-huel-extending-its-portfolio-in-functional-nutrition.html",
+    "source_url": "https://uk.finance.yahoo.com/news/danone-completes-acquisition-huel-extending-155900850.html",
     "intent": "acted",
     "mandate_keywords": []
    },
@@ -183,7 +183,7 @@
     "claim": "Danone completed its roughly $1B acquisition of Huel on September 1, 2026, extending its portfolio into functional nutrition.",
     "date": "2026-09-01",
     "direction": "positive",
-    "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356691/0/en/danone-completes-its-acquisition-of-huel-extending-its-portfolio-in-functional-nutrition.html",
+    "source_url": "https://uk.finance.yahoo.com/news/danone-completes-acquisition-huel-extending-155900850.html",
     "source_type": "web",
     "confidence": "high"
    },
@@ -243,7 +243,7 @@
     "kind": "acquisition",
     "date": "2026-09-01",
     "value": "~$1B (~€1bn)",
-    "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356691/0/en/danone-completes-its-acquisition-of-huel-extending-its-portfolio-in-functional-nutrition.html"
+    "source_url": "https://uk.finance.yahoo.com/news/danone-completes-acquisition-huel-extending-155900850.html"
    },
    {
     "target": "Made Group (Cocobella, Rokesby, Nutrientwater, Impressed)",

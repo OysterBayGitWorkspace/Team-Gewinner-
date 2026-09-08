@@ -143,14 +143,6 @@
     "source_url": "https://triplepundit.com/2025/hyundai-low-carbon-leather-alternative/",
     "source_type": "web",
     "confidence": "high"
-   },
-   {
-    "claim": "Senior representatives from Hermès, Chanel, L'Oréal, LVMH and Kering reportedly expressed interest in mycelium-based materials for fashion, leather goods, beauty, fine watchmaking and jewelry applications at VivaTech 2026 (2026-06-17 to 2026-06-20).",
-    "date": "2026-06",
-    "direction": "positive",
-    "source_url": "https://natlawreview.com/press-releases/heri-farms-inc-gains-spotlight-vivatech-2026-luxury-and-automotive-giants-visit-mycelium-brand-holon-bionics",
-    "source_type": "web",
-    "confidence": "low"
    }
   ],
   "players": [
@@ -161,21 +153,6 @@
     "source_url": "https://triplepundit.com/2025/hyundai-low-carbon-leather-alternative/",
     "intent": "acted",
     "mandate_keywords": []
-   },
-   {
-    "name": "Hermès, Chanel, L'Oréal, LVMH, Kering",
-    "evidence": "Senior professionals from these houses expressed interest in mycelium materials' potential across fashion, leather goods, beauty, fine watchmaking and jewelry at VivaTech 2026.",
-    "date": "2026-06",
-    "source_url": "https://natlawreview.com/press-releases/heri-farms-inc-gains-spotlight-vivatech-2026-luxury-and-automotive-giants-visit-mycelium-brand-holon-bionics",
-    "intent": "stated_looking_for",
-    "mandate_keywords": [
-     "mycelium materials",
-     "fashion",
-     "leather goods",
-     "beauty",
-     "fine watchmaking",
-     "jewelry"
-    ]
    }
   ]
  },

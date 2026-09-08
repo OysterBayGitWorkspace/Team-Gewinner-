@@ -85,14 +85,6 @@
     "source_url": "https://fundmomentum.vc/blog/anterra-capital-fund-iii-86m-first-close-agrifoodtech-rabobank-novo-zoetis-2026",
     "source_type": "web",
     "confidence": "medium"
-   },
-   {
-    "claim": "Zebra Impact Ventures (Regenerative Growth I, with Mirabaud Asset Management) led AgroSpheres' $37M Series B final close, joined by Lewis and Clark AgriFood, Ospraie Ag Science Ventures, FMC Ventures, BIDRA Ventures and Cavallo Ventures.",
-    "date": "2024-09-30",
-    "direction": "positive",
-    "source_url": "https://cvillebiohub.org/2024/09/30/agrospheres-secures-37m-series-b-funding-pushes-for-growth/",
-    "source_type": "web",
-    "confidence": "medium"
    }
   ],
   "active_funds": [
@@ -360,14 +352,6 @@
     "date": "2026-05-06",
     "value": null,
     "source_url": "https://www.suterra.com/blog/suterra-acquires-vestarons-rd-assets-and-product-lines"
-   },
-   {
-    "target": "AgroSpheres",
-    "acquirer_or_lead": "Zebra Impact Ventures (led Series B)",
-    "kind": "growth_round",
-    "date": "2024-09-30",
-    "value": "$37M",
-    "source_url": "https://cvillebiohub.org/2024/09/30/agrospheres-secures-37m-series-b-funding-pushes-for-growth/"
    }
   ]
  },

@@ -57,6 +57,7 @@ ACCEL_FUND = "https://techcrunch.com/2026/04/15/accel-raises-5b-to-back-late-sta
 CRUNCH_ROBOTICS = "https://news.crunchbase.com/robotics/startup-venture-funding-surges-2026-data/"
 PHYS_AI = "https://valueaddvc.com/pulse/physical-ai-funding-47-billion-h1-2026-data"
 FOURAG = "https://betakit.com/4ag-robotics-looks-to-grow-fleet-of-mushroom-harvesting-robots-with-40-million-series-b-round/"
+AGRIPASS = "https://www.agtechnavigator.com/Article/2026/03/05/weed-management-how-this-startup-is-helping-farmers-improve-yields/"
 OEM_AUTONOMY = "https://www.precisionfarmingdealer.com/articles/5150-acquisitions-investments-accelerate-oems-autonomous-capabilities"
 OEM_OUTLOOK = "https://www.farm-equipment.com/articles/24910-cnh-agco-and-kubota-share-outlook-on-autonomy"
 DEERE_BEARFLAG = "https://techcrunch.com/2021/08/05/john-deere-buys-autonomous-tractor-startup-bear-flag-robotics/"
@@ -79,8 +80,8 @@ HANDWRITTEN = {
                  fact("Physical AI companies raised about $47bn in H1 2026.", "2026-07", url=PHYS_AI),
                  fact("4AG Robotics closed a $40m Series B to grow its fleet of mushroom-harvesting robots.", "2025-07", url=FOURAG, conf="medium")],
         funds=[party("Accel", "Co-led Mind Robotics' $500m Series A (a Rivian spinout) and describes its thesis as bringing AI to the physical world.", "2026-03", ACCEL_MIND, "acted"),
-               party("Accel (Leaders Fund V)", "Raised $5bn for late-stage bets; the new fund names software, hardware, robotics and defense tech as focus areas.", "2026-04-15", ACCEL_FUND, "stated_looking_for", ["robotics", "hardware", "physical AI", "late-stage", "automation"]),
-               party("Physical AI growth investors", "H1 2026 physical-AI funding of about $47bn concentrated in a handful of growth funds.", "2026-07", PHYS_AI, "acted")],
+               party("Accel (Leaders Fund V)", "Raised $5bn for late-stage bets; the new fund names software, hardware, robotics and defense tech as focus areas.", "2026-04-15", ACCEL_FUND, "stated_looking_for", ["robotics", "hardware", "physical AI", "late-stage", "automation", "harvest"]),
+               party("Harbor Venture Consulting", "Led AgriPass Robotics' $7.5m seed round for a computer-vision cultivation robot (March 2026).", "2026-03-05", AGRIPASS, "acted")],
         reg=[fact("Farm-equipment OEMs describe autonomy as a blended build-and-buy roadmap for 2026, with specialty crops first.", "2026-01", url=OEM_OUTLOOK, direction="positive", conf="medium"),
              fact("Kubota is working with a startup on autonomous specialty-crop projects starting in 2026.", "2026-01", url=OEM_OUTLOOK, conf="medium")],
         players=[party("Kubota", "Working with a startup on autonomous specialty-crop solutions in 2026; earlier acquired Bloomfield Robotics.", "2026-01", OEM_AUTONOMY, "stated_looking_for", ["autonomy", "specialty crops", "robotics", "agriculture"]),
@@ -143,6 +144,12 @@ def load_segments() -> dict:
     for sid, extra in AUGMENT.items():
         if sid in segs:
             segs[sid]["capital_access"]["active_funds"] = extra + segs[sid]["capital_access"]["active_funds"]
+    # long syndicate names from the research snapshot read badly on a card: keep the lead, note the rest
+    for seg in segs.values():
+        for p in seg["capital_access"]["active_funds"]:
+            if " / " in p["name"] and len(p["name"]) > 40:
+                lead, _, rest = p["name"].partition(" / ")
+                p["name"] = f"{lead} (with {rest.replace(' / ', ', ')})"
     return segs
 
 
