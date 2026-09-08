@@ -68,12 +68,19 @@ segments:
     known_strategics: ["Kering", "LVMH", "Hermès", "Adidas", "Nike", "Stella McCartney", "BMW", "Volvo", "Toyota Boshoku", "Lenzing"]
     regulation_watch: ["EU Ecodesign for Sustainable Products", "EU Green Claims directive", "EUDR leather scope", "textile EPR schemes"]
 
-  precision_fermentation:
-    label: "Precision fermentation and biomanufacturing platforms"
-    keywords: ["precision fermentation funding", "biomanufacturing platform", "fermentation capacity Europe", "fermentation-derived ingredients", "contract fermentation"]
-    peers: ["Formo", "Onego Bio", "Vivici", "Solar Foods", "Bon Vivant", "Standing Ovation", "Liberation Labs", "Planetary"]
-    known_strategics: ["Novonesis", "DSM-Firmenich", "Kerry", "Ajinomoto", "Danone", "Fonterra", "Bel Group", "Cargill", "ADM", "Lesaffre"]
-    regulation_watch: ["EU Novel Food approvals for fermentation-derived proteins", "EU Biotech Act", "US GRAS pathway changes", "Singapore SFA"]
+  agri_robotics:
+    label: "Greenhouse and field robotics, harvest automation"
+    keywords: ["greenhouse harvesting robot", "agricultural robotics funding", "harvest automation startup", "horticulture robots", "robotics-as-a-service agriculture"]
+    peers: ["Four Growers", "Inaho", "TTA", "ISO Group", "Denso Artemy", "MetoMotion", "Xihelm", "Tortuga AgTech", "Saga Robotics", "Root AI", "Iron Ox"]
+    known_strategics: ["Priva", "Ridder", "Koppert", "Signify", "Kubota", "Yanmar", "John Deere", "CNH", "AppHarvest successors", "Van der Hoeven", "Certhon"]
+    regulation_watch: ["EU machinery regulation", "EU AI Act", "seasonal labour rules Netherlands and Germany", "minimum wage development", "CAP greenhouse energy subsidies"]
+
+  agri_supply_chain_traceability:
+    label: "First-mile agri supply chain, smallholder procurement and traceability"
+    keywords: ["smallholder procurement platform", "palm oil traceability startup", "cocoa traceability funding", "agri supply chain fintech Indonesia", "EUDR compliance software", "farm-to-mill digitization"]
+    peers: ["Koltiva", "Agridence", "Farmerline", "Meridia", "Sourcetrace", "Satelligence", "eFishery", "TaniHub", "Semaai"]
+    known_strategics: ["Cargill", "Olam", "Wilmar", "Musim Mas", "Golden Agri-Resources", "Barry Callebaut", "Unilever", "Nestlé", "Mondelez", "Bunge", "Louis Dreyfus"]
+    regulation_watch: ["EUDR deforestation regulation timeline and simplification", "Indonesia palm oil export levies", "ISPO and RSPO certification", "cocoa sustainability regulation"]
 
   alt_cocoa_ingredients:
     label: "Cocoa-free chocolate and alternative ingredients"
@@ -101,9 +108,9 @@ companies:
   Stenon:              {segment: precision_ag_sensing,  hq: DE, one_liner: "Real-time soil analysis sensor and agronomy software"}
   Seedalive:           {segment: seed_and_crop_genetics, hq: DE, one_liner: "Rapid seed viability and quality testing"}
   Amatera:             {segment: seed_and_crop_genetics, hq: FR, one_liner: "Accelerated non-GMO breeding of perennial crops such as coffee"}
-  Bindbridge:          {segment: ag_biologicals,        hq: UK, one_liner: "Agricultural biologicals platform; convertible note 2026, confirmatory DD open"}
+  Bindbridge:          {segment: ag_biologicals,        hq: UK, one_liner: "Agricultural biologicals / crop science platform; £2.6M convertible note funded 2026-08-12, confirmatory DD items open", verify_segment: true}
   Arda Biomaterials:   {segment: biomaterials,          hq: UK, one_liner: "Leather alternative from brewers' spent grain"}
-  eternal:             {segment: precision_fermentation, hq: DE, one_liner: "Fermentation platform, pre-revenue, 24 FTE"}
-  Abeya:               {segment: food_ingredients_b2b,  hq: null, one_liner: "Early-stage food company, 8 FTE; segment to verify via Jarvis profile", verify_segment: true}
+  eternal:              {segment: agri_robotics,         hq: DE, one_liner: "EHT Eternal Horticulture Technologies, Cologne: greenhouse tomato harvesting robots leased per square metre; €20M Series A in process, equipment lease proposal expiring 2026-09-11"}
+  Abeya:                {segment: agri_supply_chain_traceability, hq: ID, one_liner: "Abeya Inc. / PemPem: digitised farm-to-mill procurement for smallholder palm oil and cocoa in Indonesia, monetised as market-maker; EUDR traceability tailwind; 6 FTE"}
   Nukoko:              {segment: alt_cocoa_ingredients, hq: UK, one_liner: "Cocoa-free chocolate; sold to Döhler (SPA effective 2026-03-27), earn-out running", status_override: exit_in_progress}
   Oatly:               {segment: plant_based_meat,      hq: SE, one_liner: "Public company", status_override: ipo}

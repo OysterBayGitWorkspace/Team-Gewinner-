@@ -65,10 +65,13 @@ TOOLS, IN THIS ORDER
 
 DIMENSIONS TO FILL
 - funding_market: rounds announced in this segment in the last 12 months (who, how much, when, lead), plus any data on total segment funding vs prior year. 4 to 8 facts.
-- capital_access: growth-stage or specialist funds that led or joined a round in this segment in the last 12 months. List each in active_funds with the deal as evidence. Also note funds that publicly said they are looking at this segment. 3 to 8 entries if they exist.
+- capital_access: (a) growth-stage or specialist funds that led or joined a round in this segment in the last 12 months (intent "acted", the deal as evidence); (b) funds that closed a NEW fund in the last 12 months and stated a mandate that covers this segment: fund name, size, close date, and their own words on what they look for (intent "stated_looking_for", mandate_keywords from their words). 3 to 8 entries if they exist. Search e.g. "<segment> fund closes", "new fund agrifood growth 2026", "<segment> investor mandate".
 - regulation: approvals, bans, labelling rules, subsidies, tariffs, policy signals affecting this segment in the last 18 months. 2 to 6 facts.
-- strategics: corporates that in the last 12 months publicly said what they look for, launched a venture arm or program, partnered with, invested in, or acquired a company in this segment. List each in players with the quote or action as evidence. 3 to 8 entries if they exist.
+- strategics: corporates that in the last 12 months (a) publicly said what they look for: acquisition targets, partnership calls, venture programs, "we are looking for X" statements at conferences or in earnings calls (intent "stated_looking_for", mandate_keywords from their words); or (b) partnered with, invested in, or acquired a company in this segment (intent "acted"). List each in players with the quote or action as evidence. 3 to 8 entries if they exist.
 - exit_comps: acquisitions, mergers, large growth rounds, and shutdowns of companies in this segment in the last 24 months. List each in deals. 3 to 8 entries if they exist.
+- consolidators: PE platforms, buy-and-build holdings, roll-up vehicles and well-funded peers that bought or merged two or more companies in this segment in the last 24 months, or announced a consolidation strategy for it (intent stated_looking_for or acted). Search e.g. "<segment> roll-up", "<segment> buy and build", "<segment> consolidation platform", "<segment> PE platform acquisition". 0 to 6 entries; empty is a valid answer.
+
+The "stated_looking_for" entries matter most: they are the lid that may fit a pot in our portfolio. Quote their words in evidence and keep mandate_keywords faithful to those words.
 
 Set segment_id to "{segment_id}".
 {COMMON_RULES}"""

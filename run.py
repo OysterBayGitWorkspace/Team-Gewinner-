@@ -189,7 +189,7 @@ def main(argv: list[str] | None = None) -> int:
     for inv in scoped:
         r = results.get(f"company__{slug(inv['name'])}")
         company_data[inv["name"]] = r.data if r and r.ok else None
-    pulse = score_portfolio(scoped, companies_cfg, segment_data, company_data, macro, as_of)
+    pulse = score_portfolio(scoped, companies_cfg, segments_cfg, segment_data, company_data, macro, as_of)
 
     # 6. Render
     out = Path(args.out)

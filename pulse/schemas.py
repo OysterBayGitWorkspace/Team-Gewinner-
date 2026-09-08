@@ -68,8 +68,12 @@ _NAMED_EVIDENCE = {
         "evidence": {"type": "string", "maxLength": 300},
         "date": {"type": ["string", "null"]},
         "source_url": {"type": ["string", "null"]},
+        "intent": {"type": "string", "enum": ["stated_looking_for", "acted"],
+                   "description": "stated_looking_for = they publicly said what they want to invest in / acquire / partner on; acted = they did a deal"},
+        "mandate_keywords": {"type": "array", "items": {"type": "string", "maxLength": 40}, "maxItems": 8,
+                             "description": "3 to 8 keywords from their own words describing what they look for (e.g. 'alt protein', 'B2B ingredients', 'Series B', 'DACH'). Empty if intent is acted."},
     },
-    "required": ["name", "evidence", "date", "source_url"],
+    "required": ["name", "evidence", "date", "source_url", "intent", "mandate_keywords"],
     "additionalProperties": False,
 }
 
@@ -121,8 +125,17 @@ SEGMENT = {
             },
             "required": ["facts", "deals"], "additionalProperties": False,
         },
+        "consolidators": {
+            "type": "object",
+            "properties": {
+                "facts": {"type": "array", "items": FACT},
+                "players": {"type": "array", "items": _NAMED_EVIDENCE,
+                            "description": "PE platforms, roll-up vehicles, buy-and-build holdings and well-funded peers that bought or merged two or more companies in this segment in the last 24 months, or publicly announced a consolidation strategy"},
+            },
+            "required": ["facts", "players"], "additionalProperties": False,
+        },
     },
-    "required": ["segment_id", "funding_market", "capital_access", "regulation", "strategics", "exit_comps"],
+    "required": ["segment_id", "funding_market", "capital_access", "regulation", "strategics", "exit_comps", "consolidators"],
     "additionalProperties": False,
 }
 

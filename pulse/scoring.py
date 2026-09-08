@@ -1,56 +1,73 @@
 """Deterministic scoring. Pure functions, no I/O, no LLM.
 
-    facts ──▶ dimension lights ──▶ market strength ─┐
-                                                     ├──▶ route ──▶ urgency ──▶ partners
-    inventory + internal ──▶ health lights ──▶ health ┘
+    segment facts ──▶ 6 market lights ──▶ market strength ─┐
+                                                            ├──▶ 3 path lights ──▶ recommended path
+    inventory + internal + own news ──▶ 5 health lights ──▶ health strength ─┘        │
+                                                                                      ▼
+                                                              urgency (ESCALATE / NOW / QUARTER / WATCH)
+                                                              counterparties per path + lid-to-pot matches
 
 Lights: green / yellow / red / grey. Grey means "not enough dated evidence",
-never a default colour. Every light carries a reason string.
+never a default colour. Every light carries the rule that produced it.
 
-Route matrix (health rows, market columns):
-
-                 MARKET STRONG        MARKET MIXED          MARKET WEAK
-  HEALTH STRONG  RAISE_GROWTH         SELECTIVE_RAISE       EXTEND_AND_PARTNER
-  HEALTH MIXED   OPPORTUNISTIC_RAISE  HOLD_AND_MONITOR      PREPARE_STRATEGIC
-  HEALTH WEAK    SELL_OR_BRIDGE       BRIDGE_AND_PROCESS    CONSOLIDATE_OR_EXIT
+Paths (one light each, shown side by side on the card):
+  growth_round  needs capital access + funding market + company health
+  strategic_ma  needs vocal strategics + exit comps
+  roll_up       needs consolidators active in the segment
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, asdict
 from datetime import date, timedelta
 from statistics import mean
 
+# ---- thresholds, all in one place -------------------------------------------------------------
 LIGHT_VALUE = {"green": 1.0, "yellow": 0.0, "red": -1.0}
+LIGHT_RANK = {"green": 3, "yellow": 2, "grey": 1, "red": 0}
 CONF_W = {"high": 1.0, "medium": 0.6, "low": 0.3}
 DIR_V = {"positive": 1.0, "negative": -1.0, "neutral": 0.0}
 STRONG_CUT, WEAK_CUT = 0.34, -0.34
+FACT_NET_CUT = 0.3
+MIN_DATED_FACTS = 2
+WINDOW_MONTHS = {"funding_market": 12, "capital_access": 12, "regulation": 18, "strategics": 12,
+                 "exit_comps": 24, "consolidators": 24, "momentum": 12}
+COUNT_BARS = {  # (green_at, yellow_at)
+    "capital_access": (3, 1), "strategics": (2, 1), "exit_comps": (2, 1), "consolidators": (2, 1)}
+HEALTH_WEIGHTS = {"runway": 2.0, "risk_band": 1.5, "kpi_trend": 1.5, "contact": 0.5, "momentum": 1.0}
+ESCALATE_RUNWAY_WEEKS = 8
+RUNWAY_RED_MONTHS, RUNWAY_YELLOW_MONTHS = 6, 12
+CONTACT_RED_DAYS, CONTACT_YELLOW_DAYS = 60, 30
+WEEKS_PER_MONTH = 4.345
 
-ROUTES = {
-    ("STRONG", "STRONG"): ("RAISE_GROWTH", "Raise from growth funds active in the segment"),
-    ("STRONG", "MIXED"): ("SELECTIVE_RAISE", "Raise selectively, lead with traction; market is mixed"),
-    ("STRONG", "WEAK"): ("EXTEND_AND_PARTNER", "Extend runway, build a strategic partnership, wait for the window"),
-    ("MIXED", "STRONG"): ("OPPORTUNISTIC_RAISE", "Fix the internal gaps fast and raise while the window is open"),
-    ("MIXED", "MIXED"): ("HOLD_AND_MONITOR", "Hold, close the data gaps, review next cycle"),
-    ("MIXED", "WEAK"): ("PREPARE_STRATEGIC", "Prepare strategic options now; the market will not carry a round"),
-    ("WEAK", "STRONG"): ("SELL_OR_BRIDGE", "Sell to a funded peer or bridge to the next milestone; buyers have money"),
-    ("WEAK", "MIXED"): ("BRIDGE_AND_PROCESS", "Bridge and start a structured process in parallel"),
-    ("WEAK", "WEAK"): ("CONSOLIDATE_OR_EXIT", "Roll-up, consolidation or managed exit. Act now"),
+PATH_LABELS = {
+    "growth_round": "Follow-on / growth round",
+    "strategic_ma": "Strategic M&A",
+    "roll_up": "Roll-up / consolidation",
+    "bridge_and_process": "Bridge and prepare a structured process",
+    "exit_in_progress": "Exit signed: track closing, earn-out and put-option milestones",
+    "wind_down": "Wind-down documented: manage the process",
 }
-ROUTE_WANTS_FUNDS = {"RAISE_GROWTH", "SELECTIVE_RAISE", "OPPORTUNISTIC_RAISE"}
-ROUTE_WANTS_BUYERS = {"EXTEND_AND_PARTNER", "PREPARE_STRATEGIC", "SELL_OR_BRIDGE",
-                      "BRIDGE_AND_PROCESS", "CONSOLIDATE_OR_EXIT"}
+PATH_PREFERENCE = {  # tie-break order by company health
+    "STRONG": ["growth_round", "strategic_ma", "roll_up"],
+    "MIXED": ["growth_round", "strategic_ma", "roll_up"],
+    "UNKNOWN": ["growth_round", "strategic_ma", "roll_up"],
+    "WEAK": ["strategic_ma", "roll_up", "growth_round"],
+}
+URGENCY_ORDER = {"ESCALATE": 0, "NOW": 1, "QUARTER": 2, "WATCH": 3}
 
 
 @dataclass
 class Light:
     colour: str
     reason: str
-    n_facts: int = 0
+    n: int = 0
 
     def value(self) -> float | None:
         return LIGHT_VALUE.get(self.colour)
 
 
+# ---- dates -------------------------------------------------------------------------------------
 def parse_date(s: str | None) -> date | None:
     if not s:
         return None
@@ -68,7 +85,9 @@ def months_ago(as_of: date, months: int) -> date:
     return as_of - timedelta(days=int(months * 30.44))
 
 
-def recent(items: list[dict], as_of: date, months: int) -> list[dict]:
+def recent(items: list[dict] | None, as_of: date, months: int) -> list[dict]:
+    """Items with a parseable date inside the window. Future-dated items (beyond 31 days) are dropped:
+    Jarvis carries contract milestones dated 2032 that must never count as current evidence."""
     floor = months_ago(as_of, months)
     out = []
     for it in items or []:
@@ -78,15 +97,16 @@ def recent(items: list[dict], as_of: date, months: int) -> list[dict]:
     return out
 
 
-def light_from_facts(facts: list[dict], as_of: date, months: int = 12, min_facts: int = 2) -> Light:
+# ---- primitive lights --------------------------------------------------------------------------
+def light_from_facts(facts: list[dict], as_of: date, months: int, min_facts: int = MIN_DATED_FACTS) -> Light:
     dated = recent(facts, as_of, months)
     if len(dated) < min_facts:
         return Light("grey", f"{len(dated)} dated facts in the last {months} months (need {min_facts})", len(dated))
     weights = [CONF_W[f["confidence"]] for f in dated]
     score = sum(DIR_V[f["direction"]] * w for f, w in zip(dated, weights)) / sum(weights)
-    if score >= 0.3:
+    if score >= FACT_NET_CUT:
         return Light("green", f"net positive ({score:+.2f}) over {len(dated)} dated facts", len(dated))
-    if score <= -0.3:
+    if score <= -FACT_NET_CUT:
         return Light("red", f"net negative ({score:+.2f}) over {len(dated)} dated facts", len(dated))
     return Light("yellow", f"mixed ({score:+.2f}) over {len(dated)} dated facts", len(dated))
 
@@ -101,10 +121,13 @@ def light_from_count(n: int | None, green_at: int, yellow_at: int, what: str) ->
     return Light("red", f"0 {what} in window", 0)
 
 
-def strength(values: list[float]) -> str:
+def strength(values: list[float], weights: list[float] | None = None) -> str:
     if not values:
         return "UNKNOWN"
-    m = mean(values)
+    if weights:
+        m = sum(v * w for v, w in zip(values, weights)) / sum(weights)
+    else:
+        m = mean(values)
     if m >= STRONG_CUT:
         return "STRONG"
     if m <= WEAK_CUT:
@@ -112,42 +135,53 @@ def strength(values: list[float]) -> str:
     return "MIXED"
 
 
+def _as_feasibility(colour: str) -> str:
+    """Grey counts as yellow for path feasibility (unknown is not a veto), but is flagged by the caller."""
+    return "yellow" if colour == "grey" else colour
+
+
+# ---- segment -----------------------------------------------------------------------------------
 def score_segment(seg: dict | None, as_of: date) -> dict:
-    """Five dimension lights and a market strength for one segment. seg=None means the worker failed."""
+    dims = ("funding_market", "capital_access", "regulation", "strategics", "exit_comps", "consolidators")
     if seg is None:
         grey = Light("grey", "segment research unavailable")
-        lights = {k: grey for k in ("funding_market", "capital_access", "regulation", "strategics", "exit_comps")}
-        return {"lights": {k: asdict(v) for k, v in lights.items()}, "market": "UNKNOWN", "market_value": None}
+        return {"lights": {k: asdict(grey) for k in dims}, "market": "UNKNOWN", "market_value": None}
 
+    W = WINDOW_MONTHS
     lights = {
-        "funding_market": light_from_facts(seg["funding_market"]["facts"], as_of, 12),
-        "capital_access": light_from_count(len(recent(seg["capital_access"]["active_funds"], as_of, 12)),
-                                           3, 1, "active funds"),
-        "regulation": light_from_facts(seg["regulation"]["facts"], as_of, 18),
-        "strategics": light_from_count(len(recent(seg["strategics"]["players"], as_of, 12)), 2, 1, "vocal strategics"),
+        "funding_market": light_from_facts(seg["funding_market"]["facts"], as_of, W["funding_market"]),
+        "capital_access": light_from_count(len(recent(seg["capital_access"]["active_funds"], as_of, W["capital_access"])),
+                                           *COUNT_BARS["capital_access"], "active funds"),
+        "regulation": light_from_facts(seg["regulation"]["facts"], as_of, W["regulation"]),
+        "strategics": light_from_count(len(recent(seg["strategics"]["players"], as_of, W["strategics"])),
+                                       *COUNT_BARS["strategics"], "vocal strategics"),
         "exit_comps": light_from_count(
-            len([d for d in recent(seg["exit_comps"]["deals"], as_of, 24) if d["kind"] != "shutdown"]),
-            2, 1, "exit comps"),
+            len([d for d in recent(seg["exit_comps"]["deals"], as_of, W["exit_comps"]) if d["kind"] != "shutdown"]),
+            *COUNT_BARS["exit_comps"], "exit comps"),
+        "consolidators": light_from_count(len(recent(seg.get("consolidators", {}).get("players", []), as_of, W["consolidators"])),
+                                          *COUNT_BARS["consolidators"], "active consolidators"),
     }
-    shutdowns = len([d for d in recent(seg["exit_comps"]["deals"], as_of, 24) if d["kind"] == "shutdown"])
+    shutdowns = len([d for d in recent(seg["exit_comps"]["deals"], as_of, W["exit_comps"]) if d["kind"] == "shutdown"])
     if shutdowns >= 2 and lights["exit_comps"].colour == "green":
-        lights["exit_comps"] = Light("yellow", f"{lights['exit_comps'].n_facts} comps but {shutdowns} shutdowns", lights["exit_comps"].n_facts)
+        lights["exit_comps"] = Light("yellow", f"{lights['exit_comps'].n} comps but {shutdowns} shutdowns", lights["exit_comps"].n)
     values = [v.value() for v in lights.values() if v.value() is not None]
     return {"lights": {k: asdict(v) for k, v in lights.items()},
             "market": strength(values), "market_value": round(mean(values), 2) if values else None}
 
 
-def health_lights(inv: dict, internal: dict | None) -> dict[str, Light]:
+# ---- company health ----------------------------------------------------------------------------
+def health_lights(inv: dict, internal: dict | None, external_facts: list[dict] | None, as_of: date) -> dict[str, Light]:
     internal = internal or {}
     runway = internal.get("runway_months")
+    ras = internal.get("runway_as_of") or "n/a"
     if runway is None:
         rl = Light("grey", "runway not derivable")
-    elif runway < 6:
-        rl = Light("red", f"runway {runway:.0f} months (as of {internal.get('runway_as_of') or 'n/a'})")
-    elif runway < 12:
-        rl = Light("yellow", f"runway {runway:.0f} months (as of {internal.get('runway_as_of') or 'n/a'})")
+    elif runway < RUNWAY_RED_MONTHS:
+        rl = Light("red", f"runway {runway:.1f} months (as of {ras})")
+    elif runway < RUNWAY_YELLOW_MONTHS:
+        rl = Light("yellow", f"runway {runway:.1f} months (as of {ras})")
     else:
-        rl = Light("green", f"runway {runway:.0f} months (as of {internal.get('runway_as_of') or 'n/a'})")
+        rl = Light("green", f"runway {runway:.1f} months (as of {ras})")
 
     band = inv.get("risk_band")
     bl = {"high": Light("red", f"internal risk band high ({inv.get('risk_score')})"),
@@ -161,81 +195,168 @@ def health_lights(inv: dict, internal: dict | None) -> dict[str, Light]:
     days = inv.get("days_since_contact")
     if days is None:
         cl = Light("grey", "contact recency unknown")
-    elif days > 60:
+    elif days > CONTACT_RED_DAYS:
         cl = Light("red", f"{days} days since founder contact")
-    elif days > 30:
+    elif days > CONTACT_YELLOW_DAYS:
         cl = Light("yellow", f"{days} days since founder contact")
     else:
         cl = Light("green", f"{days} days since founder contact")
-    return {"runway": rl, "risk_band": bl, "kpi_trend": tl, "contact": cl}
+
+    ml = light_from_facts(external_facts or [], as_of, WINDOW_MONTHS["momentum"])
+    ml.reason = "own news: " + ml.reason
+    return {"runway": rl, "risk_band": bl, "kpi_trend": tl, "contact": cl, "momentum": ml}
 
 
 def health_strength(lights: dict[str, Light]) -> str:
-    if lights["runway"].colour == "red":
-        return "WEAK"
-    values = [v.value() for v in lights.values() if v.value() is not None]
-    return strength(values)
+    pairs = [(v.value(), HEALTH_WEIGHTS[k]) for k, v in lights.items() if v.value() is not None]
+    if not pairs:
+        return "UNKNOWN"
+    return strength([p[0] for p in pairs], [p[1] for p in pairs])
 
 
-def pick_route(health: str, market: str, status_override: str | None, active_process: str) -> tuple[str, str]:
+def runway_weeks(internal: dict | None) -> float | None:
+    r = (internal or {}).get("runway_months")
+    return None if r is None else r * WEEKS_PER_MONTH
+
+
+# ---- paths -------------------------------------------------------------------------------------
+def path_lights(seg_lights: dict[str, dict], health: str) -> dict[str, Light]:
+    c = {k: seg_lights[k]["colour"] for k in seg_lights}
+    flagged = [k for k, v in c.items() if v == "grey"]
+    f = {k: _as_feasibility(v) for k, v in c.items()}
+    note = f" (grey counted as yellow: {', '.join(flagged)})" if flagged else ""
+
+    ca, fm = f["capital_access"], f["funding_market"]
+    if ca == "green" and fm == "green" and health == "STRONG":
+        g = Light("green", "capital access and funding market green, company STRONG" + note)
+    elif ca in ("green", "yellow") and fm in ("green", "yellow") and health != "WEAK":
+        g = Light("yellow", f"capital access {ca}, funding market {fm}, company {health}" + note)
+    else:
+        g = Light("red", f"capital access {ca}, funding market {fm}, company {health}" + note)
+
+    st, ex = f["strategics"], f["exit_comps"]
+    if st == "green" and ex == "green":
+        m = Light("green", "vocal strategics and exit comps both green" + note)
+    elif st in ("green", "yellow") or ex in ("green", "yellow"):
+        m = Light("yellow", f"strategics {st}, exit comps {ex}" + note)
+    else:
+        m = Light("red", "no vocal strategics and no exit comps in window" + note)
+
+    co = f["consolidators"]
+    r = Light(co, f"consolidators light {c['consolidators']}" + note)
+    return {"growth_round": g, "strategic_ma": m, "roll_up": r}
+
+
+def pick_path(paths: dict[str, Light], health: str, status_override: str | None, active_process: str) -> tuple[str, str]:
     if status_override == "exit_in_progress":
-        return "EXIT_IN_PROGRESS", "Exit signed; track closing, earn-out and put-option milestones"
+        return "exit_in_progress", PATH_LABELS["exit_in_progress"]
     if active_process == "wind_down":
-        return "WIND_DOWN", "Wind-down documented; manage the process"
-    h = "MIXED" if health == "UNKNOWN" else health
-    m = "MIXED" if market == "UNKNOWN" else market
-    return ROUTES[(h, m)]
+        return "wind_down", PATH_LABELS["wind_down"]
+    best_rank = max(LIGHT_RANK[p.colour] for p in paths.values())
+    if best_rank == LIGHT_RANK["red"]:
+        return "bridge_and_process", PATH_LABELS["bridge_and_process"]
+    for key in PATH_PREFERENCE.get(health, PATH_PREFERENCE["MIXED"]):
+        if LIGHT_RANK[paths[key].colour] == best_rank:
+            return key, PATH_LABELS[key]
+    raise AssertionError("unreachable")
 
 
+# ---- urgency -----------------------------------------------------------------------------------
 def urgency(internal: dict | None, health: str, market: str, as_of: date, status_override: str | None) -> tuple[str, str]:
     internal = internal or {}
     runway = internal.get("runway_months")
+    weeks = runway_weeks(internal)
     deadline = parse_date(internal.get("process_deadline"))
     process = internal.get("active_process", "unknown")
     if status_override == "exit_in_progress":
         return "WATCH", "exit in progress, milestone tracking"
-    if runway is not None and runway < 6:
-        return "NOW", f"runway {runway:.0f} months"
+    if weeks is not None and weeks < ESCALATE_RUNWAY_WEEKS:
+        return "ESCALATE", f"runway {weeks:.0f} weeks: find a solution immediately"
+    if runway is not None and runway < RUNWAY_RED_MONTHS:
+        return "NOW", f"runway {runway:.1f} months"
     if deadline is not None and deadline <= as_of + timedelta(days=60):
         return "NOW", f"documented deadline {deadline.isoformat()}"
     if process in ("m_and_a", "wind_down", "bridge"):
         return "NOW", f"active process: {process}"
     if health == "WEAK" and market == "WEAK":
         return "NOW", "weak company in a weak market"
-    if (runway is not None and runway < 12) or health == "WEAK" or market == "WEAK" or process == "fundraise":
+    if (runway is not None and runway < RUNWAY_YELLOW_MONTHS) or health == "WEAK" or market == "WEAK" or process == "fundraise":
         return "QUARTER", "decision needed this quarter"
     return "WATCH", "no trigger"
 
 
-def partners(route_code: str, seg: dict | None, as_of: date, limit: int = 6) -> list[dict]:
+# ---- counterparties and lid-to-pot matches -----------------------------------------------------
+def _named(items: list[dict], kind: str) -> list[dict]:
+    return [{"name": p["name"], "kind": kind, "evidence": p.get("evidence"), "date": p.get("date"),
+             "source_url": p.get("source_url"), "intent": p.get("intent"), "mandate_keywords": p.get("mandate_keywords") or []}
+            for p in items or []]
+
+
+def _dedupe(items: list[dict]) -> list[dict]:
+    seen, out = set(), []
+    for p in sorted(items, key=lambda x: x.get("date") or "", reverse=True):
+        key = (p["name"] or "").strip().lower()
+        if key and key not in seen:
+            seen.add(key)
+            out.append(p)
+    return out
+
+
+def counterparties(seg: dict | None, limit: int = 6) -> dict[str, list[dict]]:
+    if seg is None:
+        return {"growth_round": [], "strategic_ma": [], "roll_up": []}
+    funds = _named(seg["capital_access"]["active_funds"], "fund")
+    players = _named(seg["strategics"]["players"], "strategic")
+    acquirers = [{"name": d["acquirer_or_lead"], "kind": "acquirer", "evidence": f"{d['kind']} of {d['target']} {d.get('value') or ''}".strip(),
+                  "date": d["date"], "source_url": d["source_url"], "intent": "acted", "mandate_keywords": []}
+                 for d in seg["exit_comps"]["deals"] if d["kind"] in ("acquisition", "merger")]
+    cons = _named(seg.get("consolidators", {}).get("players", []), "consolidator")
+    return {"growth_round": _dedupe(funds)[:limit],
+            "strategic_ma": _dedupe(players + acquirers)[:limit],
+            "roll_up": _dedupe(cons)[:limit]}
+
+
+_TOKEN = re.compile(r"[a-zäöüß][a-zäöüß0-9-]{3,}")
+STOP = {"startup", "startups", "company", "companies", "funding", "food", "agri", "agtech", "foodtech", "europe", "european",
+        "platform", "technology", "market", "brand", "brands", "based", "with", "from", "that", "this", "their"}
+
+
+def _tokens(*texts: str) -> set[str]:
+    out: set[str] = set()
+    for t in texts:
+        out |= {w for w in _TOKEN.findall((t or "").lower()) if w not in STOP}
+    return out
+
+
+def lid_to_pot(seg: dict | None, seg_cfg: dict, one_liner: str, as_of: date, limit: int = 5) -> list[dict]:
+    """Demand signals that explicitly say what they look for, ranked by keyword overlap with this company.
+    Deterministic: overlap count between the party's mandate keywords and segment keywords + company one-liner."""
     if seg is None:
         return []
-    out: list[dict] = []
-    if route_code in ROUTE_WANTS_FUNDS:
-        pool = sorted(seg["capital_access"]["active_funds"], key=lambda x: x.get("date") or "", reverse=True)
-        out = [{"name": f["name"], "kind": "fund", "evidence": f["evidence"], "date": f["date"], "source_url": f["source_url"]} for f in pool]
-    elif route_code in ROUTE_WANTS_BUYERS:
-        players = [{"name": p["name"], "kind": "strategic", "evidence": p["evidence"], "date": p["date"], "source_url": p["source_url"]}
-                   for p in seg["strategics"]["players"]]
-        acquirers = [{"name": d["acquirer_or_lead"], "kind": "acquirer", "evidence": f"{d['kind']} of {d['target']} {d.get('value') or ''}".strip(),
-                      "date": d["date"], "source_url": d["source_url"]}
-                     for d in seg["exit_comps"]["deals"] if d["kind"] in ("acquisition", "merger")]
-        seen, merged = set(), []
-        for p in sorted(players + acquirers, key=lambda x: x.get("date") or "", reverse=True):
-            key = p["name"].strip().lower()
-            if key not in seen:
-                seen.add(key)
-                merged.append(p)
-        out = merged
+    target = _tokens(seg_cfg.get("label", ""), " ".join(seg_cfg.get("keywords") or []), one_liner)
+    pool = (_named(seg["capital_access"]["active_funds"], "fund") + _named(seg["strategics"]["players"], "strategic")
+            + _named(seg.get("consolidators", {}).get("players", []), "consolidator"))
+    out = []
+    for p in recent(pool, as_of, 12):
+        if p.get("intent") != "stated_looking_for":
+            continue
+        hits = sorted(_tokens(" ".join(p["mandate_keywords"]), p.get("evidence") or "") & target)
+        if hits:
+            out.append({**p, "match_score": len(hits), "match_terms": hits[:6]})
+    out.sort(key=lambda x: (-x["match_score"], x.get("date") or ""), reverse=False)
     return out[:limit]
 
 
-def score_company(inv: dict, cfg: dict, company_res: dict | None, seg_res: dict | None, seg_score: dict, as_of: date) -> dict:
+# ---- company -----------------------------------------------------------------------------------
+def score_company(inv: dict, cfg: dict, seg_cfg: dict, company_res: dict | None, seg_res: dict | None,
+                  seg_score: dict, as_of: date) -> dict:
     internal = (company_res or {}).get("internal")
-    hl = health_lights(inv, internal)
+    ext = (company_res or {}).get("external_facts", [])
+    hl = health_lights(inv, internal, ext, as_of)
     health = health_strength(hl)
     override = cfg.get("status_override")
-    route_code, route_label = pick_route(health, seg_score["market"], override, (internal or {}).get("active_process", "unknown"))
+    paths = path_lights(seg_score["lights"], health)
+    path_key, path_label = pick_path(paths, health, override, (internal or {}).get("active_process", "unknown"))
     urg, urg_reason = urgency(internal, health, seg_score["market"], as_of, override)
     coverage = list(inv.get("coverage_notes") or [])
     if company_res is None:
@@ -248,20 +369,18 @@ def score_company(inv: dict, cfg: dict, company_res: dict | None, seg_res: dict 
         "company": inv["name"], "org_id": inv.get("org_id"), "segment": cfg["segment"], "funds": inv.get("funds", []),
         "health": health, "health_lights": {k: asdict(v) for k, v in hl.items()},
         "market": seg_score["market"], "market_lights": seg_score["lights"],
-        "route": route_code, "route_label": route_label,
+        "paths": {k: asdict(v) for k, v in paths.items()},
+        "recommended_path": path_key, "recommended_label": path_label,
         "urgency": urg, "urgency_reason": urg_reason,
-        "partners": partners(route_code, seg_res, as_of),
+        "counterparties": counterparties(seg_res),
+        "matches": lid_to_pot(seg_res, seg_cfg, cfg.get("one_liner", ""), as_of),
         "internal": internal, "attention_items": inv.get("attention_items", []),
-        "external_facts": (company_res or {}).get("external_facts", []),
-        "segment_check": (company_res or {}).get("segment_check"),
+        "external_facts": ext, "segment_check": (company_res or {}).get("segment_check"),
         "coverage": coverage,
     }
 
 
-URGENCY_ORDER = {"NOW": 0, "QUARTER": 1, "WATCH": 2}
-
-
-def score_portfolio(inventory: list[dict], companies_cfg: dict, segment_data: dict[str, dict | None],
+def score_portfolio(inventory: list[dict], companies_cfg: dict, segments_cfg: dict, segment_data: dict[str, dict | None],
                     company_data: dict[str, dict | None], macro: dict | None, as_of: date) -> dict:
     seg_scores = {sid: score_segment(sdata, as_of) for sid, sdata in segment_data.items()}
     rows = []
@@ -270,7 +389,7 @@ def score_portfolio(inventory: list[dict], companies_cfg: dict, segment_data: di
         if cfg is None:
             continue
         sid = cfg["segment"]
-        rows.append(score_company(inv, cfg, company_data.get(inv["name"]), segment_data.get(sid),
+        rows.append(score_company(inv, cfg, segments_cfg.get(sid, {}), company_data.get(inv["name"]), segment_data.get(sid),
                                   seg_scores.get(sid, score_segment(None, as_of)), as_of))
     rows.sort(key=lambda r: (URGENCY_ORDER[r["urgency"]], -(r["health_lights"]["runway"]["colour"] == "red"), r["company"]))
     return {"as_of": as_of.isoformat(), "macro": macro, "segments": seg_scores, "companies": rows}
