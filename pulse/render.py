@@ -127,13 +127,20 @@ def _matches_block(c: dict) -> str:
     return f'<h4>Lid to pot: parties that said they look for this</h4><ul class="small">{items}</ul>'
 
 
-def render_html(pulse: dict, run_report: dict, segments_cfg: dict) -> str:
+def render_html(pulse: dict, run_report: dict, segments_cfg: dict, demo: bool = False) -> str:
     as_of = pulse["as_of"]
     companies = pulse["companies"]
     n_ok = sum(1 for w in run_report["workers"] if w["ok"])
     n_all = len(run_report["workers"])
     total_cost = sum(w.get("cost_usd") or 0 for w in run_report["workers"])
     banner_cls = "" if n_ok == n_all else " warn"
+    if demo:
+        subtitle = f"Illustrative demo · fictional companies and numbers · as of {esc(as_of)} · {len(companies)} companies"
+        banner_text = ("DEMO DATA. Every company, cash figure and internal note on this page is invented. Funds and corporates are real, "
+                       "the deals and quotes attributed to them here are illustrative. The scoring rules are the real ones.")
+    else:
+        subtitle = f"Oyster Bay Venture Capital · as of {esc(as_of)} · {len(companies)} companies · confidential"
+        banner_text = f"Run {esc(run_report['run_id'])} · {n_ok}/{n_all} workers succeeded · research cost {total_cost:.2f} USD · generated {esc(run_report['generated_at'])}"
 
     prop_cards = []
     for c in companies:
@@ -224,8 +231,8 @@ def render_html(pulse: dict, run_report: dict, segments_cfg: dict) -> str:
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Market Pulse {esc(as_of)} — Oyster Bay VC</title>
 <style>{CSS}</style></head><body>
-<div class="header"><div class="container"><h1>Portfolio Market Pulse</h1><div class="subtitle">Oyster Bay Venture Capital · as of {esc(as_of)} · {len(companies)} companies · confidential</div></div></div>
-<div class="banner{banner_cls}"><div class="container">Run {esc(run_report['run_id'])} · {n_ok}/{n_all} workers succeeded · research cost {total_cost:.2f} USD · generated {esc(run_report['generated_at'])} · <span class="legend">{legend}</span></div></div>
+<div class="header"><div class="container"><h1>Portfolio Market Pulse</h1><div class="subtitle">{subtitle}</div></div></div>
+<div class="banner{banner_cls}"><div class="container">{banner_text} · <span class="legend">{legend}</span></div></div>
 
 <div class="section"><div class="container"><h2>Macro</h2><div class="card">{macro_html}</div></div></div>
 
@@ -240,12 +247,14 @@ def render_html(pulse: dict, run_report: dict, segments_cfg: dict) -> str:
 
 <div class="section section-sand"><div class="container"><h2>Run report</h2><div class="card table-wrap"><table><thead><tr><th>Worker</th><th>Status</th><th>Turns</th><th>Time</th><th>USD</th><th>Error</th></tr></thead><tbody>{workers_rows}</tbody></table></div></div></div>
 
-<div class="footer">OYSTERBAY · Portfolio Market Pulse · confidential · internal marks and cash positions, do not distribute</div>
+<div class="footer">{"Portfolio Market Pulse · illustrative demo · all company data fictional" if demo else "OYSTERBAY · Portfolio Market Pulse · confidential · internal marks and cash positions, do not distribute"}</div>
 </body></html>"""
 
 
-def render_markdown(pulse: dict, run_report: dict, segments_cfg: dict) -> str:
+def render_markdown(pulse: dict, run_report: dict, segments_cfg: dict, demo: bool = False) -> str:
     lines = [f"# Portfolio Market Pulse, as of {pulse['as_of']}", ""]
+    if demo:
+        lines += ["_Illustrative demo. Every company and number is fictional._", ""]
     m = pulse.get("macro")
     if m:
         lines += [f"**Macro.** {m['summary']}", "",

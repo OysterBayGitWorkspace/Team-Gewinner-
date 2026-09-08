@@ -64,6 +64,26 @@ def load_result(run_dir: Path, name: str) -> WorkerResult | None:
     return WorkerResult(**d)
 
 
+def run_demo(out: Path) -> int:
+    """Illustrative dataset through the real scoring and rendering. Nothing here is confidential or real."""
+    from demo.build import EXTRA_SEGMENT_LABELS, build
+    inventory, companies_cfg, segment_data, company_data, macro, as_of = build()
+    cfg = yaml.safe_load((ROOT / "config" / "segments.yaml").read_text())
+    segments_cfg = {**EXTRA_SEGMENT_LABELS, **cfg["segments"]}
+    pulse = score_portfolio(inventory, companies_cfg, segments_cfg, segment_data, company_data, macro, as_of)
+    workers = [{"name": f"segment__{s}", "ok": True, "error": None, "error_kind": None, "duration_s": 0.0, "cost_usd": 0.0, "turns": 0} for s in segment_data]
+    workers += [{"name": f"company__{slug(c)}", "ok": True, "error": None, "error_kind": None, "duration_s": 0.0, "cost_usd": 0.0, "turns": 0} for c in company_data]
+    run_report = {"run_id": "demo", "generated_at": now_iso(), "workers": workers, "segment_data": segment_data}
+    out.mkdir(parents=True, exist_ok=True)
+    page = render_html(pulse, run_report, segments_cfg, demo=True)
+    (out / "index.html").write_text(page)
+    (out / "artifact.html").write_text(artifact_body(page))
+    (out / "pulse.md").write_text(render_markdown(pulse, run_report, segments_cfg, demo=True))
+    (out / "pulse.json").write_text(json.dumps(pulse, indent=1, ensure_ascii=False, default=str))
+    print(f"demo: {len(pulse['companies'])} fictional companies → {out / 'index.html'}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--companies", help="comma-separated subset of company names")
@@ -74,11 +94,14 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--model", default=None)
     ap.add_argument("--out", default=str(ROOT / "out"))
     ap.add_argument("--skip-macro", action="store_true")
+    ap.add_argument("--demo", action="store_true", help="render the illustrative demo dataset (fictional companies), no workers, no Jarvis")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args(argv)
 
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO,
                         format="%(asctime)s %(levelname)s %(name)s %(message)s")
+    if args.demo:
+        return run_demo(Path(args.out) if args.out != str(ROOT / "out") else ROOT / "out" / "demo")
     load_env()
     if args.model:
         os.environ["PULSE_MODEL"] = args.model
