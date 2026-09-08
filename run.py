@@ -25,7 +25,7 @@ import yaml
 from pulse import prompts, schemas
 from pulse.render import artifact_body, now_iso, render_html, render_markdown, slug
 from pulse.scoring import score_portfolio
-from pulse.workers import WorkerAuthError, WorkerResult, WorkerSpec, run_many, run_worker
+from pulse.workers import WorkerAuthError, WorkerQuotaError, WorkerResult, WorkerSpec, run_many, run_worker
 
 ROOT = Path(__file__).resolve().parent
 log = logging.getLogger("pulse")
@@ -43,7 +43,17 @@ def load_env() -> None:
 
 
 def save_result(run_dir: Path, res: WorkerResult) -> None:
-    (run_dir / f"{res.name}.json").write_text(json.dumps(asdict(res), indent=1, ensure_ascii=False))
+    """Persist a worker result. A failed result never overwrites a saved good one: a quota or
+    timeout on a rerun must not destroy research that was already paid for."""
+    path = run_dir / f"{res.name}.json"
+    if not res.ok and path.exists():
+        try:
+            if json.loads(path.read_text()).get("ok"):
+                log.warning("keep saved good result for %s; new attempt failed (%s)", res.name, res.error_kind)
+                return
+        except (json.JSONDecodeError, OSError):
+            pass
+    path.write_text(json.dumps(asdict(res), indent=1, ensure_ascii=False))
 
 
 def load_result(run_dir: Path, name: str) -> WorkerResult | None:
@@ -174,8 +184,14 @@ def main(argv: list[str] | None = None) -> int:
         log.info("running %d workers (max %d parallel)", len(todo), args.max_workers)
         try:
             fresh = run_many(todo, mcp_config, run_dir / "raw", max_workers=args.max_workers)
-        except WorkerAuthError as e:
-            print(f"FATAL authentication failed mid-run: {e}", file=sys.stderr)
+        except (WorkerAuthError, WorkerQuotaError) as e:
+            for r in getattr(e, "partial", {}).values():
+                save_result(run_dir, r)
+            kind = "authentication" if isinstance(e, WorkerAuthError) else "spend or usage limit"
+            print(f"FATAL {kind} failed mid-run: {e}", file=sys.stderr)
+            print(f"Saved {len(getattr(e, 'partial', {}))} finished workers. Rerun later with --reuse to continue where it stopped.", file=sys.stderr)
+            if isinstance(e, WorkerQuotaError):
+                print("Fix: wait for the limit to reset, or set ANTHROPIC_API_KEY in .env to bill the firm API account instead of the subscription.", file=sys.stderr)
             return 2
         for r in fresh.values():
             save_result(run_dir, r)

@@ -107,6 +107,21 @@ def test_run_many_aborts_on_auth():
         W.run_many([spec(name="a"), spec(name="b")], None, None, max_workers=2, runner=runner)
 
 
+def test_quota_error_is_classified_and_aborts_with_partial():
+    quota = cli_payload(is_error=True, structured_output=None,
+                        result="You've hit your monthly spend limit · your session limit resets 10:20pm")
+    r = W.run_worker(spec(), None, None, runner=fake_runner(quota))
+    assert r.error_kind == "quota"
+    calls = {"n": 0}
+
+    def _run(argv, **kw):
+        calls["n"] += 1
+        return subprocess.CompletedProcess(argv, 0, cli_payload() if calls["n"] == 1 else quota, "")
+    with pytest.raises(W.WorkerQuotaError) as ei:
+        W.run_many([spec(name="a"), spec(name="b")], None, None, max_workers=1, runner=_run)
+    assert set(ei.value.partial) == {"a"}
+
+
 def test_run_many_collects():
     res = W.run_many([spec(name="a"), spec(name="b")], None, None, max_workers=2, runner=fake_runner(cli_payload()))
     assert set(res) == {"a", "b"} and all(r.ok for r in res.values())

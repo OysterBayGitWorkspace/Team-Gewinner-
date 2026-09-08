@@ -50,6 +50,10 @@ class WorkerAuthError(WorkerError):
     """Claude CLI or Jarvis authentication failed. Fatal for the run."""
 
 
+class WorkerQuotaError(WorkerError):
+    """Spend or usage limit reached. Fatal for the run: every remaining worker would fail the same way."""
+
+
 class WorkerTimeout(WorkerError):
     """Subprocess exceeded the wall-clock budget."""
 
@@ -132,8 +136,11 @@ def _classify(payload: dict) -> tuple[str, str] | None:
         return "incomplete", f"max turns ({payload.get('num_turns')}) reached without structured output" + _denied(payload)
     if payload.get("is_error"):
         msg = str(payload.get("result") or "")[:500]
-        if "authenticate" in msg.lower() or "oauth" in msg.lower():
+        low = msg.lower()
+        if "authenticate" in low or "oauth" in low:
             return "auth", msg
+        if "spend limit" in low or "usage limit" in low or "rate limit" in low or "quota" in low or "limit resets" in low:
+            return "quota", msg
         errs = payload.get("errors")
         detail = msg or (json.dumps(errs)[:300] if errs else "") or f"subtype={payload.get('subtype')}"
         return "error", detail + _denied(payload)
@@ -197,16 +204,20 @@ def run_worker(spec: WorkerSpec, mcp_config: Path | None, raw_dir: Path | None =
 def run_many(specs: list[WorkerSpec], mcp_config: Path | None, raw_dir: Path | None,
              max_workers: int = 8, runner: Callable[..., subprocess.CompletedProcess] = subprocess.run
              ) -> dict[str, WorkerResult]:
-    """Run workers in parallel. Stops early and raises WorkerAuthError on the first auth failure,
-    because every remaining worker would fail the same way."""
+    """Run workers in parallel. Stops early on the first auth or quota failure, because every
+    remaining worker would fail the same way. Results finished before the abort are returned
+    on the exception (`partial`) so the caller can save them."""
     results: dict[str, WorkerResult] = {}
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = {pool.submit(run_worker, s, mcp_config, raw_dir, runner): s.name for s in specs}
         for fut in as_completed(futures):
             res = fut.result()
             results[res.name] = res
-            if res.error_kind == "auth":
+            if res.error_kind in ("auth", "quota"):
                 for f in futures:
                     f.cancel()
-                raise WorkerAuthError(res.error or "authentication failed")
+                exc = WorkerAuthError if res.error_kind == "auth" else WorkerQuotaError
+                err = exc(res.error or res.error_kind)
+                err.partial = {k: v for k, v in results.items() if v.ok}  # type: ignore[attr-defined]
+                raise err
     return results
