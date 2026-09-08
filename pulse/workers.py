@@ -119,17 +119,26 @@ def build_argv(spec: WorkerSpec, mcp_config: Path | None) -> list[str]:
     return argv
 
 
+def _denied(payload: dict) -> str:
+    names = sorted({d.get("tool_name", "?") for d in payload.get("permission_denials") or []})
+    return f" (denied tool calls: {', '.join(names)})" if names else ""
+
+
 def _classify(payload: dict) -> tuple[str, str] | None:
     """Return (error_kind, message) if the CLI payload signals a failure."""
+    max_turns = (payload.get("subtype") == "error_max_turns" or payload.get("terminal_reason") == "max_turns"
+                 or payload.get("stop_reason") == "max_turns")
+    if max_turns and payload.get("structured_output") is None:
+        return "incomplete", f"max turns ({payload.get('num_turns')}) reached without structured output" + _denied(payload)
     if payload.get("is_error"):
-        msg = str(payload.get("result", ""))[:500]
+        msg = str(payload.get("result") or "")[:500]
         if "authenticate" in msg.lower() or "oauth" in msg.lower():
             return "auth", msg
-        return "error", msg
+        errs = payload.get("errors")
+        detail = msg or (json.dumps(errs)[:300] if errs else "") or f"subtype={payload.get('subtype')}"
+        return "error", detail + _denied(payload)
     if payload.get("structured_output") is None:
-        if payload.get("stop_reason") == "max_turns" or payload.get("terminal_reason") == "max_turns":
-            return "incomplete", "max turns reached without structured output"
-        return "schema", "no structured_output in CLI payload"
+        return "schema", "no structured_output in CLI payload" + _denied(payload)
     return None
 
 

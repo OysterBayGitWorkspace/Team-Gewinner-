@@ -170,18 +170,35 @@ def score_segment(seg: dict | None, as_of: date) -> dict:
 
 
 # ---- company health ----------------------------------------------------------------------------
-def health_lights(inv: dict, internal: dict | None, external_facts: list[dict] | None, as_of: date) -> dict[str, Light]:
+def effective_runway(internal: dict | None, as_of: date) -> tuple[float | None, str]:
+    """Runway aged to today. A reading of '3 months as of April' is 0 months in September.
+    Aging applies once the reading is more than one month old; the note says what was done."""
     internal = internal or {}
     runway = internal.get("runway_months")
-    ras = internal.get("runway_as_of") or "n/a"
     if runway is None:
-        rl = Light("grey", "runway not derivable")
+        return None, "runway not derivable"
+    ras = internal.get("runway_as_of")
+    d = parse_date(ras)
+    if d is None:
+        return float(runway), f"runway {runway:.1f} months (as-of date unknown, not aged)"
+    elapsed = (as_of - d).days / 30.44
+    if elapsed <= 1.0:
+        return float(runway), f"runway {runway:.1f} months (as of {ras})"
+    eff = max(0.0, runway - elapsed)
+    return eff, f"runway {runway:.1f} months as of {ras}, aged {elapsed:.1f} months: about {eff:.1f} months today"
+
+
+def health_lights(inv: dict, internal: dict | None, external_facts: list[dict] | None, as_of: date) -> dict[str, Light]:
+    internal = internal or {}
+    runway, rnote = effective_runway(internal, as_of)
+    if runway is None:
+        rl = Light("grey", rnote)
     elif runway < RUNWAY_RED_MONTHS:
-        rl = Light("red", f"runway {runway:.1f} months (as of {ras})")
+        rl = Light("red", rnote)
     elif runway < RUNWAY_YELLOW_MONTHS:
-        rl = Light("yellow", f"runway {runway:.1f} months (as of {ras})")
+        rl = Light("yellow", rnote)
     else:
-        rl = Light("green", f"runway {runway:.1f} months (as of {ras})")
+        rl = Light("green", rnote)
 
     band = inv.get("risk_band")
     bl = {"high": Light("red", f"internal risk band high ({inv.get('risk_score')})"),
@@ -214,8 +231,8 @@ def health_strength(lights: dict[str, Light]) -> str:
     return strength([p[0] for p in pairs], [p[1] for p in pairs])
 
 
-def runway_weeks(internal: dict | None) -> float | None:
-    r = (internal or {}).get("runway_months")
+def runway_weeks(internal: dict | None, as_of: date) -> float | None:
+    r, _ = effective_runway(internal, as_of)
     return None if r is None else r * WEEKS_PER_MONTH
 
 
@@ -247,6 +264,15 @@ def path_lights(seg_lights: dict[str, dict], health: str) -> dict[str, Light]:
     return {"growth_round": g, "strategic_ma": m, "roll_up": r}
 
 
+def path_label(key: str, health: str) -> str:
+    """Roll-up reads differently by health: a strong company is the acquirer, a weak one joins a platform."""
+    if key == "roll_up":
+        if health == "STRONG":
+            return "Roll-up as acquirer: consolidators are active, buy distressed peers"
+        return "Roll-up / consolidation: join a platform or merge with a funded peer"
+    return PATH_LABELS[key]
+
+
 def pick_path(paths: dict[str, Light], health: str, status_override: str | None, active_process: str) -> tuple[str, str]:
     if status_override == "exit_in_progress":
         return "exit_in_progress", PATH_LABELS["exit_in_progress"]
@@ -257,23 +283,23 @@ def pick_path(paths: dict[str, Light], health: str, status_override: str | None,
         return "bridge_and_process", PATH_LABELS["bridge_and_process"]
     for key in PATH_PREFERENCE.get(health, PATH_PREFERENCE["MIXED"]):
         if LIGHT_RANK[paths[key].colour] == best_rank:
-            return key, PATH_LABELS[key]
+            return key, path_label(key, health)
     raise AssertionError("unreachable")
 
 
 # ---- urgency -----------------------------------------------------------------------------------
 def urgency(internal: dict | None, health: str, market: str, as_of: date, status_override: str | None) -> tuple[str, str]:
     internal = internal or {}
-    runway = internal.get("runway_months")
-    weeks = runway_weeks(internal)
+    runway, rnote = effective_runway(internal, as_of)
+    weeks = runway_weeks(internal, as_of)
     deadline = parse_date(internal.get("process_deadline"))
     process = internal.get("active_process", "unknown")
     if status_override == "exit_in_progress":
         return "WATCH", "exit in progress, milestone tracking"
     if weeks is not None and weeks < ESCALATE_RUNWAY_WEEKS:
-        return "ESCALATE", f"runway {weeks:.0f} weeks: find a solution immediately"
+        return "ESCALATE", f"{rnote}; under {ESCALATE_RUNWAY_WEEKS} weeks: find a solution immediately"
     if runway is not None and runway < RUNWAY_RED_MONTHS:
-        return "NOW", f"runway {runway:.1f} months"
+        return "NOW", rnote
     if deadline is not None and deadline <= as_of + timedelta(days=60):
         return "NOW", f"documented deadline {deadline.isoformat()}"
     if process in ("m_and_a", "wind_down", "bridge"):
@@ -358,6 +384,8 @@ def score_company(inv: dict, cfg: dict, seg_cfg: dict, company_res: dict | None,
     paths = path_lights(seg_score["lights"], health)
     path_key, path_label = pick_path(paths, health, override, (internal or {}).get("active_process", "unknown"))
     urg, urg_reason = urgency(internal, health, seg_score["market"], as_of, override)
+    if urg == "WATCH" and health == "STRONG" and path_key in ("growth_round", "strategic_ma", "roll_up"):
+        path_label = "No action required. Best open option: " + path_label[0].lower() + path_label[1:]
     coverage = list(inv.get("coverage_notes") or [])
     if company_res is None:
         coverage.append("company research unavailable")

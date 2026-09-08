@@ -102,7 +102,7 @@ def main(argv: list[str] | None = None) -> int:
     # 1. Inventory (fatal)
     inv_spec = WorkerSpec("inventory", prompts.inventory_prompt(as_of.isoformat()), schemas.INVENTORY,
                           ["mcp__jarvis__crm_list_portfolio", "mcp__jarvis__portfolio_risk_rank"], True,
-                          max_turns=6, model=os.environ.get("PULSE_MODEL", w.DEFAULT_MODEL))
+                          max_turns=12, model=os.environ.get("PULSE_MODEL", w.DEFAULT_MODEL))
     if args.dry_run:
         print("PLAN: inventory worker, then:")
     else:

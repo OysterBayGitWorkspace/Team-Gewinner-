@@ -31,9 +31,32 @@ def inv(name="Co", band="medium", days=10):
             "days_since_contact": days, "attention_items": ["a"], "coverage_notes": []}
 
 
-def internal(runway=18.0, trend="up", process="none", deadline=None, status="ok"):
-    return {"runway_months": runway, "runway_as_of": "2026-06-30", "cash": "EUR 1m", "cash_as_of": "2026-06-30",
+def internal(runway=18.0, trend="up", process="none", deadline=None, status="ok", as_of="2026-09-01"):
+    return {"runway_months": runway, "runway_as_of": as_of, "cash": "EUR 1m", "cash_as_of": as_of,
             "kpi_trend": trend, "active_process": process, "process_deadline": deadline, "data_status": status, "notes": []}
+
+
+def test_effective_runway_ages_stale_readings():
+    # Dropz case: 3 months as of April, read in September → 0 today → ESCALATE
+    r, note = S.effective_runway(internal(runway=3, as_of="2026-04-01"), AS_OF)
+    assert r == 0.0 and "aged" in note
+    assert S.urgency(internal(runway=3, as_of="2026-04-01"), "WEAK", "STRONG", AS_OF, None)[0] == "ESCALATE"
+    # fresh reading is not aged; unknown as-of is not aged
+    assert S.effective_runway(internal(runway=3, as_of="2026-08-20"), AS_OF)[0] == 3.0
+    assert S.effective_runway(internal(runway=3, as_of=None), AS_OF)[0] == 3.0
+    # 21 months as of June → about 18.7 today, still green
+    r, _ = S.effective_runway(internal(runway=21.5, as_of="2026-06-30"), AS_OF)
+    assert 18 < r < 20
+
+
+def test_roll_up_label_follows_health_and_watch_prefix():
+    only_rollup = {"growth_round": S.Light("yellow", ""), "strategic_ma": S.Light("yellow", ""), "roll_up": S.Light("green", "")}
+    assert "acquirer" in S.pick_path(only_rollup, "STRONG", None, "none")[1]
+    assert "join a platform" in S.pick_path(only_rollup, "WEAK", None, "none")[1]
+    seg = segment(funding=[fact(), fact(direction="negative")], funds=[named("F1"), named("F2"), named("F3")], cons=[named("PE1"), named("PE2")])
+    row = S.score_company(inv("A", "low"), {"segment": "s"}, SEG_CFG["s"], company(internal(runway=21)), seg, S.score_segment(seg, AS_OF), AS_OF)
+    assert row["urgency"] == "WATCH" and row["health"] == "STRONG"
+    assert row["recommended_label"].startswith("No action required.")
 
 
 def company(int_=None, ext=(), check="fits"):

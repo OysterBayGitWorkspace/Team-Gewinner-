@@ -1,1 +1,14 @@
-2026-09-08 17:36:47,868 INFO pulse.workers worker start name=inventory model=claude-sonnet-5 tools=2
+2026-09-08 17:39:54,927 INFO pulse.workers worker start name=inventory model=claude-sonnet-5 tools=2
+2026-09-08 17:42:02,828 INFO pulse.workers worker done name=inventory turns=5 cost=0.281 dur=128s
+2026-09-08 17:42:02,830 INFO pulse skip Oatly (status ipo)
+2026-09-08 17:42:02,832 INFO pulse running 4 workers (max 5 parallel)
+2026-09-08 17:42:02,834 INFO pulse.workers worker start name=segment__cultivated_meat model=claude-sonnet-5 tools=3
+2026-09-08 17:42:02,835 INFO pulse.workers worker start name=segment__functional_beverage_d2c model=claude-sonnet-5 tools=3
+2026-09-08 17:42:02,838 INFO pulse.workers worker start name=company__dropz model=claude-sonnet-5 tools=4
+2026-09-08 17:42:02,839 INFO pulse.workers worker start name=company__meatly model=claude-sonnet-5 tools=4
+2026-09-08 17:43:37,736 INFO pulse.workers worker done name=company__meatly turns=11 cost=0.481 dur=95s
+2026-09-08 17:43:57,929 INFO pulse.workers worker done name=company__dropz turns=12 cost=0.463 dur=115s
+2026-09-08 17:46:09,686 INFO pulse.workers worker done name=segment__cultivated_meat turns=33 cost=1.215 dur=247s
+2026-09-08 17:47:17,457 INFO pulse.workers worker done name=segment__functional_beverage_d2c turns=33 cost=1.371 dur=315s
+done: 5/5 workers ok, cost 3.81 USD, 2 companies → /Users/flynnseeger/oysterbay/Team-Gewinner/out/index.html
+EXIT 0

@@ -1,0 +1,11 @@
+2026-09-08 17:48:03,372 INFO pulse reuse inventory
+2026-09-08 17:48:03,372 INFO pulse skip Oatly (status ipo)
+2026-09-08 17:48:03,375 INFO pulse running 25 workers (max 8 parallel)
+2026-09-08 17:48:03,375 INFO pulse.workers worker start name=macro model=claude-sonnet-5 tools=2
+2026-09-08 17:48:03,376 INFO pulse.workers worker start name=segment__ag_biologicals model=claude-sonnet-5 tools=3
+2026-09-08 17:48:03,384 INFO pulse.workers worker start name=segment__agri_robotics model=claude-sonnet-5 tools=3
+2026-09-08 17:48:03,387 INFO pulse.workers worker start name=segment__alt_cocoa_ingredients model=claude-sonnet-5 tools=3
+2026-09-08 17:48:03,385 INFO pulse.workers worker start name=segment__agri_supply_chain_traceability model=claude-sonnet-5 tools=3
+2026-09-08 17:48:03,387 INFO pulse.workers worker start name=segment__biomaterials model=claude-sonnet-5 tools=3
+2026-09-08 17:48:03,387 INFO pulse.workers worker start name=segment__food_robotics model=claude-sonnet-5 tools=3
+2026-09-08 17:48:03,389 INFO pulse.workers worker start name=segment__organic_food_cpg_dach model=claude-sonnet-5 tools=3

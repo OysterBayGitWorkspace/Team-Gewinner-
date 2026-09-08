@@ -48,6 +48,19 @@ def test_max_turns_incomplete():
     assert r.error_kind == "incomplete"
 
 
+def test_max_turns_subtype_with_denials_is_incomplete_and_names_tools():
+    payload = cli_payload(is_error=True, structured_output=None, subtype="error_max_turns", terminal_reason="max_turns",
+                          result=None, num_turns=7,
+                          permission_denials=[{"tool_name": "Bash"}, {"tool_name": "Write"}, {"tool_name": "Bash"}])
+    r = W.run_worker(spec(), None, None, runner=fake_runner(payload))
+    assert r.error_kind == "incomplete" and "Bash, Write" in r.error and "7" in r.error
+
+
+def test_error_without_result_text_still_has_detail():
+    r = W.run_worker(spec(), None, None, runner=fake_runner(cli_payload(is_error=True, structured_output=None, result=None, subtype="error_during_execution")))
+    assert r.error_kind == "error" and "error_during_execution" in r.error
+
+
 def test_no_structured_output_is_schema_error():
     r = W.run_worker(spec(), None, None, runner=fake_runner(cli_payload(structured_output=None)))
     assert r.error_kind == "schema"

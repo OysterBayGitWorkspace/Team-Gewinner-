@@ -5,7 +5,11 @@ what counts as a fact, and that the only acceptable output is the schema.
 """
 from __future__ import annotations
 
-COMMON_RULES = """
+NO_SHELL = """
+YOU HAVE NO SHELL. Only the tools named in this prompt exist for you. Do not call Bash, Write, Read, Edit or any file tool; those calls are denied and waste your turns. Never write helper scripts or files. Merge, count and format everything in your own reasoning and answer directly with the structured output as your final message.
+"""
+
+COMMON_RULES = NO_SHELL + """
 RULES FOR EVERY FACT
 - A fact is one dated, sourced claim. Prefer facts from the last 12 months. Anything older than 24 months is out unless it is the most recent thing that exists.
 - date: YYYY-MM-DD or YYYY-MM if you know it, else null. Never guess a date.
@@ -24,11 +28,11 @@ def inventory_prompt(as_of: str) -> str:
 STEPS
 1. Call mcp__jarvis__crm_list_portfolio once. Take every company with its name, orgId, status and funds.
 2. Call mcp__jarvis__portfolio_risk_rank once with limit 20. For each ranked company copy risk_score, band, daysSinceContact, the "reasons" list verbatim (each item max 600 chars, trim if longer) and the coverage list.
-3. Merge by company name. Companies present in the portfolio list but absent from the ranking get risk_band null, risk_score null, days_since_contact null, empty attention_items, and a coverage note "not ranked (status or skipped)".
+3. Merge by company name in your head. Companies present in the portfolio list but absent from the ranking get risk_band null, risk_score null, days_since_contact null, empty attention_items, and a coverage note "not ranked (status or skipped)".
 4. Set as_of to the as_of value returned by the tools.
 
-Do not call any other tool. Do not add commentary. Return only the schema.
-"""
+Exactly two tool calls, then answer. Do not add commentary. Return only the schema.
+{NO_SHELL}"""
 
 
 def macro_prompt(as_of: str) -> str:
