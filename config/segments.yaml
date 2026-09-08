@@ -1,0 +1,109 @@
+# Curated segment map. Hand-maintained, deterministic input to the pulse.
+# Update when a company is added, pivots, exits, or is written off.
+# Last curated: 2026-09-08 (FS)
+
+exclude_status: [ipo, exit, written_off]
+
+segments:
+  cultivated_meat:
+    label: "Cultivated meat and cell-ag inputs"
+    keywords: ["cultivated meat", "cell-cultivated meat", "cultivated pet food", "cultivated fat", "cell culture media"]
+    peers: ["Mosa Meat", "Aleph Farms", "Vow", "BlueNalu", "Hoxton Farms", "Mission Barns", "Umami Bioworks", "Gourmey", "PARIMA"]
+    known_strategics: ["Mars Petcare", "Nestlé Purina", "JBS", "Tyson Foods", "Bühler", "Mitsui Chemicals", "Nomad Foods", "Cargill"]
+    regulation_watch: ["UK FSA cell-cultivated products sandbox", "EFSA novel food applications", "Singapore SFA approvals", "US state-level bans", "EU Novel Food regulation"]
+
+  plant_based_meat:
+    label: "Plant-based meat and dairy alternatives"
+    keywords: ["plant-based meat", "plant-based bacon", "meat alternatives", "alt protein retail", "plant-based category sales"]
+    peers: ["Heura", "Redefine Meat", "Planted", "Beyond Meat", "Impossible Foods", "Oumph", "THIS", "La Vie", "Peas of Heaven"]
+    known_strategics: ["Nestlé", "Unilever", "Danone", "JBS", "Vion", "Tönnies", "Rügenwalder Mühle", "Orkla", "Kerry"]
+    regulation_watch: ["EU meaty-names labelling ban", "France plant-based naming decree", "Nutri-Score changes", "retailer price parity moves"]
+
+  organic_food_cpg_dach:
+    label: "Organic and clean-label food brands, DACH retail"
+    keywords: ["organic food brand Germany", "Bio Lebensmittel Startup", "EDEKA REWE listing startup", "clean label CPG", "baby food organic"]
+    peers: ["HiPP", "Holle", "Little Lunch", "Koro", "Just Spices", "Lycka", "Frosta", "Yfood"]
+    known_strategics: ["Nestlé", "Danone", "HiPP", "Dr. Oetker", "Katjes International", "Hochland", "Emmi", "DMK", "Edeka", "REWE", "Rossmann", "dm"]
+    regulation_watch: ["EU organic regulation", "German Lebensmittelrecht labelling", "Werbeverbot Kinderlebensmittel", "Nutri-Score"]
+
+  functional_beverage_d2c:
+    label: "Functional beverage and hydration, D2C to retail"
+    keywords: ["functional beverage", "hydration tablets", "drink startup funding", "D2C beverage brand Europe", "electrolyte drink"]
+    peers: ["Waterdrop", "Liquid Death", "Cirkul", "Nuun", "Prime", "Olipop", "Vitamin Well", "Celsius"]
+    known_strategics: ["Coca-Cola", "PepsiCo", "Red Bull", "Nestlé Waters", "Unilever", "Suntory", "Keurig Dr Pepper", "Danone"]
+    regulation_watch: ["EU health claims regulation", "sugar taxes", "packaging and deposit rules (Pfand)", "EU packaging waste regulation PPWR"]
+
+  food_robotics:
+    label: "Food robotics and automated kitchens"
+    keywords: ["kitchen robot", "food robotics funding", "robotic kitchen restaurant", "food automation startup", "cooking robot"]
+    peers: ["Aitme", "Circus SE", "Miso Robotics", "Karakuri", "Chef Robotics", "Hyphen", "Moley Robotics", "Dexai"]
+    known_strategics: ["Compass Group", "Sodexo", "Aramark", "Rational AG", "Welbilt", "Middleby", "Marley Spoon", "Apleona", "Circus SE"]
+    regulation_watch: ["EU machinery regulation", "EU AI Act", "food hygiene rules for automated preparation", "German minimum wage development"]
+
+  precision_ag_sensing:
+    label: "Precision agriculture, soil and field sensing"
+    keywords: ["soil sensor startup", "precision agriculture funding", "agronomy data platform", "soil analysis technology", "farm data"]
+    peers: ["Stenon", "Agricolus", "Farmers Edge", "xarvio", "Teralytic", "CropX", "Arable", "Sentera", "Agremo"]
+    known_strategics: ["Bayer Crop Science", "BASF", "Syngenta", "Corteva", "Yara", "John Deere", "CNH", "AGCO", "Trimble", "KWS"]
+    regulation_watch: ["EU Common Agricultural Policy 2028 reform", "EU soil monitoring law", "fertiliser regulation", "farm data governance (EU Data Act)"]
+
+  seed_and_crop_genetics:
+    label: "Seed technology and accelerated crop breeding"
+    keywords: ["seed testing technology", "seed viability", "plant breeding startup", "crop genetics funding", "cell culture plant breeding", "climate-resilient crops"]
+    peers: ["Inari", "Pairwise", "Cibus", "Ohalo", "Avalo", "Phytoform", "Tropic Biosciences", "Solynta"]
+    known_strategics: ["KWS", "Bayer Crop Science", "Corteva", "Syngenta", "Limagrain", "BASF", "Rijk Zwaan", "Nestlé (coffee)", "JDE Peet's", "Barry Callebaut"]
+    regulation_watch: ["EU New Genomic Techniques (NGT) regulation", "EU seed marketing law reform (PRM)", "EUDR deforestation regulation for coffee and cocoa"]
+
+  ag_biologicals:
+    label: "Agricultural biologicals and biocontrol"
+    keywords: ["agricultural biologicals funding", "biocontrol startup", "biostimulant", "biopesticide", "crop protection biologicals"]
+    peers: ["Biotalys", "Pivot Bio", "Vestaron", "AgBiome", "Micropep", "Andermatt", "Aphea.Bio", "Bioceres"]
+    known_strategics: ["Bayer Crop Science", "Syngenta", "Corteva", "BASF", "FMC", "UPL", "Novonesis", "Koppert", "Certis Belchim"]
+    regulation_watch: ["EU biocontrol fast-track", "EU pesticide reduction targets", "EPA biopesticide registration", "UK pesticide approvals post-Brexit"]
+
+  biomaterials:
+    label: "Next-gen biomaterials and leather alternatives"
+    keywords: ["leather alternative startup", "biomaterials funding", "next-gen materials", "plant-based leather", "brewers spent grain material"]
+    peers: ["Modern Meadow", "MycoWorks", "Bolt Threads", "Natural Fiber Welding", "Desserto", "Uncaged Innovations", "Polybion", "Ecovative"]
+    known_strategics: ["Kering", "LVMH", "Hermès", "Adidas", "Nike", "Stella McCartney", "BMW", "Volvo", "Toyota Boshoku", "Lenzing"]
+    regulation_watch: ["EU Ecodesign for Sustainable Products", "EU Green Claims directive", "EUDR leather scope", "textile EPR schemes"]
+
+  precision_fermentation:
+    label: "Precision fermentation and biomanufacturing platforms"
+    keywords: ["precision fermentation funding", "biomanufacturing platform", "fermentation capacity Europe", "fermentation-derived ingredients", "contract fermentation"]
+    peers: ["Formo", "Onego Bio", "Vivici", "Solar Foods", "Bon Vivant", "Standing Ovation", "Liberation Labs", "Planetary"]
+    known_strategics: ["Novonesis", "DSM-Firmenich", "Kerry", "Ajinomoto", "Danone", "Fonterra", "Bel Group", "Cargill", "ADM", "Lesaffre"]
+    regulation_watch: ["EU Novel Food approvals for fermentation-derived proteins", "EU Biotech Act", "US GRAS pathway changes", "Singapore SFA"]
+
+  alt_cocoa_ingredients:
+    label: "Cocoa-free chocolate and alternative ingredients"
+    keywords: ["cocoa-free chocolate", "chocolate alternative startup", "cocoa price", "cocoa supply chain funding", "alternative cocoa"]
+    peers: ["WNWN", "Voyage Foods", "Foreverland", "Planet A Foods", "Win-Win", "California Cultured", "Kokomodo"]
+    known_strategics: ["Döhler", "Barry Callebaut", "Cargill", "Mondelez", "Nestlé", "Ferrero", "Lindt", "Puratos", "Olam"]
+    regulation_watch: ["EUDR deforestation regulation", "EU chocolate composition directive", "cocoa price volatility", "Novel Food"]
+
+  food_ingredients_b2b:
+    label: "B2B food ingredients"
+    keywords: ["food ingredient startup funding", "B2B ingredients", "functional ingredients Europe"]
+    peers: []
+    known_strategics: ["Kerry", "DSM-Firmenich", "Givaudan", "Symrise", "Döhler", "Ingredion", "Tate & Lyle", "Cargill"]
+    regulation_watch: ["EU Novel Food", "EU health claims", "EU additives regulation"]
+
+companies:
+  Meatly:              {segment: cultivated_meat,       hq: UK, one_liner: "Cultivated chicken for pet food, UK regulatory approval, Series A2 closed June 2026"}
+  La Vie:              {segment: plant_based_meat,      hq: FR, one_liner: "Plant-based pork and bacon, retail and QSR in France and UK"}
+  Peas of Heaven:      {segment: plant_based_meat,      hq: SE, one_liner: "Plant-based meat alternatives, Swedish retail, REWE listing"}
+  Löwenzahn Organics:  {segment: organic_food_cpg_dach, hq: DE, one_liner: "Organic baby and toddler food brand, German retail"}
+  Mühlenkraft:         {segment: organic_food_cpg_dach, hq: DE, one_liner: "Clean-label food brand, EDEKA roll-out to 400 stores"}
+  Dropz:               {segment: functional_beverage_d2c, hq: CH, one_liner: "Hydration and coffee drops, D2C and retail; M&A mandate signed April 2026"}
+  Air Up:              {segment: functional_beverage_d2c, hq: DE, one_liner: "Scent-based drinking system, D2C and retail, international scale-up"}
+  goodBytz:            {segment: food_robotics,         hq: DE, one_liner: "Robotic kitchen for restaurants and catering"}
+  Stenon:              {segment: precision_ag_sensing,  hq: DE, one_liner: "Real-time soil analysis sensor and agronomy software"}
+  Seedalive:           {segment: seed_and_crop_genetics, hq: DE, one_liner: "Rapid seed viability and quality testing"}
+  Amatera:             {segment: seed_and_crop_genetics, hq: FR, one_liner: "Accelerated non-GMO breeding of perennial crops such as coffee"}
+  Bindbridge:          {segment: ag_biologicals,        hq: UK, one_liner: "Agricultural biologicals platform; convertible note 2026, confirmatory DD open"}
+  Arda Biomaterials:   {segment: biomaterials,          hq: UK, one_liner: "Leather alternative from brewers' spent grain"}
+  eternal:             {segment: precision_fermentation, hq: DE, one_liner: "Fermentation platform, pre-revenue, 24 FTE"}
+  Abeya:               {segment: food_ingredients_b2b,  hq: null, one_liner: "Early-stage food company, 8 FTE; segment to verify via Jarvis profile", verify_segment: true}
+  Nukoko:              {segment: alt_cocoa_ingredients, hq: UK, one_liner: "Cocoa-free chocolate; sold to Döhler (SPA effective 2026-03-27), earn-out running", status_override: exit_in_progress}
+  Oatly:               {segment: plant_based_meat,      hq: SE, one_liner: "Public company", status_override: ipo}

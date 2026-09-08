@@ -1,0 +1,10 @@
+# secrets
+.env
+# virtualenv
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# run artefacts: contain confidential marks, cash positions, founder names. Never commit.
+out/
+data/runs/
