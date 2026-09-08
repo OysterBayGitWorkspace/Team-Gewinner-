@@ -48,6 +48,14 @@ def test_markdown_digest():
     assert md.startswith("# Portfolio Market Pulse") and "Mühlenkraft" in md and "1/2 workers" in md and "Paths:" in md
 
 
+def test_artifact_body_strips_skeleton():
+    from pulse.render import artifact_body
+    pulse, seg = build_pulse()
+    body = artifact_body(render_html(pulse, report(seg), CFG))
+    assert body.startswith("<title>") and "<style>" in body and "Mühlenkraft" in body
+    assert "<!DOCTYPE" not in body and "<html" not in body and "<body>" not in body and "<head>" not in body
+
+
 def test_slug():
     assert slug("Löwenzahn Organics") == "lowenzahn-organics"
     assert slug("Air Up") == "air-up"

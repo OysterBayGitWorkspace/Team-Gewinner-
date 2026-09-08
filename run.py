@@ -23,7 +23,7 @@ from pathlib import Path
 import yaml
 
 from pulse import prompts, schemas
-from pulse.render import now_iso, render_html, render_markdown, slug
+from pulse.render import artifact_body, now_iso, render_html, render_markdown, slug
 from pulse.scoring import score_portfolio
 from pulse.workers import WorkerAuthError, WorkerResult, WorkerSpec, run_many, run_worker
 
@@ -199,7 +199,9 @@ def main(argv: list[str] | None = None) -> int:
         "workers": [{k: v for k, v in asdict(r).items() if k != "data"} for r in results.values()],
         "segment_data": segment_data,
     }
-    (out / "index.html").write_text(render_html(pulse, run_report, segments_cfg))
+    page = render_html(pulse, run_report, segments_cfg)
+    (out / "index.html").write_text(page)
+    (out / "artifact.html").write_text(artifact_body(page))
     (out / "pulse.md").write_text(render_markdown(pulse, run_report, segments_cfg))
     (out / "pulse.json").write_text(json.dumps(pulse, indent=1, ensure_ascii=False, default=str))
     (out / "run_report.json").write_text(json.dumps({k: v for k, v in run_report.items() if k != "segment_data"}, indent=1, default=str))
