@@ -25,3 +25,35 @@
 2026-09-08 17:55:04,438 INFO pulse.workers worker start name=company__muhlenkraft model=claude-sonnet-5 tools=4
 2026-09-08 17:55:04,438 INFO pulse.workers worker start name=company__arda-biomaterials model=claude-sonnet-5 tools=4
 2026-09-08 17:55:04,438 INFO pulse.workers worker start name=company__eternal model=claude-sonnet-5 tools=4
+2026-09-08 17:55:54,541 INFO pulse.workers worker done name=company__nukoko turns=9 cost=0.412 dur=104s
+2026-09-08 17:55:54,595 INFO pulse.workers worker start name=company__lowenzahn-organics model=claude-sonnet-5 tools=4
+2026-09-08 17:56:00,115 INFO pulse.workers worker done name=segment__plant_based_meat turns=37 cost=1.527 dur=353s
+2026-09-08 17:56:00,121 INFO pulse.workers worker start name=company__peas-of-heaven model=claude-sonnet-5 tools=4
+2026-09-08 17:56:02,566 INFO pulse.workers worker done name=company__seedalive turns=11 cost=0.331 dur=113s
+2026-09-08 17:56:02,568 INFO pulse.workers worker start name=company__goodbytz model=claude-sonnet-5 tools=4
+2026-09-08 17:56:50,452 INFO pulse.workers worker done name=company__arda-biomaterials turns=11 cost=0.448 dur=106s
+2026-09-08 17:56:50,455 INFO pulse.workers worker start name=company__stenon model=claude-sonnet-5 tools=4
+2026-09-08 17:57:03,883 INFO pulse.workers worker done name=company__eternal turns=11 cost=0.489 dur=119s
+2026-09-08 17:57:03,885 INFO pulse.workers worker start name=company__amatera model=claude-sonnet-5 tools=4
+2026-09-08 17:57:13,683 INFO pulse.workers worker done name=segment__precision_ag_sensing turns=34 cost=1.203 dur=347s
+2026-09-08 17:57:13,684 INFO pulse.workers worker start name=company__la-vie model=claude-sonnet-5 tools=4
+2026-09-08 17:57:19,882 INFO pulse.workers worker done name=company__muhlenkraft turns=14 cost=0.615 dur=135s
+2026-09-08 17:57:19,882 INFO pulse.workers worker start name=company__bindbridge model=claude-sonnet-5 tools=4
+2026-09-08 17:58:03,151 INFO pulse.workers worker done name=company__lowenzahn-organics turns=12 cost=0.515 dur=129s
+2026-09-08 17:58:03,157 INFO pulse.workers worker start name=company__abeya model=claude-sonnet-5 tools=4
+2026-09-08 17:58:16,404 INFO pulse.workers worker done name=company__peas-of-heaven turns=15 cost=0.458 dur=136s
+2026-09-08 17:58:16,404 INFO pulse.workers worker start name=company__air-up model=claude-sonnet-5 tools=4
+2026-09-08 17:58:18,591 INFO pulse.workers worker done name=company__goodbytz turns=10 cost=0.523 dur=136s
+2026-09-08 17:58:47,392 INFO pulse.workers worker done name=company__amatera turns=12 cost=0.482 dur=103s
+2026-09-08 17:58:49,526 INFO pulse.workers worker done name=company__stenon turns=10 cost=0.462 dur=119s
+2026-09-08 17:59:08,237 INFO pulse.workers worker done name=company__la-vie turns=15 cost=0.616 dur=115s
+2026-09-08 17:59:38,026 ERROR pulse.workers worker timeout name=segment__seed_and_crop_genetics after=420s
+2026-09-08 18:00:06,299 INFO pulse.workers worker done name=company__air-up turns=12 cost=0.334 dur=110s
+2026-09-08 18:00:46,768 INFO pulse.workers worker done name=company__abeya turns=12 cost=0.510 dur=164s
+2026-09-08 18:01:18,054 INFO pulse.workers worker done name=company__bindbridge turns=13 cost=0.691 dur=238s
+done: 26/30 workers ok, cost 18.91 USD, 16 companies → /Users/flynnseeger/oysterbay/Team-Gewinner/out/index.html
+  FAILED segment__organic_food_cpg_dach: timeout: timeout after 420s
+  FAILED segment__agri_robotics: timeout: timeout after 420s
+  FAILED segment__agri_supply_chain_traceability: timeout: timeout after 420s
+  FAILED segment__seed_and_crop_genetics: timeout: timeout after 420s
+EXIT 1
